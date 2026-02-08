@@ -52,8 +52,8 @@
     }
     
     body {
-      background-color: #FFFFFF;
-      color: #42210B;
+      background-color: #1A1A1A;
+      color: #FFFFFF;
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
     }
@@ -72,9 +72,9 @@
     
     /* Solid, stable elements */
     .solid-card {
-      border: 1px solid #E5E7EB;
-      background: #FFFFFF;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border: 1px solid #3D3D3D;
+      background: #2D2D2D;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
     }
     
     .solid-btn {
@@ -115,7 +115,7 @@
     .step-number {
       font-size: 5rem;
       font-weight: 900;
-      opacity: 0.15;
+      opacity: 0.05;
       line-height: 1;
     }
     
@@ -169,7 +169,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: #FFFFFF;
+      background: #F05C28;
       transition: width 0.2s ease;
     }
     
@@ -183,10 +183,10 @@
     }
   </style>
 </head>
-<body class="industrial-grid">
+<body class="industrial-grid bg-mesh-dark text-white">
   
   <!-- Fixed Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-mesh-dark/95 backdrop-blur-sm shadow-md border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
@@ -198,16 +198,16 @@
         
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8" id="nav-links">
-          <a href="#method" class="nav-link text-sm font-medium text-gray-700 hover:text-mesh-orange transition-colors" data-i18n="nav.method">Method</a>
-          <a href="#impact" class="nav-link text-sm font-medium text-gray-700 hover:text-mesh-orange transition-colors" data-i18n="nav.impact">Impact</a>
-          <a href="#partners" class="nav-link text-sm font-medium text-gray-700 hover:text-mesh-orange transition-colors" data-i18n="nav.partners">Partners</a>
-          <a href="#about" class="nav-link text-sm font-medium text-gray-700 hover:text-mesh-orange transition-colors" data-i18n="nav.about">About</a>
+          <a href="#method" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors" data-i18n="nav.method">Method</a>
+          <a href="#impact" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors" data-i18n="nav.impact">Impact</a>
+          <a href="#partners" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors" data-i18n="nav.partners">Partners</a>
+          <a href="#about" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors" data-i18n="nav.about">About</a>
         </div>
         
         <!-- Actions -->
         <div class="flex items-center space-x-4">
           <!-- Language Toggle -->
-          <button id="lang-toggle" class="flex items-center space-x-2 text-sm font-medium text-gray-700 hover:text-mesh-orange transition-colors px-3 py-1 border border-gray-200 rounded">
+          <button id="lang-toggle" class="flex items-center space-x-2 text-sm font-medium text-gray-300 hover:text-white transition-colors px-3 py-1 border border-gray-700 rounded">
             <span id="lang-label">EN / AR</span>
           </button>
           
@@ -219,17 +219,17 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="min-h-screen flex items-center pt-16 bg-white border-b border-gray-100">
+  <section class="min-h-screen flex items-center pt-16 bg-mesh-dark border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
       <div class="max-w-4xl">
         <!-- Industrial accent line -->
         <div class="w-20 h-1 bg-mesh-orange mb-8"></div>
         
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 text-mesh-brown" data-i18n="hero.headline">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 text-white" data-i18n="hero.headline">
           They said it was impossible.<br>We call it <span class="text-mesh-orange">Optimization.</span>
         </h1>
         
-        <p class="text-lg md:text-xl text-gray-600 max-w-2xl mb-10 leading-relaxed" data-i18n="hero.subheadline">
+        <p class="text-lg md:text-xl text-gray-400 max-w-2xl mb-10 leading-relaxed" data-i18n="hero.subheadline">
           Growth Architecture for Global Enterprises. Bridging the gap between manual bottlenecks and automated revenue machines.
         </p>
         
@@ -244,28 +244,28 @@
   </section>
 
   <!-- Impact Dashboard -->
-  <section id="impact" class="border-b border-gray-100 bg-gray-50">
+  <section id="impact" class="border-b border-white/5 bg-[#202020]">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
         <div class="text-center md:text-left">
           <div class="stat-number text-mesh-orange mb-2">100<span class="text-2xl">x</span></div>
-          <p class="text-sm text-gray-600 uppercase tracking-wider font-medium" data-i18n="impact.roi">Max ROI achieved</p>
+          <p class="text-sm text-gray-400 uppercase tracking-wider font-medium" data-i18n="impact.roi">Max ROI achieved</p>
         </div>
         <div class="text-center md:text-left">
           <div class="stat-number text-mesh-orange mb-2">$2<span class="text-2xl">M+</span></div>
-          <p class="text-sm text-gray-600 uppercase tracking-wider font-medium" data-i18n="impact.capital">Capital raised</p>
+          <p class="text-sm text-gray-400 uppercase tracking-wider font-medium" data-i18n="impact.capital">Capital raised</p>
         </div>
         <div class="text-center md:text-left">
           <div class="stat-number text-mesh-orange mb-2">30<span class="text-2xl">+</span></div>
-          <p class="text-sm text-gray-600 uppercase tracking-wider font-medium" data-i18n="impact.clients">Global clients</p>
+          <p class="text-sm text-gray-400 uppercase tracking-wider font-medium" data-i18n="impact.clients">Global clients</p>
         </div>
         <div class="text-center md:text-left">
           <div class="stat-number text-mesh-orange mb-2">8</div>
-          <p class="text-sm text-gray-600 uppercase tracking-wider font-medium" data-i18n="impact.countries">Countries</p>
+          <p class="text-sm text-gray-400 uppercase tracking-wider font-medium" data-i18n="impact.countries">Countries</p>
         </div>
       </div>
       
-      <div class="mt-12 pt-8 border-t border-gray-200">
+      <div class="mt-12 pt-8 border-t border-white/10">
         <p class="text-center text-gray-500 text-sm uppercase tracking-widest" data-i18n="impact.badge">
           One of the Highest Recorded ROAS in Techne Summit history
         </p>
@@ -274,37 +274,37 @@
   </section>
 
   <!-- Case Study: Techne Summit -->
-  <section class="border-b border-gray-100 bg-white">
+  <section class="border-b border-white/5 bg-mesh-dark">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
           <div class="text-xs font-bold text-mesh-green uppercase tracking-widest mb-4" data-i18n="case.label">Case Study</div>
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-mesh-brown" data-i18n="case.title">Techne Summit 2025</h2>
-          <p class="text-gray-600 mb-8 leading-relaxed" data-i18n="case.description">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white" data-i18n="case.title">Techne Summit 2025</h2>
+          <p class="text-gray-400 mb-8 leading-relaxed" data-i18n="case.description">
             Managed 2025 Meta advertising for the Mediterranean's leading tech event. Engineered one of the highest recorded ROAS in event history through data-driven optimization.
           </p>
           
           <div class="grid grid-cols-2 gap-6">
-            <div class="solid-card p-4">
-              <div class="text-2xl font-bold text-mesh-brown">55,000+</div>
-              <div class="text-xs text-gray-500 uppercase tracking-wider mt-1" data-i18n="case.stats.attendees">Attendees</div>
+            <div class="solid-card p-4 border border-white/10 bg-mesh-grey">
+              <div class="text-2xl font-bold text-white">55,000+</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider mt-1" data-i18n="case.stats.attendees">Attendees</div>
             </div>
-            <div class="solid-card p-4">
-              <div class="text-2xl font-bold text-mesh-brown">70+</div>
-              <div class="text-xs text-gray-500 uppercase tracking-wider mt-1" data-i18n="case.stats.countries">Countries</div>
+            <div class="solid-card p-4 border border-white/10 bg-mesh-grey">
+              <div class="text-2xl font-bold text-white">70+</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider mt-1" data-i18n="case.stats.countries">Countries</div>
             </div>
-            <div class="solid-card p-4">
-              <div class="text-2xl font-bold text-mesh-brown">450+</div>
-              <div class="text-xs text-gray-500 uppercase tracking-wider mt-1" data-i18n="case.stats.speakers">Speakers</div>
+            <div class="solid-card p-4 border border-white/10 bg-mesh-grey">
+              <div class="text-2xl font-bold text-white">450+</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider mt-1" data-i18n="case.stats.speakers">Speakers</div>
             </div>
-            <div class="solid-card p-4">
-              <div class="text-2xl font-bold text-mesh-brown">150+</div>
-              <div class="text-xs text-gray-500 uppercase tracking-wider mt-1" data-i18n="case.stats.investors">Investors</div>
+            <div class="solid-card p-4 border border-white/10 bg-mesh-grey">
+              <div class="text-2xl font-bold text-white">150+</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider mt-1" data-i18n="case.stats.investors">Investors</div>
             </div>
           </div>
         </div>
         
-        <div class="solid-card aspect-video flex items-center justify-center">
+        <div class="solid-card aspect-video flex items-center justify-center border border-white/10 bg-mesh-grey">
           <img src="http://static.photos/technology/1024x576/42" alt="Techne Summit" class="w-full h-full object-cover opacity-80">
         </div>
       </div>
@@ -312,28 +312,28 @@
   </section>
 
   <!-- Partners Grid -->
-  <section id="partners" class="border-b border-gray-100 bg-white">
+  <section id="partners" class="border-b border-white/5 bg-mesh-dark">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-mesh-brown" data-i18n="partners.title">Industrial Trust</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="partners.subtitle">Strategic partnerships with global enterprises and emerging market leaders.</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white" data-i18n="partners.title">Industrial Trust</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="partners.subtitle">Strategic partnerships with global enterprises and emerging market leaders.</p>
       </div>
       
       <!-- Grid A: Strategic Advisory -->
       <div class="mb-12">
         <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-l-2 border-mesh-orange pl-4" data-i18n="partners.gridA.title">Strategic Advisory — Adham Mashaly</h3>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
-            <span class="text-sm font-semibold uppercase tracking-wider text-center text-mesh-brown">Techne Summit 2025</span>
+          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6 border border-white/10 bg-mesh-grey">
+            <span class="text-sm font-semibold uppercase tracking-wider text-center text-white">Techne Summit 2025</span>
           </div>
-          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
-            <span class="text-sm font-semibold uppercase tracking-wider text-center text-mesh-brown">B2B Enterprise Partners</span>
+          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6 border border-white/10 bg-mesh-grey">
+            <span class="text-sm font-semibold uppercase tracking-wider text-center text-white">B2B Enterprise Partners</span>
           </div>
-          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
-            <span class="text-sm font-semibold uppercase tracking-wider text-center text-mesh-brown">High-Ticket Consulting</span>
+          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6 border border-white/10 bg-mesh-grey">
+            <span class="text-sm font-semibold uppercase tracking-wider text-center text-white">High-Ticket Consulting</span>
           </div>
-          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
-            <span class="text-sm font-semibold uppercase tracking-wider text-center text-mesh-brown">Growth Architecture</span>
+          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6 border border-white/10 bg-mesh-grey">
+            <span class="text-sm font-semibold uppercase tracking-wider text-center text-white">Growth Architecture</span>
           </div>
         </div>
       </div>
@@ -342,25 +342,25 @@
       <div class="mb-12">
         <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-l-2 border-mesh-orange pl-4" data-i18n="partners.gridB.title">Digitalization — MeshMesh Consulting</h3>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
+          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6 border border-white/10 bg-mesh-grey">
             <div class="text-center">
               <i data-lucide="shopping-cart" class="w-8 h-8 mx-auto mb-2 text-mesh-orange"></i>
-              <span class="text-sm font-semibold uppercase tracking-wider text-mesh-brown">Kaf Market</span>
-              <p class="text-xs text-gray-500 mt-1">Meta Catalog Systems</p>
+              <span class="text-sm font-semibold uppercase tracking-wider text-white">Kaf Market</span>
+              <p class="text-xs text-gray-400 mt-1">Meta Catalog Systems</p>
             </div>
           </div>
-          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
+          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6 border border-white/10 bg-mesh-grey">
             <div class="text-center">
               <i data-lucide="zap" class="w-8 h-8 mx-auto mb-2 text-mesh-orange"></i>
-              <span class="text-sm font-semibold uppercase tracking-wider text-mesh-brown">Cooley Comics</span>
-              <p class="text-xs text-gray-500 mt-1">Automation Systems</p>
+              <span class="text-sm font-semibold uppercase tracking-wider text-white">Cooley Comics</span>
+              <p class="text-xs text-gray-400 mt-1">Automation Systems</p>
             </div>
           </div>
-          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
+          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6 border border-white/10 bg-mesh-grey">
             <div class="text-center">
               <i data-lucide="building-2" class="w-8 h-8 mx-auto mb-2 text-mesh-orange"></i>
-              <span class="text-sm font-semibold uppercase tracking-wider text-mesh-brown">B2B Clients</span>
-              <p class="text-xs text-gray-500 mt-1">Enterprise Solutions</p>
+              <span class="text-sm font-semibold uppercase tracking-wider text-white">B2B Clients</span>
+              <p class="text-xs text-gray-400 mt-1">Enterprise Solutions</p>
             </div>
           </div>
         </div>
@@ -370,16 +370,16 @@
       <div>
         <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-l-2 border-mesh-orange pl-4" data-i18n="partners.gridC.title">Industrial Partners — via Senno Elite</h3>
         <div class="grid grid-cols-2 gap-4">
-          <div class="solid-card aspect-[3/1] flex items-center justify-center p-8">
+          <div class="solid-card aspect-[3/1] flex items-center justify-center p-8 border border-white/10 bg-mesh-grey">
             <div class="flex items-center gap-4">
               <i data-lucide="car" class="w-10 h-10 text-mesh-orange"></i>
-              <span class="text-lg font-bold uppercase tracking-wider text-mesh-brown">Mercedes-Benz</span>
+              <span class="text-lg font-bold uppercase tracking-wider text-white">Mercedes-Benz</span>
             </div>
           </div>
-          <div class="solid-card aspect-[3/1] flex items-center justify-center p-8">
+          <div class="solid-card aspect-[3/1] flex items-center justify-center p-8 border border-white/10 bg-mesh-grey">
             <div class="flex items-center gap-4">
               <i data-lucide="truck" class="w-10 h-10 text-mesh-orange"></i>
-              <span class="text-lg font-bold uppercase tracking-wider text-mesh-brown">Mitsubishi Motors</span>
+              <span class="text-lg font-bold uppercase tracking-wider text-white">Mitsubishi Motors</span>
             </div>
           </div>
         </div>
@@ -388,47 +388,47 @@
   </section>
 
   <!-- The MeshMesh Method -->
-  <section id="method" class="border-b border-gray-100 bg-gray-50">
+  <section id="method" class="border-b border-white/5 bg-[#202020]">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-mesh-brown" data-i18n="method.title">The MeshMesh Method</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="method.subtitle">A systematic approach to digital transformation.</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white" data-i18n="method.title">The MeshMesh Method</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="method.subtitle">A systematic approach to digital transformation.</p>
       </div>
       
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Step 1: Audit -->
-        <div class="relative solid-card p-8">
-          <div class="step-number absolute top-4 right-4 text-gray-200">01</div>
+        <div class="relative solid-card p-8 border border-white/10 bg-mesh-grey">
+          <div class="step-number absolute top-4 right-4 text-gray-600">01</div>
           <div class="relative z-10">
             <div class="w-12 h-12 bg-mesh-orange/10 flex items-center justify-center mb-6 rounded-md">
               <i data-lucide="search" class="w-6 h-6 text-mesh-orange"></i>
             </div>
-            <h3 class="text-xl font-bold mb-4 text-mesh-brown" data-i18n="method.step1.title">Audit</h3>
-            <p class="text-gray-600 text-sm leading-relaxed" data-i18n="method.step1.desc">Identifying inefficiencies in current manual processes. Deep diagnostic of operational bottlenecks.</p>
+            <h3 class="text-xl font-bold mb-4 text-white" data-i18n="method.step1.title">Audit</h3>
+            <p class="text-gray-400 text-sm leading-relaxed" data-i18n="method.step1.desc">Identifying inefficiencies in current manual processes. Deep diagnostic of operational bottlenecks.</p>
           </div>
         </div>
         
         <!-- Step 2: Architect -->
-        <div class="relative solid-card p-8">
-          <div class="step-number absolute top-4 right-4 text-gray-200">02</div>
+        <div class="relative solid-card p-8 border border-white/10 bg-mesh-grey">
+          <div class="step-number absolute top-4 right-4 text-gray-600">02</div>
           <div class="relative z-10">
             <div class="w-12 h-12 bg-mesh-orange/10 flex items-center justify-center mb-6 rounded-md">
               <i data-lucide="layout" class="w-6 h-6 text-mesh-orange"></i>
             </div>
-            <h3 class="text-xl font-bold mb-4 text-mesh-brown" data-i18n="method.step2.title">Architect</h3>
-            <p class="text-gray-600 text-sm leading-relaxed" data-i18n="method.step2.desc">Designing a lean, high-performance digital "skeleton". Blueprint for scalable growth infrastructure.</p>
+            <h3 class="text-xl font-bold mb-4 text-white" data-i18n="method.step2.title">Architect</h3>
+            <p class="text-gray-400 text-sm leading-relaxed" data-i18n="method.step2.desc">Designing a lean, high-performance digital "skeleton". Blueprint for scalable growth infrastructure.</p>
           </div>
         </div>
         
         <!-- Step 3: Automate -->
-        <div class="relative solid-card p-8">
-          <div class="step-number absolute top-4 right-4 text-gray-200">03</div>
+        <div class="relative solid-card p-8 border border-white/10 bg-mesh-grey">
+          <div class="step-number absolute top-4 right-4 text-gray-600">03</div>
           <div class="relative z-10">
             <div class="w-12 h-12 bg-mesh-orange/10 flex items-center justify-center mb-6 rounded-md">
               <i data-lucide="cog" class="w-6 h-6 text-mesh-orange"></i>
             </div>
-            <h3 class="text-xl font-bold mb-4 text-mesh-brown" data-i18n="method.step3.title">Automate</h3>
-            <p class="text-gray-600 text-sm leading-relaxed" data-i18n="method.step3.desc">Turning the skeleton into a self-optimizing growth machine. Continuous improvement systems.</p>
+            <h3 class="text-xl font-bold mb-4 text-white" data-i18n="method.step3.title">Automate</h3>
+            <p class="text-gray-400 text-sm leading-relaxed" data-i18n="method.step3.desc">Turning the skeleton into a self-optimizing growth machine. Continuous improvement systems.</p>
           </div>
         </div>
       </div>
@@ -436,12 +436,12 @@
   </section>
 
   <!-- The Architect -->
-  <section id="about" class="border-b border-gray-100 bg-white">
+  <section id="about" class="border-b border-white/5 bg-mesh-dark">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div>
           <div class="text-xs font-bold text-mesh-green uppercase tracking-widest mb-4" data-i18n="about.label">The Architect</div>
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-mesh-brown">Adham Mashaly</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Adham Mashaly</h2>
           
           <div class="space-y-6">
             <div class="flex gap-4">
@@ -449,8 +449,8 @@
                 <i data-lucide="graduation-cap" class="w-5 h-5 text-mesh-orange"></i>
               </div>
               <div>
-                <h4 class="font-semibold mb-1 text-mesh-brown" data-i18n="about.edu.title">Education</h4>
-                <p class="text-gray-600 text-sm" data-i18n="about.edu.desc">University of Rochester (USA) — Applying Tier-1 research and systems logic to business bottlenecks.</p>
+                <h4 class="font-semibold mb-1 text-white" data-i18n="about.edu.title">Education</h4>
+                <p class="text-gray-400 text-sm" data-i18n="about.edu.desc">University of Rochester (USA) — Applying Tier-1 research and systems logic to business bottlenecks.</p>
               </div>
             </div>
             
@@ -459,8 +459,8 @@
                 <i data-lucide="briefcase" class="w-5 h-5 text-mesh-orange"></i>
               </div>
               <div>
-                <h4 class="font-semibold mb-1 text-mesh-brown" data-i18n="about.ops.title">Operator Status</h4>
-                <p class="text-gray-600 text-sm" data-i18n="about.ops.desc">Co-Founder at Kaf Market, Partner at Senno Elite, and CMO at Cooley Comics.</p>
+                <h4 class="font-semibold mb-1 text-white" data-i18n="about.ops.title">Operator Status</h4>
+                <p class="text-gray-400 text-sm" data-i18n="about.ops.desc">Co-Founder at Kaf Market, Partner at Senno Elite, and CMO at Cooley Comics.</p>
               </div>
             </div>
             
@@ -469,14 +469,14 @@
                 <i data-lucide="trending-up" class="w-5 h-5 text-mesh-orange"></i>
               </div>
               <div>
-                <h4 class="font-semibold mb-1 text-mesh-brown" data-i18n="about.exp.title">Experience</h4>
-                <p class="text-gray-600 text-sm" data-i18n="about.exp.desc">Advised on $500k+ in deals and led international due diligence for $200k+ operations.</p>
+                <h4 class="font-semibold mb-1 text-white" data-i18n="about.exp.title">Experience</h4>
+                <p class="text-gray-400 text-sm" data-i18n="about.exp.desc">Advised on $500k+ in deals and led international due diligence for $200k+ operations.</p>
               </div>
             </div>
           </div>
         </div>
         
-        <div class="solid-card aspect-square md:aspect-[4/5]">
+        <div class="solid-card aspect-square md:aspect-[4/5] border border-white/10 bg-mesh-grey">
           <img src="http://static.photos/office/1024x576/88" alt="Adham Mashaly" class="w-full h-full object-cover opacity-90 rounded-sm">
         </div>
       </div>
@@ -484,17 +484,17 @@
   </section>
 
   <!-- Final CTA -->
-  <section id="contact" class="border-b border-gray-100 bg-gray-50">
+  <section id="contact" class="border-b border-white/5 bg-[#202020]">
     <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-5xl font-bold mb-6 text-mesh-brown" data-i18n="cta.title">Ready for an efficient business?</h2>
-      <p class="text-gray-600 mb-10 max-w-xl mx-auto" data-i18n="cta.subtitle">Schedule a comprehensive growth audit. We'll identify your biggest opportunities for automation and revenue growth.</p>
+      <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white" data-i18n="cta.title">Ready for an efficient business?</h2>
+      <p class="text-gray-400 mb-10 max-w-xl mx-auto" data-i18n="cta.subtitle">Schedule a comprehensive growth audit. We'll identify your biggest opportunities for automation and revenue growth.</p>
       
       <a href="mailto:contact@meshmesh.consulting" class="bg-mesh-orange text-white hover:bg-mesh-light-orange px-10 py-5 text-lg rounded-sm inline-flex items-center justify-center gap-3 font-bold transition-colors" data-i18n="cta.button">
         <span>Schedule a Call</span>
         <i data-lucide="arrow-right" class="w-5 h-5"></i>
       </a>
       
-      <div class="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row items-center justify-center gap-6 text-sm text-gray-500">
+      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-center gap-6 text-sm text-gray-500">
         <a href="mailto:contact@meshmesh.consulting" class="flex items-center gap-2 hover:text-mesh-orange transition-colors">
           <i data-lucide="mail" class="w-4 h-4"></i>
           contact@meshmesh.consulting
