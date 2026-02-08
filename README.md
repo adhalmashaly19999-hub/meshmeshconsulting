@@ -1,13 +1,13 @@
 ---
-title: MeshMesh Consulting — Growth Architecture 🏭
-colorFrom: green
-colorTo: purple
+title: MeshMesh Heavyweight Operator 🏭
+colorFrom: yellow
+colorTo: yellow
 sdk: static
-emoji: ⚡
+emoji: 🔧
 tags:
   - deepsite-v4
 ---
 
-# MeshMesh Consulting — Growth Architecture 🏭
+# MeshMesh Heavyweight Operator 🏭
 
 This project has been created with [DeepSite](https://deepsite.hf.co) AI Vibe Coding.

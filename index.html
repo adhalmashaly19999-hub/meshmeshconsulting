@@ -3,382 +3,674 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MeshMesh Consulting | مؤسسة مشمش للخدمات الاستشارية</title>
-  <meta name="description" content="Growth Architecture for Global Enterprises. Bridging the gap between manual bottlenecks and automated revenue machines.">
-  
-  <!-- Tailwind CSS -->
+  <title>MeshMesh Consulting | Heavyweight Operator</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
             'mesh-dark': '#1A1A1A',
-            'mesh-white': '#FFFFFF',
+            'mesh-orange': '#FF5722',
             'mesh-grey': '#2D2D2D',
-            'mesh-accent': '#3D3D3D',
-            'mesh-primary': '#F05C28',
-            'mesh-secondary': '#96B21C',
-            'mesh-text-dark': '#42210B',
           },
           fontFamily: {
-            'en': ['Inter', 'sans-serif'],
-            'ar': ['Almarai', 'Cairo', 'sans-serif'],
+            'en': ['Inter', 'system-ui', 'sans-serif'],
+            'ar': ['Cairo', 'sans-serif'],
           }
         }
       }
     }
   </script>
-  
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+    
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
     
     html {
-      scroll-behavior: auto;
+      scroll-behavior: smooth;
     }
     
     body {
+      font-family: 'Inter', system-ui, sans-serif;
       background-color: #1A1A1A;
       color: #FFFFFF;
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
+      overflow-x: hidden;
     }
     
     body[dir="rtl"] {
-      font-family: 'Almarai', 'Cairo', sans-serif;
+      font-family: 'Cairo', sans-serif;
     }
     
-    /* Industrial Grid Pattern */
-    .industrial-grid {
-      background-image: 
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 50px 50px;
+    .mesh-orange {
+      color: #FF5722;
     }
     
-    /* Solid, stable elements */
-    .solid-card {
-      border: 1px solid rgba(255,255,255,0.1);
-      background: #2D2D2D;
+    .bg-mesh-orange {
+      background-color: #FF5722;
     }
     
-    .solid-btn {
-      background: #F05C28;
-      color: #FFFFFF;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      transition: none;
+    .border-mesh-orange {
+      border-color: #FF5722;
     }
     
-    .solid-btn:hover {
-      background: #F79422;
+    /* Scroll animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
-    .solid-btn-outline {
-      border: 2px solid #FFFFFF;
-      color: #FFFFFF;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
     }
     
-    .solid-btn-outline:hover {
-      background: #FFFFFF;
-      color: #1A1A1A;
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
-    /* Stats counter style */
-    .stat-number {
-      font-size: 3.5rem;
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: -0.02em;
+    .reveal-left.active {
+      opacity: 1;
+      transform: translateX(0);
     }
     
-    /* Method step numbers */
-    .step-number {
-      font-size: 5rem;
-      font-weight: 900;
-      opacity: 0.15;
-      line-height: 1;
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
-    /* Logo placeholder style */
-    .logo-placeholder {
-      background: #3D3D3D;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      font-size: 0.875rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+    .reveal-right.active {
+      opacity: 1;
+      transform: translateX(0);
     }
     
-    /* Section spacing - consistent */
-    section {
-      padding: 5rem 0;
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
-    /* RTL specific adjustments */
-    [dir="rtl"] .rtl-flip {
-      transform: scaleX(-1);
+    .reveal-scale.active {
+      opacity: 1;
+      transform: scale(1);
     }
     
-    [dir="rtl"] .text-left {
-      text-align: right;
+    /* Stagger delays */
+    .delay-100 { transition-delay: 100ms; }
+    .delay-200 { transition-delay: 200ms; }
+    .delay-300 { transition-delay: 300ms; }
+    .delay-400 { transition-delay: 400ms; }
+    
+    /* Gradient mesh background */
+    .mesh-gradient {
+      background: radial-gradient(ellipse at 20% 20%, rgba(255, 87, 34, 0.08) 0%, transparent 50%),
+                  radial-gradient(ellipse at 80% 80%, rgba(255, 87, 34, 0.05) 0%, transparent 50%),
+                  #1A1A1A;
     }
     
-    [dir="rtl"] .text-right {
-      text-align: left;
-    }
-    
-    [dir="rtl"] .md\:text-left {
-      text-align: right;
-    }
-    
-    [dir="rtl"] .md\:text-right {
-      text-align: left;
-    }
-    
-    /* Navigation active state */
-    .nav-link {
+    /* Button hover effects */
+    .btn-primary {
       position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
     }
     
-    .nav-link::after {
+    .btn-primary::before {
       content: '';
       position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #FFFFFF;
-      transition: width 0.2s ease;
-    }
-    
-    [dir="rtl"] .nav-link::after {
-      left: auto;
-      right: 0;
-    }
-    
-    .nav-link:hover::after {
+      top: 0;
+      left: -100%;
       width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(255, 87, 34, 0.3);
+    }
+    
+    /* Card hover */
+    .hover-lift {
+      transition: all 0.3s ease;
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    
+    /* Number counter animation */
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .stat-number {
+      animation: countUp 0.6s ease-out forwards;
+    }
+    
+    /* Pulse animation for CTA */
+    @keyframes pulse-orange {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.4); }
+      50% { box-shadow: 0 0 0 20px rgba(255, 87, 34, 0); }
+    }
+    
+    .pulse-cta {
+      animation: pulse-orange 2s infinite;
+    }
+    
+    /* Logo grid */
+    .logo-item {
+      filter: grayscale(100%) brightness(0.8);
+      transition: all 0.3s ease;
+    }
+    
+    .logo-item:hover {
+      filter: grayscale(0%) brightness(1);
+    }
+    
+    /* Method step connector */
+    .method-connector {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #FF5722, transparent);
+      z-index: 0;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #1A1A1A;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #FF5722;
+      border-radius: 4px;
+    }
+    
+    /* Mobile menu */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+    
+    /* RTL specific */
+    [dir="rtl"] .method-connector {
+      background: linear-gradient(270deg, #FF5722, transparent);
+    }
+    
+    [dir="rtl"] .reveal-left {
+      transform: translateX(50px);
+    }
+    
+    [dir="rtl"] .reveal-left.active {
+      transform: translateX(0);
+    }
+    
+    [dir="rtl"] .reveal-right {
+      transform: translateX(-50px);
+    }
+    
+    [dir="rtl"] .reveal-right.active {
+      transform: translateX(0);
     }
   </style>
 </head>
-<body class="industrial-grid">
-  
+<body class="mesh-gradient">
   <!-- Fixed Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-mesh-dark/95 backdrop-blur-sm border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-mesh-dark/95 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
         <!-- Logo -->
-        <div class="flex-shrink-0">
-          <a href="#" class="block">
-            <img src="assets/logo.png" alt="MeshMesh Consulting" class="h-10 w-auto bg-white rounded-md p-1">
-          </a>
+        <div class="flex items-center">
+          <img src="http://static.photos/minimal/200x200/1" alt="MeshMesh Consulting Logo" class="h-10 w-auto object-contain">
         </div>
         
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-8" id="nav-links">
-          <a href="#method" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors" data-i18n="nav.method">Method</a>
-          <a href="#impact" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors" data-i18n="nav.impact">Impact</a>
-          <a href="#partners" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors" data-i18n="nav.partners">Partners</a>
-          <a href="#about" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors" data-i18n="nav.about">About</a>
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#impact" class="text-sm font-medium text-gray-300 hover:text-white transition-colors" data-en="Impact" data-ar="التأثير">Impact</a>
+          <a href="#case-study" class="text-sm font-medium text-gray-300 hover:text-white transition-colors" data-en="Case Study" data-ar="دراسة الحالة">Case Study</a>
+          <a href="#clients" class="text-sm font-medium text-gray-300 hover:text-white transition-colors" data-en="Clients" data-ar="العملاء">Clients</a>
+          <a href="#method" class="text-sm font-medium text-gray-300 hover:text-white transition-colors" data-en="Method" data-ar="المنهجية">Method</a>
+          <a href="#audit" class="text-sm font-medium text-gray-300 hover:text-white transition-colors" data-en="Audit" data-ar="الفحص">Audit</a>
         </div>
         
-        <!-- Actions -->
-        <div class="flex items-center space-x-4">
-          <!-- Language Toggle -->
-          <button id="lang-toggle" class="flex items-center space-x-2 text-sm font-medium text-gray-300 hover:text-white transition-colors px-3 py-1 border border-white/20 rounded">
-            <span id="lang-label">EN / AR</span>
+        <!-- Language Toggle & CTA -->
+        <div class="flex items-center gap-4">
+          <button id="langToggle" class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 text-sm font-medium hover:border-mesh-orange transition-colors">
+            <i data-lucide="globe" class="w-4 h-4"></i>
+            <span id="langLabel">EN</span>
           </button>
           
-          <!-- CTA Button -->
-          <a href="#contact" class="solid-btn px-5 py-2.5 text-sm rounded-sm" data-i18n="nav.cta">Book Audit</a>
+          <a href="#audit" class="hidden sm:flex btn-primary bg-mesh-orange text-white px-5 py-2.5 rounded-lg font-semibold text-sm">
+            <span data-en="Get Audit" data-ar="احصل على الفحص">Get Audit</span>
+          </a>
+          
+          <!-- Mobile menu button -->
+          <button id="mobileMenuBtn" class="md:hidden p-2">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
         </div>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-16 right-0 w-64 h-screen bg-mesh-grey border-l border-white/10 md:hidden">
+      <div class="p-6 space-y-4">
+        <a href="#impact" class="block text-gray-300 hover:text-white py-2" data-en="Impact" data-ar="التأثير">Impact</a>
+        <a href="#case-study" class="block text-gray-300 hover:text-white py-2" data-en="Case Study" data-ar="دراسة الحالة">Case Study</a>
+        <a href="#clients" class="block text-gray-300 hover:text-white py-2" data-en="Clients" data-ar="العملاء">Clients</a>
+        <a href="#method" class="block text-gray-300 hover:text-white py-2" data-en="Method" data-ar="المنهجية">Method</a>
+        <a href="#audit" class="block text-gray-300 hover:text-white py-2" data-en="Audit" data-ar="الفحص">Audit</a>
+        <a href="#audit" class="btn-primary block bg-mesh-orange text-white text-center px-5 py-3 rounded-lg font-semibold mt-4" data-en="Get Audit" data-ar="احصل على الفحص">Get Audit</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="min-h-screen flex items-center pt-16 border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+  <section class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-mesh-orange/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-mesh-orange/3 rounded-full blur-3xl"></div>
+      <!-- Grid pattern -->
+      <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-4xl">
-        <!-- Industrial accent line -->
-        <div class="w-20 h-1 bg-white mb-8"></div>
+        <!-- Badge -->
+        <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
+          <i data-lucide="sparkles" class="w-4 h-4 mesh-orange"></i>
+          <span class="text-sm font-medium text-gray-300" data-en="Heavyweight Operator" data-ar="المشغل الثقيل">Heavyweight Operator</span>
+        </div>
         
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6" data-i18n="hero.headline">
-          They said it was impossible.<br>We call it <span class="text-mesh-secondary">Optimization.</span>
+        <!-- Headline -->
+        <h1 class="reveal delay-100 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
+          <span data-en="They said it was impossible." data-ar="بيقولوا &quot;في المشمش&quot; لما الموضوع يكون مستحيل..">They said it was impossible.</span>
+          <br>
+          <span class="mesh-orange" data-en="We call it Optimization." data-ar="احنا بنخلي &quot;مشمش&quot; هو السيستم اللي بيكبّر البيزنس.">We call it Optimization.</span>
         </h1>
         
-        <p class="text-lg md:text-xl text-gray-400 max-w-2xl mb-10 leading-relaxed" data-i18n="hero.subheadline">
-          Growth Architecture for Global Enterprises. Bridging the gap between manual bottlenecks and automated revenue machines.
+        <!-- Sub-headline -->
+        <p class="reveal delay-200 text-lg sm:text-xl text-gray-400 max-w-2xl mb-10 leading-relaxed" data-en="Bridging the gap between manual &quot;whirlpools&quot; and automated revenue engines." data-ar="بنبني الجسر بين الدوّامة اليدوية ومحركات الإيرادات الآلية.">
+          Bridging the gap between manual "whirlpools" and automated revenue engines.
         </p>
         
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#contact" class="solid-btn px-8 py-4 text-base rounded-sm inline-flex items-center justify-center gap-3" data-i18n="hero.cta">
-            <span>Book a Growth Audit</span>
-            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        <!-- CTA Buttons -->
+        <div class="reveal delay-300 flex flex-col sm:flex-row gap-4">
+          <a href="#audit" class="btn-primary pulse-cta bg-mesh-orange text-white px-8 py-4 rounded-xl font-bold text-lg text-center">
+            <span data-en="Schedule Your Audit" data-ar="احجز فحصك">Schedule Your Audit</span>
+            <i data-lucide="arrow-right" class="w-5 h-5 inline-block ml-2 rtl:ml-0 rtl:mr-2 rtl:rotate-180"></i>
           </a>
+          <a href="#case-study" class="px-8 py-4 rounded-xl font-semibold text-lg border border-white/20 hover:border-white/40 hover:bg-white/5 transition-all text-center">
+            <span data-en="See Our Work" data-ar="شوف شغلنا">See Our Work</span>
+          </a>
+        </div>
+        
+        <!-- Trust indicators -->
+        <div class="reveal delay-400 mt-16 flex flex-wrap items-center gap-8">
+          <div class="flex items-center gap-2 text-gray-500 text-sm">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+            <span data-en="Enterprise Grade" data-ar="مستوى المؤسسات">Enterprise Grade</span>
+          </div>
+          <div class="flex items-center gap-2 text-gray-500 text-sm">
+            <i data-lucide="clock" class="w-5 h-5"></i>
+            <span data-en="45-Min Audit" data-ar="فحص 45 دقيقة">45-Min Audit</span>
+          </div>
+          <div class="flex items-center gap-2 text-gray-500 text-sm">
+            <i data-lucide="trending-up" class="w-5 h-5"></i>
+            <span data-en="100x ROI Tracked" data-ar="عائد استثمار 100x">100x ROI Tracked</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <i data-lucide="chevron-down" class="w-6 h-6 text-gray-500"></i>
+    </div>
+  </section>
+
+  <!-- Impact Dashboard -->
+  <section id="impact" class="py-20 md:py-32 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="reveal text-3xl sm:text-4xl md:text-5xl font-bold mb-4" data-en="The Impact Dashboard" data-ar="لوحة التأثير">The Impact Dashboard</h2>
+        <p class="reveal delay-100 text-gray-400 text-lg" data-en="Numbers that define heavyweight operations" data-ar="أرقام تحدد العمليات الثقيلة">Numbers that define heavyweight operations</p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <!-- Stat 1 -->
+        <div class="reveal delay-100 bg-mesh-grey/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 text-center border border-white/5 hover-lift">
+          <div class="text-4xl md:text-5xl font-black mesh-orange mb-2 stat-number" data-target="100" data-suffix="x">100x</div>
+          <div class="text-sm md:text-base text-gray-400 font-medium" data-en="Max ROI Achieved" data-ar="أقصى عائد استثمار">Max ROI Achieved</div>
+        </div>
+        
+        <!-- Stat 2 -->
+        <div class="reveal delay-200 bg-mesh-grey/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 text-center border border-white/5 hover-lift">
+          <div class="text-4xl md:text-5xl font-black mesh-orange mb-2 stat-number" data-target="2" data-prefix="$" data-suffix="M+">$2M+</div>
+          <div class="text-sm md:text-base text-gray-400 font-medium" data-en="Capital Raised" data-ar="رأس مال تم جمعه">Capital Raised</div>
+        </div>
+        
+        <!-- Stat 3 -->
+        <div class="reveal delay-300 bg-mesh-grey/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 text-center border border-white/5 hover-lift">
+          <div class="text-4xl md:text-5xl font-black mesh-orange mb-2 stat-number" data-target="30">30+</div>
+          <div class="text-sm md:text-base text-gray-400 font-medium" data-en="Global Clients" data-ar="عميل عالمي">Global Clients</div>
+        </div>
+        
+        <!-- Stat 4 -->
+        <div class="reveal delay-400 bg-mesh-grey/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 text-center border border-white/5 hover-lift">
+          <div class="text-4xl md:text-5xl font-black mesh-orange mb-2 stat-number" data-target="8">8</div>
+          <div class="text-sm md:text-base text-gray-400 font-medium" data-en="Countries" data-ar="دول">Countries</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Impact Dashboard -->
-  <section id="impact" class="border-b border-white/10 bg-mesh-grey">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-        <div class="text-center md:text-left">
-          <div class="stat-number text-mesh-primary mb-2">100<span class="text-2xl">x</span></div>
-          <p class="text-sm text-gray-400 uppercase tracking-wider font-medium" data-i18n="impact.roi">Max ROI achieved</p>
+  <!-- Pain Catalog -->
+  <section id="pain" class="py-20 md:py-32 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <!-- Content -->
+        <div class="reveal-left">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mesh-orange/10 border border-mesh-orange/20 mb-6">
+            <i data-lucide="alert-circle" class="w-4 h-4 mesh-orange"></i>
+            <span class="text-sm font-medium mesh-orange" data-en="Founder Empathy" data-ar="تفهم المؤسس">Founder Empathy</span>
+          </div>
+          
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <span data-en="The " data-ar="ال">The </span>
+            <span class="mesh-orange" data-en="Manual Whirlpool" data-ar="دوّامة">Manual Whirlpool</span>
+            <span data-en=" & Hiring Headaches" data-ar=" اليدوية ووجع الدماغ"> & Hiring Headaches</span>
+          </h2>
+          
+          <p class="text-lg text-gray-400 mb-8 leading-relaxed" data-en="You're drowning in operational chaos. Every process requires manual intervention. Every hire feels like a gamble. Your business runs on your personal bandwidth, not on systems." data-ar="أنت تغرق في الفوضى التشغيلية. كل عملية تحتاج تدخل يدوي. كل موظف جديد يبدو كرهان. عملك يشتغل على طاقتك الشخصية، مش على الأنظمة.">
+            You're drowning in operational chaos. Every process requires manual intervention. Every hire feels like a gamble. Your business runs on your personal bandwidth, not on systems.
+          </p>
+          
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-mesh-orange/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="repeat" class="w-6 h-6 mesh-orange"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1" data-en="The Whirlpool Effect" data-ar="تأثير الدوّامة">The Whirlpool Effect</h4>
+                <p class="text-gray-400 text-sm" data-en="Same tasks, endless loops, zero scalability" data-ar="نفس المهام، حلقات لا نهائية، صفر قابلية للتوسع">Same tasks, endless loops, zero scalability</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-mesh-orange/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="users" class="w-6 h-6 mesh-orange"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1" data-en="Hiring Roulette" data-ar="روليت التوظيف">Hiring Roulette</h4>
+                <p class="text-gray-400 text-sm" data-en="People-dependent operations that break when they leave" data-ar="عمليات تعتمد على الأشخاص وتتعطل لما يمشوا">People-dependent operations that break when they leave</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-mesh-orange/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="building-2" class="w-6 h-6 mesh-orange"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1" data-en="Self-Carrying Infrastructure" data-ar="بنية تحتية بتشيل نفسها">Self-Carrying Infrastructure</h4>
+                <p class="text-gray-400 text-sm" data-en="Systems that scale without your constant presence" data-ar="أنظمة بتتوسع من غير وجودك المستمر">Systems that scale without your constant presence</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="text-center md:text-left">
-          <div class="stat-number text-mesh-primary mb-2">$2<span class="text-2xl">M+</span></div>
-          <p class="text-sm text-gray-400 uppercase tracking-wider font-medium" data-i18n="impact.capital">Capital raised</p>
+        
+        <!-- Visual -->
+        <div class="reveal-right relative">
+          <div class="relative rounded-2xl overflow-hidden">
+            <img src="http://static.photos/industry/640x360/42" alt="Industrial Systems" class="w-full h-auto rounded-2xl">
+            <div class="absolute inset-0 bg-gradient-to-t from-mesh-dark via-transparent to-transparent"></div>
+            
+            <!-- Floating card -->
+            <div class="absolute bottom-6 left-6 right-6 bg-mesh-grey/90 backdrop-blur-md rounded-xl p-4 border border-white/10">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-mesh-orange flex items-center justify-center">
+                  <i data-lucide="check" class="w-5 h-5 text-white"></i>
+                </div>
+                <div>
+                  <p class="font-semibold text-sm" data-en="Before: 40 hrs/week on operations" data-ar="قبل: 40 ساعة/أسبوع على التشغيل">Before: 40 hrs/week on operations</p>
+                  <p class="mesh-orange text-sm font-bold" data-en="After: 4 hrs/week on oversight" data-ar="بعد: 4 ساعات/أسبوع على الإشراف">After: 4 hrs/week on oversight</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Decorative elements -->
+          <div class="absolute -top-4 -right-4 w-24 h-24 border-2 border-mesh-orange/20 rounded-xl"></div>
+          <div class="absolute -bottom-4 -left-4 w-32 h-32 border-2 border-mesh-orange/10 rounded-full"></div>
         </div>
-        <div class="text-center md:text-left">
-          <div class="stat-number text-mesh-primary mb-2">30<span class="text-2xl">+</span></div>
-          <p class="text-sm text-gray-400 uppercase tracking-wider font-medium" data-i18n="impact.clients">Global clients</p>
-        </div>
-        <div class="text-center md:text-left">
-          <div class="stat-number text-mesh-primary mb-2">8</div>
-          <p class="text-sm text-gray-400 uppercase tracking-wider font-medium" data-i18n="impact.countries">Countries</p>
-        </div>
-      </div>
-      
-      <div class="mt-12 pt-8 border-t border-white/10">
-        <p class="text-center text-gray-400 text-sm uppercase tracking-widest" data-i18n="impact.badge">
-          One of the Highest Recorded ROAS in Techne Summit history
-        </p>
       </div>
     </div>
   </section>
 
   <!-- Case Study: Techne Summit -->
-  <section class="border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <div class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4" data-i18n="case.label">Case Study</div>
-          <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="case.title">Techne Summit 2025</h2>
-          <p class="text-gray-400 mb-8 leading-relaxed" data-i18n="case.description">
-            Managed 2025 Meta advertising for the Mediterranean's leading tech event. Engineered one of the highest recorded ROAS in event history through data-driven optimization.
-          </p>
-          
-          <div class="grid grid-cols-2 gap-6">
-            <div class="solid-card p-4">
-              <div class="text-2xl font-bold text-white">55,000+</div>
-              <div class="text-xs text-gray-400 uppercase tracking-wider mt-1" data-i18n="case.stats.attendees">Attendees</div>
-            </div>
-            <div class="solid-card p-4">
-              <div class="text-2xl font-bold text-white">70+</div>
-              <div class="text-xs text-gray-400 uppercase tracking-wider mt-1" data-i18n="case.stats.countries">Countries</div>
-            </div>
-            <div class="solid-card p-4">
-              <div class="text-2xl font-bold text-white">450+</div>
-              <div class="text-xs text-gray-400 uppercase tracking-wider mt-1" data-i18n="case.stats.speakers">Speakers</div>
-            </div>
-            <div class="solid-card p-4">
-              <div class="text-2xl font-bold text-white">150+</div>
-              <div class="text-xs text-gray-400 uppercase tracking-wider mt-1" data-i18n="case.stats.investors">Investors</div>
+  <section id="case-study" class="py-20 md:py-32 relative bg-mesh-grey/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <!-- Visual -->
+        <div class="reveal-left order-2 lg:order-1">
+          <div class="relative rounded-2xl overflow-hidden group">
+            <img src="http://static.photos/event/640x360/55" alt="Techne Summit 2025" class="w-full h-auto rounded-2xl transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-r from-mesh-dark/80 to-transparent"></div>
+            
+            <!-- Stats overlay -->
+            <div class="absolute inset-0 flex flex-col justify-center p-8">
+              <div class="space-y-6">
+                <div class="reveal-scale delay-100">
+                  <p class="text-5xl md:text-6xl font-black mesh-orange">55,000+</p>
+                  <p class="text-gray-300" data-en="Attendees" data-ar="حاضر">Attendees</p>
+                </div>
+                <div class="reveal-scale delay-200">
+                  <p class="text-5xl md:text-6xl font-black mesh-orange">70+</p>
+                  <p class="text-gray-300" data-en="Countries" data-ar="دولة">Countries</p>
+                </div>
+                <div class="reveal-scale delay-300">
+                  <p class="text-5xl md:text-6xl font-black mesh-orange">150+</p>
+                  <p class="text-gray-300" data-en="Investors" data-ar="مستثمر">Investors</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         
-        <div class="solid-card aspect-video flex items-center justify-center">
-          <img src="http://static.photos/technology/1024x576/42" alt="Techne Summit" class="w-full h-full object-cover opacity-80">
+        <!-- Content -->
+        <div class="reveal-right order-1 lg:order-2">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mesh-orange/10 border border-mesh-orange/20 mb-6">
+            <i data-lucide="trophy" class="w-4 h-4 mesh-orange"></i>
+            <span class="text-sm font-medium mesh-orange" data-en="Performance Case Study" data-ar="دراسة حالة الأداء">Performance Case Study</span>
+          </div>
+          
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            <span data-en="Techne Summit " data-ar="قمة تكني ">Techne Summit </span>
+            <span class="mesh-orange">2025</span>
+          </h2>
+          
+          <p class="text-lg text-gray-400 mb-8" data-en="The largest tech and investment summit in the Mediterranean. We engineered one of the highest recorded ROAS in event history." data-ar="أكبر قمة تقنية واستثمارية في المتوسط. صممنا واحد من أعلى معدلات العائد على الإنفاق الإعلاني في تاريخ الفعاليات.">
+            The largest tech and investment summit in the Mediterranean. We engineered one of the highest recorded ROAS in event history.
+          </p>
+          
+          <div class="bg-mesh-dark rounded-xl p-6 border border-white/10 mb-8">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-full bg-mesh-orange flex items-center justify-center flex-shrink-0">
+                <i data-lucide="target" class="w-6 h-6 text-white"></i>
+              </div>
+              <div>
+                <p class="font-bold text-lg mb-2" data-en="The Result" data-ar="النتيجة">The Result</p>
+                <p class="text-gray-400" data-en="Engineered one of the highest recorded ROAS in event history through precision targeting, automated funnel optimization, and real-time performance analytics." data-ar="صممنا واحد من أعلى معدلات العائد على الإنفاق الإعلاني في تاريخ الفعاليات من خلال الاستهداف الدقيق، وتحسين القمع الآلي، وتحليلات الأداء في الوقت الفعلي.">
+                  Engineered one of the highest recorded ROAS in event history through precision targeting, automated funnel optimization, and real-time performance analytics.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm" data-en="Meta Ads" data-ar="إعلانات ميتا">Meta Ads</span>
+            <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm" data-en="Funnel Design" data-ar="تصميم القمع">Funnel Design</span>
+            <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm" data-en="Automation" data-ar="الأتمتة">Automation</span>
+            <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm" data-en="Analytics" data-ar="التحليلات">Analytics</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Partners Grid -->
-  <section id="partners" class="border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="partners.title">Industrial Trust</h2>
-        <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="partners.subtitle">Strategic partnerships with global enterprises and emerging market leaders.</p>
+  <!-- Direct Client Portfolio -->
+  <section id="clients" class="py-20 md:py-32 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="reveal text-3xl sm:text-4xl md:text-5xl font-bold mb-4" data-en="Direct Client Portfolio" data-ar="محفظة العملاء المباشرة">Direct Client Portfolio</h2>
+        <p class="reveal delay-100 text-gray-400 text-lg max-w-2xl mx-auto" data-en="Companies now operating under MeshMesh infrastructure" data-ar="شركات تعمل الآن على بنية MeshMesh التحتية">Companies now operating under MeshMesh infrastructure</p>
       </div>
       
-      <!-- Grid A: Strategic Advisory -->
-      <div class="mb-12">
-        <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-l-2 border-white pl-4" data-i18n="partners.gridA.title">Strategic Advisory — Adham Mashaly</h3>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
-            <span class="text-sm font-semibold uppercase tracking-wider text-center">Techne Summit 2025</span>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <!-- Client 1 -->
+        <div class="reveal delay-100 bg-mesh-grey/30 rounded-2xl p-6 border border-white/5 hover-lift text-center group">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-mesh-orange/10 flex items-center justify-center group-hover:bg-mesh-orange/20 transition-colors">
+            <i data-lucide="mountain" class="w-8 h-8 mesh-orange"></i>
           </div>
-          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
-            <span class="text-sm font-semibold uppercase tracking-wider text-center">B2B Enterprise Partners</span>
+          <h4 class="font-bold mb-1">Techne Summit</h4>
+          <p class="text-xs text-gray-500" data-en="Event Scale Systems" data-ar="أنظمة نطاق الفعاليات">Event Scale Systems</p>
+        </div>
+        
+        <!-- Client 2 -->
+        <div class="reveal delay-200 bg-mesh-grey/30 rounded-2xl p-6 border border-white/5 hover-lift text-center group">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-mesh-orange/10 flex items-center justify-center group-hover:bg-mesh-orange/20 transition-colors">
+            <i data-lucide="shopping-bag" class="w-8 h-8 mesh-orange"></i>
           </div>
-          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
-            <span class="text-sm font-semibold uppercase tracking-wider text-center">High-Ticket Consulting</span>
+          <h4 class="font-bold mb-1">Kaf Market</h4>
+          <p class="text-xs text-gray-500" data-en="Meta Catalog Systems" data-ar="أنظمة كتالوج ميتا">Meta Catalog Systems</p>
+        </div>
+        
+        <!-- Client 3 -->
+        <div class="reveal delay-300 bg-mesh-grey/30 rounded-2xl p-6 border border-white/5 hover-lift text-center group">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-mesh-orange/10 flex items-center justify-center group-hover:bg-mesh-orange/20 transition-colors">
+            <i data-lucide="book-open" class="w-8 h-8 mesh-orange"></i>
           </div>
-          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
-            <span class="text-sm font-semibold uppercase tracking-wider text-center">Growth Architecture</span>
+          <h4 class="font-bold mb-1">Cooley Comics</h4>
+          <p class="text-xs text-gray-500" data-en="Global Growth" data-ar="النمو العالمي">Global Growth</p>
+        </div>
+        
+        <!-- Client 4 -->
+        <div class="reveal delay-400 bg-mesh-grey/30 rounded-2xl p-6 border border-white/5 hover-lift text-center group">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-mesh-orange/10 flex items-center justify-center group-hover:bg-mesh-orange/20 transition-colors">
+            <i data-lucide="building" class="w-8 h-8 mesh-orange"></i>
           </div>
+          <h4 class="font-bold mb-1">Rayhana</h4>
+          <p class="text-xs text-gray-500" data-en="Real Estate Dev" data-ar="تطوير عقاري">Real Estate Dev</p>
+        </div>
+        
+        <!-- Client 5 -->
+        <div class="reveal delay-100 bg-mesh-grey/30 rounded-2xl p-6 border border-white/5 hover-lift text-center group">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-mesh-orange/10 flex items-center justify-center group-hover:bg-mesh-orange/20 transition-colors">
+            <i data-lucide="briefcase" class="w-8 h-8 mesh-orange"></i>
+          </div>
+          <h4 class="font-bold mb-1" data-en="B2B Advisory" data-ar="استشارات B2B">B2B Advisory</h4>
+          <p class="text-xs text-gray-500" data-en="Core Clients" data-ar="العملاء الأساسيين">Core Clients</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enterprise Infrastructure: Senno Elite -->
+  <section id="enterprise" class="py-20 md:py-32 relative bg-mesh-grey/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Senno Elite Hero -->
+      <div class="text-center mb-16">
+        <div class="reveal flex flex-col items-center">
+          <!-- Senno Elite Logo -->
+          <div class="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-mesh-dark border-2 border-mesh-orange/30 flex items-center justify-center mb-6 shadow-2xl shadow-mesh-orange/10">
+            <img src="http://static.photos/industry/200x200/77" alt="Senno Elite Logo" class="w-20 h-20 md:w-28 md:h-28 object-contain rounded-xl">
+          </div>
+          
+          <!-- Company Name -->
+          <h2 class="text-5xl sm:text-6xl md:text-7xl font-black mb-4 tracking-tight">
+            <span class="text-white">Senno</span>
+            <span class="mesh-orange">Elite</span>
+          </h2>
+          
+          <!-- Tagline -->
+          <p class="text-xl md:text-2xl text-gray-400 mb-2" data-en="Premium Uniform Solutions" data-ar="حلول الزي الموحد المتميزة">Premium Uniform Solutions</p>
+          <div class="w-24 h-1 bg-mesh-orange rounded-full mt-4"></div>
         </div>
       </div>
       
-      <!-- Grid B: Digitalization -->
-      <div class="mb-12">
-        <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-l-2 border-white pl-4" data-i18n="partners.gridB.title">Digitalization — MeshMesh Consulting</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
-            <div class="text-center">
-              <i data-lucide="shopping-cart" class="w-8 h-8 mx-auto mb-2 text-gray-400"></i>
-              <span class="text-sm font-semibold uppercase tracking-wider">Kaf Market</span>
-              <p class="text-xs text-gray-500 mt-1">Meta Catalog Systems</p>
-            </div>
-          </div>
-          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
-            <div class="text-center">
-              <i data-lucide="zap" class="w-8 h-8 mx-auto mb-2 text-gray-400"></i>
-              <span class="text-sm font-semibold uppercase tracking-wider">Cooley Comics</span>
-              <p class="text-xs text-gray-500 mt-1">Automation Systems</p>
-            </div>
-          </div>
-          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
-            <div class="text-center">
-              <i data-lucide="building-2" class="w-8 h-8 mx-auto mb-2 text-gray-400"></i>
-              <span class="text-sm font-semibold uppercase tracking-wider">B2B Clients</span>
-              <p class="text-xs text-gray-500 mt-1">Enterprise Solutions</p>
-            </div>
-          </div>
+      <!-- Senno Stats -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div class="reveal delay-100 bg-mesh-dark rounded-2xl p-6 border border-white/10 text-center hover-lift">
+          <p class="text-4xl font-black mesh-orange mb-2">35</p>
+          <p class="text-gray-400 text-sm" data-en="Schools" data-ar="مدرسة">Schools</p>
+        </div>
+        <div class="reveal delay-200 bg-mesh-dark rounded-2xl p-6 border border-white/10 text-center hover-lift">
+          <p class="text-4xl font-black mesh-orange mb-2">50</p>
+          <p class="text-gray-400 text-sm" data-en="Pharmacies" data-ar="صيدلية">Pharmacies</p>
+        </div>
+        <div class="reveal delay-300 bg-mesh-dark rounded-2xl p-6 border border-white/10 text-center hover-lift">
+          <p class="text-4xl font-black mesh-orange mb-2">3</p>
+          <p class="text-gray-400 text-sm" data-en="International Corporate Clients" data-ar="عملاء مؤسسات دولية">International Corporate Clients</p>
+        </div>
+        <div class="reveal delay-400 bg-mesh-dark rounded-2xl p-6 border border-white/10 text-center hover-lift">
+          <p class="text-4xl font-black mesh-orange mb-2">1M+</p>
+          <p class="text-gray-400 text-sm" data-en="Custom Uniforms Delivered" data-ar="زي موحد تم تسليمه">Custom Uniforms Delivered</p>
         </div>
       </div>
       
-      <!-- Grid C: Industrial Partners -->
-      <div>
-        <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-l-2 border-white pl-4" data-i18n="partners.gridC.title">Industrial Partners — via Senno Elite</h3>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="solid-card aspect-[3/1] flex items-center justify-center p-8">
-            <div class="flex items-center gap-4">
-              <i data-lucide="car" class="w-10 h-10 text-gray-400"></i>
-              <span class="text-lg font-bold uppercase tracking-wider">Mercedes-Benz</span>
-            </div>
+      <!-- Trusted By Section -->
+      <div class="reveal delay-200">
+        <div class="text-center mb-10">
+          <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10">
+            <i data-lucide="award" class="w-5 h-5 mesh-orange"></i>
+            <span class="text-lg font-semibold text-gray-300" data-en="Trusted By Industry Leaders" data-ar="موثوق به من قادة الصناعة">Trusted By Industry Leaders</span>
           </div>
-          <div class="solid-card aspect-[3/1] flex items-center justify-center p-8">
-            <div class="flex items-center gap-4">
-              <i data-lucide="truck" class="w-10 h-10 text-gray-400"></i>
-              <span class="text-lg font-bold uppercase tracking-wider">Mitsubishi Motors</span>
-            </div>
+          <p class="text-gray-500 mt-4 text-sm" data-en="Organizations that choose Senno Elite for their uniform needs" data-ar="المنظمات اللي بتختار سينو إيليت لاحتياجات الزي الموحد">Organizations that choose Senno Elite for their uniform needs</p>
+        </div>
+        
+        <!-- Client Logos -->
+        <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+          <div class="logo-item flex items-center gap-3 px-6 py-4 rounded-xl bg-mesh-dark/50 border border-white/5 hover:border-mesh-orange/30 transition-all">
+            <i data-lucide="car" class="w-8 h-8 mesh-orange"></i>
+            <span class="text-xl font-bold">Mercedes-Benz</span>
+          </div>
+          <div class="logo-item flex items-center gap-3 px-6 py-4 rounded-xl bg-mesh-dark/50 border border-white/5 hover:border-mesh-orange/30 transition-all">
+            <i data-lucide="zap" class="w-8 h-8 mesh-orange"></i>
+            <span class="text-xl font-bold">Mitsubishi Electric</span>
+          </div>
+          <div class="logo-item flex items-center gap-3 px-6 py-4 rounded-xl bg-mesh-dark/50 border border-white/5 hover:border-mesh-orange/30 transition-all">
+            <i data-lucide="fuel" class="w-8 h-8 mesh-orange"></i>
+            <span class="text-xl font-bold">Mobil</span>
+          </div>
+          <div class="logo-item flex items-center gap-3 px-6 py-4 rounded-xl bg-mesh-dark/50 border border-white/5 hover:border-mesh-orange/30 transition-all">
+            <i data-lucide="building-2" class="w-7 h-7 mesh-orange"></i>
+            <span class="text-lg font-bold" data-en="International Corporates" data-ar="شركات دولية">International Corporates</span>
           </div>
         </div>
       </div>
@@ -386,47 +678,67 @@
   </section>
 
   <!-- The MeshMesh Method -->
-  <section id="method" class="border-b border-white/10 bg-mesh-grey">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+  <section id="method" class="py-20 md:py-32 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="method.title">The MeshMesh Method</h2>
-        <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="method.subtitle">A systematic approach to digital transformation.</p>
+        <h2 class="reveal text-3xl sm:text-4xl md:text-5xl font-bold mb-4" data-en="The MeshMesh Method" data-ar="منهجية MeshMesh">The MeshMesh Method</h2>
+        <p class="reveal delay-100 text-gray-400 text-lg" data-en="Three phases to operational excellence" data-ar="ثلاث مراحل للتميز التشغيلي">Three phases to operational excellence</p>
       </div>
       
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Step 1: Audit -->
-        <div class="relative solid-card p-8">
-          <div class="step-number absolute top-4 right-4 text-mesh-secondary">01</div>
-          <div class="relative z-10">
-            <div class="w-12 h-12 bg-mesh-primary/20 flex items-center justify-center mb-6 rounded-md">
-              <i data-lucide="search" class="w-6 h-6 text-mesh-primary"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4" data-i18n="method.step1.title">Audit</h3>
-            <p class="text-gray-400 text-sm leading-relaxed" data-i18n="method.step1.desc">Identifying inefficiencies in current manual processes. Deep diagnostic of operational bottlenecks.</p>
-          </div>
-        </div>
+      <div class="relative">
+        <!-- Connector line (desktop) -->
+        <div class="hidden lg:block method-connector top-1/2 left-0 right-0"></div>
         
-        <!-- Step 2: Architect -->
-        <div class="relative solid-card p-8">
-          <div class="step-number absolute top-4 right-4 text-mesh-secondary">02</div>
-          <div class="relative z-10">
-            <div class="w-12 h-12 bg-mesh-primary/20 flex items-center justify-center mb-6 rounded-md">
-              <i data-lucide="layout" class="w-6 h-6 text-mesh-primary"></i>
+        <div class="grid md:grid-cols-3 gap-8 relative z-10">
+          <!-- Step 1 -->
+          <div class="reveal delay-100">
+            <div class="bg-mesh-grey/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover-lift h-full">
+              <div class="w-16 h-16 rounded-2xl bg-mesh-orange flex items-center justify-center mb-6">
+                <i data-lucide="search" class="w-8 h-8 text-white"></i>
+              </div>
+              <div class="text-sm mesh-orange font-bold mb-2">01</div>
+              <h3 class="text-2xl font-bold mb-3">
+                <span data-en="Audit" data-ar="الفحص">Audit</span>
+                <span class="text-gray-500 text-lg block mt-1 font-normal">(الفحص)</span>
+              </h3>
+              <p class="text-gray-400" data-en="Diagnostic of revenue leaks. We identify where your business is bleeding time, money, and opportunity." data-ar="تشخيص تسربات الإيرادات. نحدد أين ينزف عملك الوقت والمال والفرص.">
+                Diagnostic of revenue leaks. We identify where your business is bleeding time, money, and opportunity.
+              </p>
             </div>
-            <h3 class="text-xl font-bold mb-4" data-i18n="method.step2.title">Architect</h3>
-            <p class="text-gray-400 text-sm leading-relaxed" data-i18n="method.step2.desc">Designing a lean, high-performance digital "skeleton". Blueprint for scalable growth infrastructure.</p>
           </div>
-        </div>
-        
-        <!-- Step 3: Automate -->
-        <div class="relative solid-card p-8">
-          <div class="step-number absolute top-4 right-4 text-mesh-secondary">03</div>
-          <div class="relative z-10">
-            <div class="w-12 h-12 bg-mesh-primary/20 flex items-center justify-center mb-6 rounded-md">
-              <i data-lucide="cog" class="w-6 h-6 text-mesh-primary"></i>
+          
+          <!-- Step 2 -->
+          <div class="reveal delay-200">
+            <div class="bg-mesh-grey/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover-lift h-full">
+              <div class="w-16 h-16 rounded-2xl bg-mesh-orange flex items-center justify-center mb-6">
+                <i data-lucide="compass" class="w-8 h-8 text-white"></i>
+              </div>
+              <div class="text-sm mesh-orange font-bold mb-2">02</div>
+              <h3 class="text-2xl font-bold mb-3">
+                <span data-en="Architect" data-ar="الهندسة">Architect</span>
+                <span class="text-gray-500 text-lg block mt-1 font-normal">(الهندسة)</span>
+              </h3>
+              <p class="text-gray-400" data-en="Designing the digital skeleton. We blueprint the infrastructure that will carry your operations forward." data-ar="تصميم الهيكل الرقمي. نرسم مخطط البنية التحتية اللي هتشيل عملياتك للأمام.">
+                Designing the digital skeleton. We blueprint the infrastructure that will carry your operations forward.
+              </p>
             </div>
-            <h3 class="text-xl font-bold mb-4" data-i18n="method.step3.title">Automate</h3>
-            <p class="text-gray-400 text-sm leading-relaxed" data-i18n="method.step3.desc">Turning the skeleton into a self-optimizing growth machine. Continuous improvement systems.</p>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="reveal delay-300">
+            <div class="bg-mesh-grey/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover-lift h-full">
+              <div class="w-16 h-16 rounded-2xl bg-mesh-orange flex items-center justify-center mb-6">
+                <i data-lucide="cpu" class="w-8 h-8 text-white"></i>
+              </div>
+              <div class="text-sm mesh-orange font-bold mb-2">03</div>
+              <h3 class="text-2xl font-bold mb-3">
+                <span data-en="Automate" data-ar="الأتمتة">Automate</span>
+                <span class="text-gray-500 text-lg block mt-1 font-normal">(الأتمتة)</span>
+              </h3>
+              <p class="text-gray-400" data-en="Turning it into a self-operating machine. Your business runs while you sleep, scale, or strategize." data-ar="نحولها لماكينة تشغيل ذاتي. عملك يشتغل وأنت نايم، بتتوسع، أو بتخطط.">
+                Turning it into a self-operating machine. Your business runs while you sleep, scale, or strategize.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -434,243 +746,317 @@
   </section>
 
   <!-- The Architect -->
-  <section id="about" class="border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-12 items-start">
-        <div>
-          <div class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4" data-i18n="about.label">The Architect</div>
-          <h2 class="text-3xl md:text-4xl font-bold mb-6">Adham Mashaly</h2>
+  <section id="architect" class="py-20 md:py-32 relative bg-mesh-grey/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <!-- Content -->
+        <div class="reveal-left">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mesh-orange/10 border border-mesh-orange/20 mb-6">
+            <i data-lucide="user" class="w-4 h-4 mesh-orange"></i>
+            <span class="text-sm font-medium mesh-orange" data-en="The Architect" data-ar="المهندس">The Architect</span>
+          </div>
           
-          <div class="space-y-6">
-            <div class="flex gap-4">
-              <div class="w-12 h-12 bg-white/10 flex items-center justify-center flex-shrink-0">
-                <i data-lucide="graduation-cap" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <h4 class="font-semibold mb-1" data-i18n="about.edu.title">Education</h4>
-                <p class="text-gray-400 text-sm" data-i18n="about.edu.desc">University of Rochester (USA) — Applying Tier-1 research and systems logic to business bottlenecks.</p>
-              </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Adham Mashaly</h2>
+          
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+              <i data-lucide="graduation-cap" class="w-5 h-5 mesh-orange"></i>
             </div>
-            
-            <div class="flex gap-4">
-              <div class="w-12 h-12 bg-white/10 flex items-center justify-center flex-shrink-0">
-                <i data-lucide="briefcase" class="w-5 h-5"></i>
+            <span class="text-gray-300" data-en="University of Rochester, USA" data-ar="جامعة روتشستر، الولايات المتحدة">University of Rochester, USA</span>
+          </div>
+          
+          <p class="text-lg text-gray-400 mb-8 leading-relaxed" data-en="Built and scaled multiple 7-figure operations. The systems we deploy are battle-tested in our own companies first. No theory—only proven infrastructure." data-ar="بناى ووسع عمليات متعددة بأرقام 7 أرقام. الأنظمة اللي بننشرها اختبرناها في شركاتنا الأول. لا نظريات—فقط بنية تحتية مجربة.">
+            Built and scaled multiple 7-figure operations. The systems we deploy are battle-tested in our own companies first. No theory—only proven infrastructure.
+          </p>
+          
+          <!-- Deliverable -->
+          <div class="bg-mesh-dark rounded-2xl p-6 border border-mesh-orange/30 mb-8">
+            <div class="flex items-start gap-4">
+              <div class="w-14 h-14 rounded-xl bg-mesh-orange flex items-center justify-center flex-shrink-0">
+                <i data-lucide="clipboard-check" class="w-7 h-7 text-white"></i>
               </div>
               <div>
-                <h4 class="font-semibold mb-1" data-i18n="about.ops.title">Operator Status</h4>
-                <p class="text-gray-400 text-sm" data-i18n="about.ops.desc">Co-Founder at Kaf Market, Partner at Senno Elite, and CMO at Cooley Comics.</p>
-              </div>
-            </div>
-            
-            <div class="flex gap-4">
-              <div class="w-12 h-12 bg-white/10 flex items-center justify-center flex-shrink-0">
-                <i data-lucide="trending-up" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <h4 class="font-semibold mb-1" data-i18n="about.exp.title">Experience</h4>
-                <p class="text-gray-400 text-sm" data-i18n="about.exp.desc">Advised on $500k+ in deals and led international due diligence for $200k+ operations.</p>
+                <h4 class="font-bold text-lg mb-2" data-en="The 45-Minute Growth Audit" data-ar="فحص النمو في 45 دقيقة">The 45-Minute Growth Audit</h4>
+                <p class="text-gray-400 text-sm mb-3" data-en="Delivers a Digital Infrastructure Map identifying your top 3 revenue leaks." data-ar="يقدم خريطة البنية التحتية الرقمية اللي بتحدد أعلى 3 تسربات في إيراداتك.">
+                  Delivers a Digital Infrastructure Map identifying your top 3 revenue leaks.
+                </p>
+                <div class="flex items-center gap-2 text-mesh-orange text-sm font-semibold">
+                  <i data-lucide="check-circle" class="w-4 h-4"></i>
+                  <span data-en="Free for qualified businesses" data-ar="مجاني للشركات المؤهلة">Free for qualified businesses</span>
+                </div>
               </div>
             </div>
           </div>
+          
+          <!-- Guarantee -->
+          <div class="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
+            <i data-lucide="shield" class="w-6 h-6 mesh-orange flex-shrink-0 mt-0.5"></i>
+            <p class="text-sm text-gray-400" data-en="We use these systems in our own companies (Kaf Market, Senno). If it isn't efficient, it doesn't stay." data-ar="بنستخدم هذه الأنظمة في شركاتنا (كاف ماركت، سينو). لو مش فعّالة، مش بتفضل.">
+              We use these systems in our own companies (Kaf Market, Senno). <span class="text-white font-medium">If it isn't efficient, it doesn't stay.</span>
+            </p>
+          </div>
         </div>
         
-        <div class="solid-card aspect-square md:aspect-[4/5]">
-          <img src="http://static.photos/office/1024x576/88" alt="Adham Mashaly" class="w-full h-full object-cover opacity-90">
+        <!-- Visual -->
+        <div class="reveal-right relative">
+          <div class="relative rounded-2xl overflow-hidden">
+            <img src="http://static.photos/office/640x360/88" alt="Adham Mashaly" class="w-full h-auto rounded-2xl">
+            <div class="absolute inset-0 bg-gradient-to-t from-mesh-dark via-mesh-dark/20 to-transparent"></div>
+            
+            <!-- Stats -->
+            <div class="absolute bottom-6 left-6 right-6 grid grid-cols-2 gap-4">
+              <div class="bg-mesh-grey/90 backdrop-blur-md rounded-xl p-4 border border-white/10">
+                <p class="text-2xl font-black mesh-orange">Kaf Market</p>
+                <p class="text-xs text-gray-400" data-en="E-commerce Systems" data-ar="أنظمة التجارة الإلكترونية">E-commerce Systems</p>
+              </div>
+              <div class="bg-mesh-grey/90 backdrop-blur-md rounded-xl p-4 border border-white/10">
+                <p class="text-2xl font-black mesh-orange">Senno</p>
+                <p class="text-xs text-gray-400" data-en="Enterprise Scale" data-ar="نطاق المؤسسات">Enterprise Scale</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Decorative -->
+          <div class="absolute -z-10 -top-8 -right-8 w-full h-full border-2 border-mesh-orange/20 rounded-2xl"></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Final CTA -->
-  <section id="contact" class="border-b border-white/10 bg-mesh-grey">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-5xl font-bold mb-6" data-i18n="cta.title">Ready for an efficient business?</h2>
-      <p class="text-gray-400 mb-10 max-w-xl mx-auto" data-i18n="cta.subtitle">Schedule a comprehensive growth audit. We'll identify your biggest opportunities for automation and revenue growth.</p>
-      
-      <a href="mailto:contact@meshmesh.consulting" class="solid-btn px-10 py-5 text-lg rounded-sm inline-flex items-center justify-center gap-3" data-i18n="cta.button">
-        <span>Schedule a Call</span>
-        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-      </a>
-      
-      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-center gap-6 text-sm text-gray-500">
-        <a href="mailto:contact@meshmesh.consulting" class="flex items-center gap-2 hover:text-white transition-colors">
-          <i data-lucide="mail" class="w-4 h-4"></i>
-          contact@meshmesh.consulting
+  <section id="audit" class="py-20 md:py-32 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="reveal">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mesh-orange/10 border border-mesh-orange/20 mb-8">
+          <i data-lucide="rocket" class="w-4 h-4 mesh-orange"></i>
+          <span class="text-sm font-medium mesh-orange" data-en="Ready to Optimize?" data-ar="جاهز للتحسين؟">Ready to Optimize?</span>
+        </div>
+        
+        <h2 class="text-4xl sm:text-5xl md:text-6xl font-black mb-6">
+          <span data-en="Ready for an " data-ar="جاهز تخلي شغلك ">Ready for an </span>
+          <span class="mesh-orange" data-en="optimized business?" data-ar="أسرع وأذكى؟">optimized business?</span>
+        </h2>
+        
+        <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto" data-en="Get your free 45-minute Growth Audit. We'll map your infrastructure and identify your top 3 revenue leaks—no commitment required." data-ar="احصل على فحص النمو المجاني لمدة 45 دقيقة. هنرسم بنيتك التحتية ونحدد أعلى 3 تسربات في إيراداتك—من غير أي التزام.">
+          Get your free 45-minute Growth Audit. We'll map your infrastructure and identify your top 3 revenue leaks—no commitment required.
+        </p>
+        
+        <a href="mailto:adham@meshmesh.consulting?subject=Growth Audit Request" class="btn-primary pulse-cta inline-flex items-center gap-3 bg-mesh-orange text-white px-10 py-5 rounded-2xl font-bold text-xl mb-8">
+          <span data-en="Schedule Your Audit" data-ar="يلا نبدأ الفحص">Schedule Your Audit</span>
+          <i data-lucide="arrow-right" class="w-6 h-6 rtl:rotate-180"></i>
         </a>
-        <span class="hidden md:inline">|</span>
-        <div class="flex items-center gap-4">
-          <a href="#" class="hover:text-white transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-          <a href="#" class="hover:text-white transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+        
+        <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
+          <div class="flex items-center gap-2">
+            <i data-lucide="clock" class="w-4 h-4"></i>
+            <span data-en="45 minutes" data-ar="45 دقيقة">45 minutes</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="video" class="w-4 h-4"></i>
+            <span data-en="Video call" data-ar="مكالمة فيديو">Video call</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="file-text" class="w-4 h-4"></i>
+            <span data-en="Digital Infrastructure Map" data-ar="خريطة البنية التحتية الرقمية">Digital Infrastructure Map</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="gift" class="w-4 h-4"></i>
+            <span data-en="100% Free" data-ar="100% مجاني">100% Free</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-8 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="text-sm text-gray-500">
-        <span data-i18n="footer.copy">© 2025 MeshMesh Consulting. All rights reserved.</span>
+  <footer class="py-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center">
+          <img src="http://static.photos/minimal/200x200/1" alt="MeshMesh Consulting Logo" class="h-10 w-auto object-contain">
+        </div>
+        
+        <div class="flex items-center gap-6 text-sm text-gray-500">
+          <a href="mailto:adham@meshmesh.consulting" class="hover:text-white transition-colors">adham@meshmesh.consulting</a>
+          <span class="hidden sm:inline">|</span>
+          <span data-en="Heavyweight Operations" data-ar="عمليات ثقيلة">Heavyweight Operations</span>
+        </div>
+        
+        <div class="flex items-center gap-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-mesh-orange transition-colors">
+            <i data-lucide="linkedin" class="w-5 h-5"></i>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-mesh-orange transition-colors">
+            <i data-lucide="twitter" class="w-5 h-5"></i>
+          </a>
+        </div>
       </div>
-      <div class="text-sm text-gray-500">
-        <span data-i18n="footer.tagline">Growth Architecture for Global Enterprises</span>
+      
+      <div class="mt-8 pt-8 border-t border-white/5 text-center text-sm text-gray-600">
+        <p>&copy; 2025 MeshMesh Consulting. <span data-en="All systems operational." data-ar="جميع الأنظمة تعمل.">All systems operational.</span></p>
       </div>
     </div>
   </footer>
 
-  <!-- JavaScript -->
   <script>
     // Initialize Lucide icons
     lucide.createIcons();
     
+    // Language state
+    let currentLang = 'en';
+    
     // Translation data
     const translations = {
       en: {
-        brand: 'MESHMESH',
-        'nav.method': 'Method',
-        'nav.impact': 'Impact',
-        'nav.partners': 'Partners',
-        'nav.about': 'About',
-        'nav.cta': 'Book Audit',
-        'hero.headline': 'They said it was impossible.<br>We call it <span class="text-gray-400">Optimization.</span>',
-        'hero.subheadline': 'Growth Architecture for Global Enterprises. Bridging the gap between manual bottlenecks and automated revenue machines.',
-        'hero.cta': 'Book a Growth Audit',
-        'impact.roi': 'Max ROI achieved',
-        'impact.capital': 'Capital raised',
-        'impact.clients': 'Global clients',
-        'impact.countries': 'Countries',
-        'impact.badge': 'One of the Highest Recorded ROAS in Techne Summit history',
-        'case.label': 'Case Study',
-        'case.title': 'Techne Summit 2025',
-        'case.description': 'Managed 2025 Meta advertising for the Mediterranean\'s leading tech event. Engineered one of the highest recorded ROAS in event history through data-driven optimization.',
-        'case.stats.attendees': 'Attendees',
-        'case.stats.countries': 'Countries',
-        'case.stats.speakers': 'Speakers',
-        'case.stats.investors': 'Investors',
-        'partners.title': 'Industrial Trust',
-        'partners.subtitle': 'Strategic partnerships with global enterprises and emerging market leaders.',
-        'partners.gridA.title': 'Strategic Advisory — Adham Mashaly',
-        'partners.gridB.title': 'Digitalization — MeshMesh Consulting',
-        'partners.gridC.title': 'Industrial Partners — via Senno Elite',
-        'method.title': 'The MeshMesh Method',
-        'method.subtitle': 'A systematic approach to digital transformation.',
-        'method.step1.title': 'Audit',
-        'method.step1.desc': 'Identifying inefficiencies in current manual processes. Deep diagnostic of operational bottlenecks.',
-        'method.step2.title': 'Architect',
-        'method.step2.desc': 'Designing a lean, high-performance digital "skeleton". Blueprint for scalable growth infrastructure.',
-        'method.step3.title': 'Automate',
-        'method.step3.desc': 'Turning the skeleton into a self-optimizing growth machine. Continuous improvement systems.',
-        'about.label': 'The Architect',
-        'about.edu.title': 'Education',
-        'about.edu.desc': 'University of Rochester (USA) — Applying Tier-1 research and systems logic to business bottlenecks.',
-        'about.ops.title': 'Operator Status',
-        'about.ops.desc': 'Co-Founder at Kaf Market, Partner at Senno Elite, and CMO at Cooley Comics.',
-        'about.exp.title': 'Experience',
-        'about.exp.desc': 'Advised on $500k+ in deals and led international due diligence for $200k+ operations.',
-        'cta.title': 'Ready for an efficient business?',
-        'cta.subtitle': 'Schedule a comprehensive growth audit. We\'ll identify your biggest opportunities for automation and revenue growth.',
-        'cta.button': 'Schedule a Call',
-        'footer.copy': '© 2025 MeshMesh Consulting. All rights reserved.',
-        'footer.tagline': 'Growth Architecture for Global Enterprises'
+        direction: 'ltr',
+        langLabel: 'EN'
       },
       ar: {
-        brand: 'مشمش',
-        'nav.method': 'المنهجية',
-        'nav.impact': 'الأداء',
-        'nav.partners': 'الشركاء',
-        'nav.about': 'عن المؤسس',
-        'nav.cta': 'احجز فحص',
-        'hero.headline': 'بيقولوا "في المشمش" لما الموضوع يكون مستحيل..<br>احنا بنخلي <span class="text-gray-400">"مشمش" هو السيستم اللي بيكبّر البيزنس.</span>',
-        'hero.subheadline': 'احنا شركاء التحول الرقمي للمصانع وشركات الـ B2B. بنحول الشغل اليدوي لسيستم رقمي ذكي بيزود أرباحك فعلياً.',
-        'hero.cta': 'احجز مكالمة فحص نمو',
-        'impact.roi': 'أقصى عائد استثمار',
-        'impact.capital': 'رأس مال تم جمعه',
-        'impact.clients': 'عميل عالمي',
-        'impact.countries': 'دولة',
-        'impact.badge': 'من أعلى معدلات العائد على الإنفاق الإعلاني في تاريخ قمة تكني',
-        'case.label': 'دراسة حالة',
-        'case.title': 'قمة تكني 2025',
-        'case.description': 'إدارة إعلانات ميتا 2025 لأبرز حدث تكنولوجي في البحر المتوسط. تحقيق أحد أعلى معدلات العائد على الإنفاق الإعلاني في تاريخ الحدث من خلال التحسين المبني على البيانات.',
-        'case.stats.attendees': 'حضور',
-        'case.stats.countries': 'دولة',
-        'case.stats.speakers': 'متحدث',
-        'case.stats.investors': 'مستثمر',
-        'partners.title': 'الثقة الصناعية',
-        'partners.subtitle': 'شراكات استراتيجية مع المؤسسات العالمية وقادة الأسواق الناشئة.',
-        'partners.gridA.title': 'الاستشارات الاستراتيجية — أدهم مشالي',
-        'partners.gridB.title': 'التحول الرقمي — مشمش للاستشارات',
-        'partners.gridC.title': 'الشركاء الصناعيون — عبر سينو إليت',
-        'method.title': 'منهجية مشمش',
-        'method.subtitle': 'نهج منهجي للتحول الرقمي.',
-        'method.step1.title': 'الفحص',
-        'method.step1.desc': 'تحديد نقاط الضعف في العمليات اليدوية الحالية. تشخيص عميق للاختناقات التشغيلية.',
-        'method.step2.title': 'الهندسة',
-        'method.step2.desc': 'تصميم هيكل رقمي رشيق وعالي الأداء. مخطط لبنية تحتية نمو قابلة للتوسع.',
-        'method.step3.title': 'الأتمتة',
-        'method.step3.desc': 'تحويل الهيكل إلى آلة نمو ذاتية التحسين. أنظمة التحسين المستمر.',
-        'about.label': 'المهندس',
-        'about.edu.title': 'التعليم',
-        'about.edu.desc': 'جامعة روتشستر (الولايات المتحدة) — تطبيق منطق الأبحاث والأنظمة من المستوى الأول على الاختناقات التجارية.',
-        'about.ops.title': 'حالة المشغل',
-        'about.ops.desc': 'شريك مؤسس في كاف ماركت، شريك في سينو إليت، ومدير تسويق في كولي كوميكس.',
-        'about.exp.title': 'الخبرة',
-        'about.exp.desc': 'قدم استشارات لصفقات بقيمة 500 ألف دولار+ وقاد العناية الواجبة الدولية لعمليات بقيمة 200 ألف دولار+.',
-        'cta.title': 'جاهز تخلي شغلك أسرع وأذكى؟',
-        'cta.subtitle': 'احجز فحص نمو شامل. سنحدد أكبر فرصك للأتمتة ونمو الإيرادات.',
-        'cta.button': 'يلا نحجز مكالمة',
-        'footer.copy': '© 2025 مؤسسة مشمش للخدمات الاستشارية. جميع الحقوق محفوظة.',
-        'footer.tagline': 'هندسة النمو للمؤسسات العالمية'
+        direction: 'rtl',
+        langLabel: 'AR'
       }
     };
     
     // Language toggle functionality
-    let currentLang = 'en';
+    const langToggle = document.getElementById('langToggle');
+    const langLabel = document.getElementById('langLabel');
     const html = document.documentElement;
-    const langToggle = document.getElementById('lang-toggle');
-    const langLabel = document.getElementById('lang-label');
-    
-    function updateContent(lang) {
-      const elements = document.querySelectorAll('[data-i18n]');
-      elements.forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-          el.innerHTML = translations[lang][key];
-        }
-      });
-      
-      // Update direction
-      html.dir = lang === 'ar' ? 'rtl' : 'ltr';
-      html.lang = lang;
-      
-      // Update nav spacing for RTL
-      const navLinks = document.getElementById('nav-links');
-      if (lang === 'ar') {
-        navLinks.classList.remove('space-x-8');
-        navLinks.classList.add('space-x-reverse', 'space-x-8');
-      } else {
-        navLinks.classList.remove('space-x-reverse', 'space-x-8');
-        navLinks.classList.add('space-x-8');
-      }
-      
-      // Re-initialize icons for any new elements
-      lucide.createIcons();
-    }
     
     langToggle.addEventListener('click', () => {
       currentLang = currentLang === 'en' ? 'ar' : 'en';
-      langLabel.textContent = currentLang === 'en' ? 'EN / AR' : 'AR / EN';
-      updateContent(currentLang);
+      
+      // Update direction
+      html.dir = translations[currentLang].direction;
+      html.lang = currentLang;
+      
+      // Update label
+      langLabel.textContent = translations[currentLang].langLabel;
+      
+      // Update all translatable elements
+      document.querySelectorAll('[data-en][data-ar]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+      
+      // Re-initialize icons for RTL/LTR changes
+      lucide.createIcons();
     });
     
-    // Smooth scroll for anchor links (no animation, just jump)
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    });
+    
+    // Scroll reveal animations
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+    
+    // Observe all reveal elements
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+      revealObserver.observe(el);
+    });
+    
+    // Number counter animation
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = entry.target;
+          const finalValue = target.getAttribute('data-target');
+          
+          if (finalValue) {
+            animateNumber(target, parseInt(finalValue));
+          }
+          
+          statObserver.unobserve(target);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    document.querySelectorAll('.stat-number').forEach(el => {
+      statObserver.observe(el);
+    });
+    
+    function animateNumber(element, target) {
+      const duration = 2000;
+      const start = 0;
+      const startTime = performance.now();
+      
+      // Get prefix and suffix from data attributes
+      const prefix = element.getAttribute('data-prefix') || '';
+      const dataSuffix = element.getAttribute('data-suffix') || '';
+      
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        const current = Math.floor(start + (target - start) * easeOutQuart);
+        
+        // Build the display string with prefix and suffix
+        element.textContent = prefix + current + dataSuffix;
+        
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          // Ensure final value is exact
+          element.textContent = prefix + target + dataSuffix;
+        }
+      }
+      
+      requestAnimationFrame(update);
+    }
+    
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+      anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-          target.scrollIntoView({ behavior: 'auto' });
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
         }
       });
+    });
+    
+    // Navbar background on scroll
+    const nav = document.querySelector('nav');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll > 100) {
+        nav.classList.add('shadow-lg');
+        nav.classList.add('bg-mesh-dark/98');
+      } else {
+        nav.classList.remove('shadow-lg');
+        nav.classList.remove('bg-mesh-dark/98');
+      }
+      
+      lastScroll = currentScroll;
     });
   </script>
 <script src="https://deepsite.hf.co/deepsite-badge.js"></script>
