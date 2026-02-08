@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MeshMesh Consulting | مؤسسة مشمش للخدمات الاستشارية</title>
+  <meta name="description" content="Growth Architecture for Global Enterprises. Bridging the gap between manual bottlenecks and automated revenue machines.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'mesh-dark': '#1A1A1A',
+            'mesh-white': '#FFFFFF',
+            'mesh-grey': '#2D2D2D',
+            'mesh-accent': '#3D3D3D',
+          },
+          fontFamily: {
+            'en': ['Inter', 'sans-serif'],
+            'ar': ['Almarai', 'Cairo', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: auto;
+    }
+    
+    body {
+      background-color: #1A1A1A;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+    
+    body[dir="rtl"] {
+      font-family: 'Almarai', 'Cairo', sans-serif;
+    }
+    
+    /* Industrial Grid Pattern */
+    .industrial-grid {
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    
+    /* Solid, stable elements */
+    .solid-card {
+      border: 1px solid rgba(255,255,255,0.1);
+      background: #2D2D2D;
+    }
+    
+    .solid-btn {
+      background: #FFFFFF;
+      color: #1A1A1A;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: none;
+    }
+    
+    .solid-btn:hover {
+      background: #E5E5E5;
+    }
+    
+    .solid-btn-outline {
+      border: 2px solid #FFFFFF;
+      color: #FFFFFF;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .solid-btn-outline:hover {
+      background: #FFFFFF;
+      color: #1A1A1A;
+    }
+    
+    /* Stats counter style */
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    
+    /* Method step numbers */
+    .step-number {
+      font-size: 5rem;
+      font-weight: 900;
+      opacity: 0.15;
+      line-height: 1;
+    }
+    
+    /* Logo placeholder style */
+    .logo-placeholder {
+      background: #3D3D3D;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    /* Section spacing - consistent */
+    section {
+      padding: 5rem 0;
+    }
+    
+    /* RTL specific adjustments */
+    [dir="rtl"] .rtl-flip {
+      transform: scaleX(-1);
+    }
+    
+    [dir="rtl"] .text-left {
+      text-align: right;
+    }
+    
+    [dir="rtl"] .text-right {
+      text-align: left;
+    }
+    
+    [dir="rtl"] .md\:text-left {
+      text-align: right;
+    }
+    
+    [dir="rtl"] .md\:text-right {
+      text-align: left;
+    }
+    
+    /* Navigation active state */
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #FFFFFF;
+      transition: width 0.2s ease;
+    }
+    
+    [dir="rtl"] .nav-link::after {
+      left: auto;
+      right: 0;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="industrial-grid">
+  
+  <!-- Fixed Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-mesh-dark/95 backdrop-blur-sm border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="#" class="text-xl font-bold tracking-tight" data-i18n="brand">MESHMESH</a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8" id="nav-links">
+          <a href="#method" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors" data-i18n="nav.method">Method</a>
+          <a href="#impact" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors" data-i18n="nav.impact">Impact</a>
+          <a href="#partners" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors" data-i18n="nav.partners">Partners</a>
+          <a href="#about" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors" data-i18n="nav.about">About</a>
+        </div>
+        
+        <!-- Actions -->
+        <div class="flex items-center space-x-4">
+          <!-- Language Toggle -->
+          <button id="lang-toggle" class="flex items-center space-x-2 text-sm font-medium text-gray-300 hover:text-white transition-colors px-3 py-1 border border-white/20 rounded">
+            <span id="lang-label">EN / AR</span>
+          </button>
+          
+          <!-- CTA Button -->
+          <a href="#contact" class="solid-btn px-5 py-2.5 text-sm rounded-sm" data-i18n="nav.cta">Book Audit</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center pt-16 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+      <div class="max-w-4xl">
+        <!-- Industrial accent line -->
+        <div class="w-20 h-1 bg-white mb-8"></div>
+        
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6" data-i18n="hero.headline">
+          They said it was impossible.<br>We call it <span class="text-gray-400">Optimization.</span>
+        </h1>
+        
+        <p class="text-lg md:text-xl text-gray-400 max-w-2xl mb-10 leading-relaxed" data-i18n="hero.subheadline">
+          Growth Architecture for Global Enterprises. Bridging the gap between manual bottlenecks and automated revenue machines.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#contact" class="solid-btn px-8 py-4 text-base rounded-sm inline-flex items-center justify-center gap-3" data-i18n="hero.cta">
+            <span>Book a Growth Audit</span>
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Dashboard -->
+  <section id="impact" class="border-b border-white/10 bg-mesh-grey">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div class="text-center md:text-left">
+          <div class="stat-number text-white mb-2">100<span class="text-2xl">x</span></div>
+          <p class="text-sm text-gray-400 uppercase tracking-wider font-medium" data-i18n="impact.roi">Max ROI achieved</p>
+        </div>
+        <div class="text-center md:text-left">
+          <div class="stat-number text-white mb-2">$2<span class="text-2xl">M+</span></div>
+          <p class="text-sm text-gray-400 uppercase tracking-wider font-medium" data-i18n="impact.capital">Capital raised</p>
+        </div>
+        <div class="text-center md:text-left">
+          <div class="stat-number text-white mb-2">30<span class="text-2xl">+</span></div>
+          <p class="text-sm text-gray-400 uppercase tracking-wider font-medium" data-i18n="impact.clients">Global clients</p>
+        </div>
+        <div class="text-center md:text-left">
+          <div class="stat-number text-white mb-2">8</div>
+          <p class="text-sm text-gray-400 uppercase tracking-wider font-medium" data-i18n="impact.countries">Countries</p>
+        </div>
+      </div>
+      
+      <div class="mt-12 pt-8 border-t border-white/10">
+        <p class="text-center text-gray-400 text-sm uppercase tracking-widest" data-i18n="impact.badge">
+          One of the Highest Recorded ROAS in Techne Summit history
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study: Techne Summit -->
+  <section class="border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4" data-i18n="case.label">Case Study</div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="case.title">Techne Summit 2025</h2>
+          <p class="text-gray-400 mb-8 leading-relaxed" data-i18n="case.description">
+            Managed 2025 Meta advertising for the Mediterranean's leading tech event. Engineered one of the highest recorded ROAS in event history through data-driven optimization.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-6">
+            <div class="solid-card p-4">
+              <div class="text-2xl font-bold text-white">55,000+</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider mt-1" data-i18n="case.stats.attendees">Attendees</div>
+            </div>
+            <div class="solid-card p-4">
+              <div class="text-2xl font-bold text-white">70+</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider mt-1" data-i18n="case.stats.countries">Countries</div>
+            </div>
+            <div class="solid-card p-4">
+              <div class="text-2xl font-bold text-white">450+</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider mt-1" data-i18n="case.stats.speakers">Speakers</div>
+            </div>
+            <div class="solid-card p-4">
+              <div class="text-2xl font-bold text-white">150+</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider mt-1" data-i18n="case.stats.investors">Investors</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="solid-card aspect-video flex items-center justify-center">
+          <img src="http://static.photos/technology/1024x576/42" alt="Techne Summit" class="w-full h-full object-cover opacity-80">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Grid -->
+  <section id="partners" class="border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="partners.title">Industrial Trust</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="partners.subtitle">Strategic partnerships with global enterprises and emerging market leaders.</p>
+      </div>
+      
+      <!-- Grid A: Strategic Advisory -->
+      <div class="mb-12">
+        <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-l-2 border-white pl-4" data-i18n="partners.gridA.title">Strategic Advisory — Adham Mashaly</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
+            <span class="text-sm font-semibold uppercase tracking-wider text-center">Techne Summit 2025</span>
+          </div>
+          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
+            <span class="text-sm font-semibold uppercase tracking-wider text-center">B2B Enterprise Partners</span>
+          </div>
+          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
+            <span class="text-sm font-semibold uppercase tracking-wider text-center">High-Ticket Consulting</span>
+          </div>
+          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
+            <span class="text-sm font-semibold uppercase tracking-wider text-center">Growth Architecture</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Grid B: Digitalization -->
+      <div class="mb-12">
+        <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-l-2 border-white pl-4" data-i18n="partners.gridB.title">Digitalization — MeshMesh Consulting</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
+            <div class="text-center">
+              <i data-lucide="shopping-cart" class="w-8 h-8 mx-auto mb-2 text-gray-400"></i>
+              <span class="text-sm font-semibold uppercase tracking-wider">Kaf Market</span>
+              <p class="text-xs text-gray-500 mt-1">Meta Catalog Systems</p>
+            </div>
+          </div>
+          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
+            <div class="text-center">
+              <i data-lucide="zap" class="w-8 h-8 mx-auto mb-2 text-gray-400"></i>
+              <span class="text-sm font-semibold uppercase tracking-wider">Cooley Comics</span>
+              <p class="text-xs text-gray-500 mt-1">Automation Systems</p>
+            </div>
+          </div>
+          <div class="solid-card aspect-[3/2] flex items-center justify-center p-6">
+            <div class="text-center">
+              <i data-lucide="building-2" class="w-8 h-8 mx-auto mb-2 text-gray-400"></i>
+              <span class="text-sm font-semibold uppercase tracking-wider">B2B Clients</span>
+              <p class="text-xs text-gray-500 mt-1">Enterprise Solutions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Grid C: Industrial Partners -->
+      <div>
+        <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-l-2 border-white pl-4" data-i18n="partners.gridC.title">Industrial Partners — via Senno Elite</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="solid-card aspect-[3/1] flex items-center justify-center p-8">
+            <div class="flex items-center gap-4">
+              <i data-lucide="car" class="w-10 h-10 text-gray-400"></i>
+              <span class="text-lg font-bold uppercase tracking-wider">Mercedes-Benz</span>
+            </div>
+          </div>
+          <div class="solid-card aspect-[3/1] flex items-center justify-center p-8">
+            <div class="flex items-center gap-4">
+              <i data-lucide="truck" class="w-10 h-10 text-gray-400"></i>
+              <span class="text-lg font-bold uppercase tracking-wider">Mitsubishi Motors</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The MeshMesh Method -->
+  <section id="method" class="border-b border-white/10 bg-mesh-grey">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="method.title">The MeshMesh Method</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="method.subtitle">A systematic approach to digital transformation.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Step 1: Audit -->
+        <div class="relative solid-card p-8">
+          <div class="step-number absolute top-4 right-4">01</div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 bg-white/10 flex items-center justify-center mb-6">
+              <i data-lucide="search" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4" data-i18n="method.step1.title">Audit</h3>
+            <p class="text-gray-400 text-sm leading-relaxed" data-i18n="method.step1.desc">Identifying inefficiencies in current manual processes. Deep diagnostic of operational bottlenecks.</p>
+          </div>
+        </div>
+        
+        <!-- Step 2: Architect -->
+        <div class="relative solid-card p-8">
+          <div class="step-number absolute top-4 right-4">02</div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 bg-white/10 flex items-center justify-center mb-6">
+              <i data-lucide="layout" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4" data-i18n="method.step2.title">Architect</h3>
+            <p class="text-gray-400 text-sm leading-relaxed" data-i18n="method.step2.desc">Designing a lean, high-performance digital "skeleton". Blueprint for scalable growth infrastructure.</p>
+          </div>
+        </div>
+        
+        <!-- Step 3: Automate -->
+        <div class="relative solid-card p-8">
+          <div class="step-number absolute top-4 right-4">03</div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 bg-white/10 flex items-center justify-center mb-6">
+              <i data-lucide="cog" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4" data-i18n="method.step3.title">Automate</h3>
+            <p class="text-gray-400 text-sm leading-relaxed" data-i18n="method.step3.desc">Turning the skeleton into a self-optimizing growth machine. Continuous improvement systems.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Architect -->
+  <section id="about" class="border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <div class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4" data-i18n="about.label">The Architect</div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Adham Mashaly</h2>
+          
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-white/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1" data-i18n="about.edu.title">Education</h4>
+                <p class="text-gray-400 text-sm" data-i18n="about.edu.desc">University of Rochester (USA) — Applying Tier-1 research and systems logic to business bottlenecks.</p>
+              </div>
+            </div>
+            
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-white/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="briefcase" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1" data-i18n="about.ops.title">Operator Status</h4>
+                <p class="text-gray-400 text-sm" data-i18n="about.ops.desc">Co-Founder at Kaf Market, Partner at Senno Elite, and CMO at Cooley Comics.</p>
+              </div>
+            </div>
+            
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-white/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="trending-up" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1" data-i18n="about.exp.title">Experience</h4>
+                <p class="text-gray-400 text-sm" data-i18n="about.exp.desc">Advised on $500k+ in deals and led international due diligence for $200k+ operations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="solid-card aspect-square md:aspect-[4/5]">
+          <img src="http://static.photos/office/1024x576/88" alt="Adham Mashaly" class="w-full h-full object-cover opacity-90">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="contact" class="border-b border-white/10 bg-mesh-grey">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6" data-i18n="cta.title">Ready for an efficient business?</h2>
+      <p class="text-gray-400 mb-10 max-w-xl mx-auto" data-i18n="cta.subtitle">Schedule a comprehensive growth audit. We'll identify your biggest opportunities for automation and revenue growth.</p>
+      
+      <a href="mailto:contact@meshmesh.consulting" class="solid-btn px-10 py-5 text-lg rounded-sm inline-flex items-center justify-center gap-3" data-i18n="cta.button">
+        <span>Schedule a Call</span>
+        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+      </a>
+      
+      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-center gap-6 text-sm text-gray-500">
+        <a href="mailto:contact@meshmesh.consulting" class="flex items-center gap-2 hover:text-white transition-colors">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          contact@meshmesh.consulting
+        </a>
+        <span class="hidden md:inline">|</span>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-white transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+          <a href="#" class="hover:text-white transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-sm text-gray-500">
+        <span data-i18n="footer.copy">© 2025 MeshMesh Consulting. All rights reserved.</span>
+      </div>
+      <div class="text-sm text-gray-500">
+        <span data-i18n="footer.tagline">Growth Architecture for Global Enterprises</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Translation data
+    const translations = {
+      en: {
+        brand: 'MESHMESH',
+        'nav.method': 'Method',
+        'nav.impact': 'Impact',
+        'nav.partners': 'Partners',
+        'nav.about': 'About',
+        'nav.cta': 'Book Audit',
+        'hero.headline': 'They said it was impossible.<br>We call it <span class="text-gray-400">Optimization.</span>',
+        'hero.subheadline': 'Growth Architecture for Global Enterprises. Bridging the gap between manual bottlenecks and automated revenue machines.',
+        'hero.cta': 'Book a Growth Audit',
+        'impact.roi': 'Max ROI achieved',
+        'impact.capital': 'Capital raised',
+        'impact.clients': 'Global clients',
+        'impact.countries': 'Countries',
+        'impact.badge': 'One of the Highest Recorded ROAS in Techne Summit history',
+        'case.label': 'Case Study',
+        'case.title': 'Techne Summit 2025',
+        'case.description': 'Managed 2025 Meta advertising for the Mediterranean\'s leading tech event. Engineered one of the highest recorded ROAS in event history through data-driven optimization.',
+        'case.stats.attendees': 'Attendees',
+        'case.stats.countries': 'Countries',
+        'case.stats.speakers': 'Speakers',
+        'case.stats.investors': 'Investors',
+        'partners.title': 'Industrial Trust',
+        'partners.subtitle': 'Strategic partnerships with global enterprises and emerging market leaders.',
+        'partners.gridA.title': 'Strategic Advisory — Adham Mashaly',
+        'partners.gridB.title': 'Digitalization — MeshMesh Consulting',
+        'partners.gridC.title': 'Industrial Partners — via Senno Elite',
+        'method.title': 'The MeshMesh Method',
+        'method.subtitle': 'A systematic approach to digital transformation.',
+        'method.step1.title': 'Audit',
+        'method.step1.desc': 'Identifying inefficiencies in current manual processes. Deep diagnostic of operational bottlenecks.',
+        'method.step2.title': 'Architect',
+        'method.step2.desc': 'Designing a lean, high-performance digital "skeleton". Blueprint for scalable growth infrastructure.',
+        'method.step3.title': 'Automate',
+        'method.step3.desc': 'Turning the skeleton into a self-optimizing growth machine. Continuous improvement systems.',
+        'about.label': 'The Architect',
+        'about.edu.title': 'Education',
+        'about.edu.desc': 'University of Rochester (USA) — Applying Tier-1 research and systems logic to business bottlenecks.',
+        'about.ops.title': 'Operator Status',
+        'about.ops.desc': 'Co-Founder at Kaf Market, Partner at Senno Elite, and CMO at Cooley Comics.',
+        'about.exp.title': 'Experience',
+        'about.exp.desc': 'Advised on $500k+ in deals and led international due diligence for $200k+ operations.',
+        'cta.title': 'Ready for an efficient business?',
+        'cta.subtitle': 'Schedule a comprehensive growth audit. We\'ll identify your biggest opportunities for automation and revenue growth.',
+        'cta.button': 'Schedule a Call',
+        'footer.copy': '© 2025 MeshMesh Consulting. All rights reserved.',
+        'footer.tagline': 'Growth Architecture for Global Enterprises'
+      },
+      ar: {
+        brand: 'مشمش',
+        'nav.method': 'المنهجية',
+        'nav.impact': 'الأداء',
+        'nav.partners': 'الشركاء',
+        'nav.about': 'عن المؤسس',
+        'nav.cta': 'احجز فحص',
+        'hero.headline': 'بيقولوا "في المشمش" لما الموضوع يكون مستحيل..<br>احنا بنخلي <span class="text-gray-400">"مشمش" هو السيستم اللي بيكبّر البيزنس.</span>',
+        'hero.subheadline': 'احنا شركاء التحول الرقمي للمصانع وشركات الـ B2B. بنحول الشغل اليدوي لسيستم رقمي ذكي بيزود أرباحك فعلياً.',
+        'hero.cta': 'احجز مكالمة فحص نمو',
+        'impact.roi': 'أقصى عائد استثمار',
+        'impact.capital': 'رأس مال تم جمعه',
+        'impact.clients': 'عميل عالمي',
+        'impact.countries': 'دولة',
+        'impact.badge': 'من أعلى معدلات العائد على الإنفاق الإعلاني في تاريخ قمة تكني',
+        'case.label': 'دراسة حالة',
+        'case.title': 'قمة تكني 2025',
+        'case.description': 'إدارة إعلانات ميتا 2025 لأبرز حدث تكنولوجي في البحر المتوسط. تحقيق أحد أعلى معدلات العائد على الإنفاق الإعلاني في تاريخ الحدث من خلال التحسين المبني على البيانات.',
+        'case.stats.attendees': 'حضور',
+        'case.stats.countries': 'دولة',
+        'case.stats.speakers': 'متحدث',
+        'case.stats.investors': 'مستثمر',
+        'partners.title': 'الثقة الصناعية',
+        'partners.subtitle': 'شراكات استراتيجية مع المؤسسات العالمية وقادة الأسواق الناشئة.',
+        'partners.gridA.title': 'الاستشارات الاستراتيجية — أدهم مشالي',
+        'partners.gridB.title': 'التحول الرقمي — مشمش للاستشارات',
+        'partners.gridC.title': 'الشركاء الصناعيون — عبر سينو إليت',
+        'method.title': 'منهجية مشمش',
+        'method.subtitle': 'نهج منهجي للتحول الرقمي.',
+        'method.step1.title': 'الفحص',
+        'method.step1.desc': 'تحديد نقاط الضعف في العمليات اليدوية الحالية. تشخيص عميق للاختناقات التشغيلية.',
+        'method.step2.title': 'الهندسة',
+        'method.step2.desc': 'تصميم هيكل رقمي رشيق وعالي الأداء. مخطط لبنية تحتية نمو قابلة للتوسع.',
+        'method.step3.title': 'الأتمتة',
+        'method.step3.desc': 'تحويل الهيكل إلى آلة نمو ذاتية التحسين. أنظمة التحسين المستمر.',
+        'about.label': 'المهندس',
+        'about.edu.title': 'التعليم',
+        'about.edu.desc': 'جامعة روتشستر (الولايات المتحدة) — تطبيق منطق الأبحاث والأنظمة من المستوى الأول على الاختناقات التجارية.',
+        'about.ops.title': 'حالة المشغل',
+        'about.ops.desc': 'شريك مؤسس في كاف ماركت، شريك في سينو إليت، ومدير تسويق في كولي كوميكس.',
+        'about.exp.title': 'الخبرة',
+        'about.exp.desc': 'قدم استشارات لصفقات بقيمة 500 ألف دولار+ وقاد العناية الواجبة الدولية لعمليات بقيمة 200 ألف دولار+.',
+        'cta.title': 'جاهز تخلي شغلك أسرع وأذكى؟',
+        'cta.subtitle': 'احجز فحص نمو شامل. سنحدد أكبر فرصك للأتمتة ونمو الإيرادات.',
+        'cta.button': 'يلا نحجز مكالمة',
+        'footer.copy': '© 2025 مؤسسة مشمش للخدمات الاستشارية. جميع الحقوق محفوظة.',
+        'footer.tagline': 'هندسة النمو للمؤسسات العالمية'
+      }
+    };
+    
+    // Language toggle functionality
+    let currentLang = 'en';
+    const html = document.documentElement;
+    const langToggle = document.getElementById('lang-toggle');
+    const langLabel = document.getElementById('lang-label');
+    
+    function updateContent(lang) {
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      
+      // Update direction
+      html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      html.lang = lang;
+      
+      // Update nav spacing for RTL
+      const navLinks = document.getElementById('nav-links');
+      if (lang === 'ar') {
+        navLinks.classList.remove('space-x-8');
+        navLinks.classList.add('space-x-reverse', 'space-x-8');
+      } else {
+        navLinks.classList.remove('space-x-reverse', 'space-x-8');
+        navLinks.classList.add('space-x-8');
+      }
+      
+      // Re-initialize icons for any new elements
+      lucide.createIcons();
+    }
+    
+    langToggle.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      langLabel.textContent = currentLang === 'en' ? 'EN / AR' : 'AR / EN';
+      updateContent(currentLang);
+    });
+    
+    // Smooth scroll for anchor links (no animation, just jump)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'auto' });
+        }
+      });
+    });
+  </script>
+<script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+</body>
+</html>
