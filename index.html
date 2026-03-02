@@ -265,7 +265,7 @@
             <span id="langLabel">EN</span>
           </button>
           
-          <a href="#audit" class="hidden sm:flex btn-primary bg-mesh-orange text-white px-5 py-2.5 rounded-lg font-semibold text-sm">
+          <a href="#" class="hidden sm:flex btn-primary bg-mesh-orange text-white px-5 py-2.5 rounded-lg font-semibold text-sm" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
             <span data-en="Get Audit" data-ar="احصل على الفحص">Get Audit</span>
           </a>
           
@@ -285,7 +285,7 @@
         <a href="#clients" class="block text-gray-300 hover:text-white py-2" data-en="Clients" data-ar="العملاء">Clients</a>
         <a href="#method" class="block text-gray-300 hover:text-white py-2" data-en="Method" data-ar="المنهجية">Method</a>
         <a href="#audit" class="block text-gray-300 hover:text-white py-2" data-en="Audit" data-ar="الفحص">Audit</a>
-        <a href="#audit" class="btn-primary block bg-mesh-orange text-white text-center px-5 py-3 rounded-lg font-semibold mt-4" data-en="Get Audit" data-ar="احصل على الفحص">Get Audit</a>
+        <a href="#" class="btn-primary block bg-mesh-orange text-white text-center px-5 py-3 rounded-lg font-semibold mt-4" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' data-en="Get Audit" data-ar="احصل على الفحص">Get Audit</a>
       </div>
     </div>
   </nav>
@@ -322,7 +322,7 @@
         
         <!-- CTA Buttons -->
         <div class="reveal delay-300 flex flex-col sm:flex-row gap-4">
-          <a href="#audit" class="btn-primary pulse-cta bg-mesh-orange text-white px-8 py-4 rounded-xl font-bold text-lg text-center">
+          <a href="#" class="btn-primary pulse-cta bg-mesh-orange text-white px-8 py-4 rounded-xl font-bold text-lg text-center" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
             <span data-en="Schedule Your Audit" data-ar="احجز فحصك">Schedule Your Audit</span>
             <i data-lucide="arrow-right" class="w-5 h-5 inline-block ml-2 rtl:ml-0 rtl:mr-2 rtl:rotate-180"></i>
           </a>
@@ -1064,7 +1064,7 @@
           Get your free 45-minute Growth Audit. We'll map your infrastructure and identify your top 3 revenue leaks—no commitment required.
         </p>
         
-        <a href="mailto:adham@meshmeshconsulting.com?subject=Growth Audit Request" class="btn-primary pulse-cta inline-flex items-center gap-3 bg-mesh-orange text-white px-10 py-5 rounded-2xl font-bold text-xl mb-8">
+        <a href="#" class="btn-primary pulse-cta inline-flex items-center gap-3 bg-mesh-orange text-white px-10 py-5 rounded-2xl font-bold text-xl mb-8" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
           <span data-en="Schedule Your Audit" data-ar="يلا نبدأ الفحص">Schedule Your Audit</span>
           <i data-lucide="arrow-right" class="w-6 h-6 rtl:rotate-180"></i>
         </a>
@@ -1120,6 +1120,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- Cal element-click embed code begins -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "45min", {origin:"https://app.cal.com"});
+    Cal.ns["45min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+  <!-- Cal element-click embed code ends -->
 
   <script>
     // Initialize Lucide icons
