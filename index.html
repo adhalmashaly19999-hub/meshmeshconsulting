@@ -1,18 +1,26 @@
 <!DOCTYPE html>
+<!-- Source page (English). ar/index.html is generated from it: run `python tools/build-ar.py` after editing. -->
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MeshMesh Consulting | Sales systems for B2B companies</title>
-  <meta name="description" content="You already paid for the leads. We build and run the system that gets every inquiry called, followed up and priced. Free 45-minute audit.">
-  <link rel="canonical" href="https://meshmeshconsulting.com/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title data-en="MeshMesh Consulting | Sales systems for B2B companies" data-ar="MeshMesh Consulting | أنظمة مبيعات لشركات الـ B2B">MeshMesh Consulting | Sales systems for B2B companies</title>
+  <meta name="description" content="You already paid for the leads. We build and run the system that gets every inquiry called, followed up and priced. Free 45-minute audit." data-ar-content="إنت دفعت تمن الليدز خلاص. إحنا بنبني وبنشغّل السيستم اللي بيخلّي كل استفسار يتكلّم ويتابَع ويتسعّر. فحص مجاني 45 دقيقة.">
+  <link rel="canonical" href="https://meshmeshconsulting.com/" data-ar-href="https://meshmeshconsulting.com/ar/">
+  <link rel="alternate" hreflang="en" href="https://meshmeshconsulting.com/">
+  <link rel="alternate" hreflang="ar" href="https://meshmeshconsulting.com/ar/">
+  <link rel="alternate" hreflang="x-default" href="https://meshmeshconsulting.com/">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://meshmeshconsulting.com/">
-  <meta property="og:title" content="MeshMesh Consulting | Sales systems for B2B companies">
-  <meta property="og:description" content="You already paid for the leads. We build and run the system that gets every inquiry called, followed up and priced.">
-  <meta property="og:image" content="https://meshmeshconsulting.com/assets/meshmesh-logo.png">
+  <meta property="og:url" content="https://meshmeshconsulting.com/" data-ar-content="https://meshmeshconsulting.com/ar/">
+  <meta property="og:title" content="MeshMesh Consulting | Sales systems for B2B companies" data-ar-content="MeshMesh Consulting | أنظمة مبيعات لشركات الـ B2B">
+  <meta property="og:description" content="You already paid for the leads. We build and run the system that gets every inquiry called, followed up and priced." data-ar-content="إنت دفعت تمن الليدز خلاص. إحنا بنبني وبنشغّل السيستم اللي بيخلّي كل استفسار يتكلّم ويتابَع ويتسعّر.">
+  <meta property="og:image" content="https://meshmeshconsulting.com/assets/og-en.png" data-ar-content="https://meshmeshconsulting.com/assets/og-ar.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US" data-ar-content="ar_EG">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#1A1A1A">
-  <link rel="icon" type="image/png" href="assets/meshmesh-logo.png">
+  <link rel="icon" type="image/png" href="/assets/meshmesh-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -24,7 +32,7 @@
       --line: rgba(255, 255, 255, 0.1);
       --text: #FFFFFF;
       --muted: #A3A3A3;
-      --dim: #737373;
+      --dim: #949494;
       --orange: #FF5722;
       --orange-soft: rgba(255, 87, 34, 0.12);
       --leaf: #9BBB2E;
@@ -50,7 +58,7 @@
 
     img { max-width: 100%; height: auto; display: block; }
     a { color: inherit; text-decoration: none; }
-    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3, p, ul { margin: 0; }
 
     .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
     section { padding: 88px 0; }
@@ -78,6 +86,9 @@
 
     .lede { color: var(--muted); font-size: 18px; max-width: 640px; margin-top: 16px; }
     .accent { color: var(--orange); }
+
+    /* Placeholder values still to be confirmed. Remove the class once filled in. */
+    .tbd { outline: 2px dashed #F5C542; outline-offset: 2px; background: rgba(245, 197, 66, 0.14); border-radius: 4px; }
 
     /* Buttons */
     .btn {
@@ -117,15 +128,12 @@
     .nav-links a:hover { color: #fff; }
     .nav-actions { display: flex; align-items: center; gap: 10px; }
     .lang {
-      background: none;
       color: #fff;
       border: 1px solid rgba(255, 255, 255, 0.22);
       border-radius: 999px;
       padding: 7px 14px;
-      font: inherit;
       font-size: 13px;
       font-weight: 600;
-      cursor: pointer;
     }
     .lang:hover { border-color: var(--orange); }
     .nav-cta { display: none; }
@@ -147,7 +155,7 @@
 
     /* Hero */
     .hero {
-      padding: 140px 0 88px;
+      padding: 140px 0 64px;
       background:
         radial-gradient(ellipse at 15% 10%, rgba(255, 87, 34, 0.1) 0%, transparent 55%),
         var(--dark);
@@ -165,7 +173,17 @@
     .hero-notes { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 26px; color: var(--dim); font-size: 14px; }
     .hero-notes span::before { content: "\2713"; color: var(--leaf); margin-inline-end: 8px; font-weight: 700; }
 
-    /* Product mock */
+    /* Logo strip under the hero */
+    .strip { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line); }
+    .strip-title { color: var(--dim); font-size: 14px; font-weight: 600; margin-bottom: 18px; }
+    .strip-logos { display: grid; gap: 10px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    @media (min-width: 760px) { .strip-logos { grid-template-columns: repeat(8, minmax(0, 1fr)); } }
+    .strip-logos > * { position: relative; display: block; height: 60px; }
+    .strip-logos img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0.7; transition: opacity 0.25s ease; }
+    .strip-logos img.c, .strip-logos > *:hover img:not(.c), .strip-logos > *:focus-visible img:not(.c) { opacity: 0; }
+    .strip-logos > *:hover img.c, .strip-logos > *:focus-visible img.c { opacity: 1; }
+
+    /* Product mocks (demo data) */
     .mock {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -176,6 +194,8 @@
       margin-inline: auto;
       width: 100%;
     }
+    .alt .mock { background: var(--dark); }
+    .alt .mock .lead, .alt .mock .row, .alt .mock .stat { background: var(--panel); }
     .mock-head { display: flex; align-items: baseline; justify-content: space-between; padding: 4px 6px 14px; }
     .mock-head strong { font-size: 18px; }
     .mock-head span { color: var(--muted); font-size: 13px; }
@@ -202,6 +222,40 @@
     .chip { font-size: 12px; font-weight: 600; padding: 7px 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.06); border: 1px solid var(--line); }
     .chip-on { background: var(--orange-soft); border-color: rgba(255, 87, 34, 0.5); color: var(--orange); }
     .mock-foot { text-align: center; color: var(--dim); font-size: 11px; margin-top: 12px; }
+    .toast {
+      display: flex; gap: 12px; align-items: center;
+      background: var(--orange-soft);
+      border: 1px solid rgba(255, 87, 34, 0.45);
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+    }
+    .toast .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--orange); flex: none; box-shadow: 0 0 0 5px rgba(255, 87, 34, 0.2); }
+    .toast-title { font-size: 13px; font-weight: 700; color: var(--orange); }
+    .toast-body { font-size: 14px; font-weight: 600; }
+    .row {
+      display: flex; justify-content: space-between; align-items: center; gap: 10px;
+      background: var(--dark);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .row span { color: var(--muted); }
+    .row strong { color: var(--leaf); }
+    .hist { margin-top: 12px; padding-inline-start: 4px; display: grid; gap: 6px; }
+    .hist div { color: var(--dim); font-size: 13px; }
+    .stats3 { display: grid; gap: 8px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .stat { background: var(--dark); border: 1px solid var(--line); border-radius: 12px; padding: 12px 10px; }
+    .stat b { display: block; font-size: clamp(16px, 4.6vw, 20px); font-weight: 800; line-height: 1.2; white-space: nowrap; direction: ltr; unicode-bidi: isolate; }
+    html[dir="rtl"] .stat b { text-align: right; }
+    .stat span { color: var(--muted); font-size: 12px; }
+    .bars { margin-top: 16px; }
+    .bars-title { color: var(--muted); font-size: 13px; margin-bottom: 4px; }
+    .bar-row { display: grid; grid-template-columns: 64px minmax(0, 1fr) 30px; gap: 10px; align-items: center; font-size: 13px; margin-top: 10px; }
+    .bar { height: 8px; border-radius: 999px; background: rgba(255, 255, 255, 0.08); }
+    .bar i { display: block; height: 100%; border-radius: 999px; background: var(--orange); }
 
     /* Cards */
     .grid-3 { display: grid; gap: 18px; margin-top: 44px; grid-template-columns: minmax(0, 1fr); }
@@ -234,10 +288,57 @@
     .proof-grid p { color: #D4D4D4; margin-top: 10px; font-size: 15px; }
     .note { color: var(--dim); font-size: 13px; margin-top: 24px; max-width: 720px; }
 
-    /* Toolbox */
-    .toolbox { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-    .toolbox strong { font-size: 15px; margin-inline-end: 6px; }
-    .toolbox span { font-size: 14px; padding: 8px 16px; border-radius: 999px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--line); color: #D4D4D4; }
+    /* Who it's for */
+    .fit { display: grid; gap: 18px; margin-top: 44px; grid-template-columns: minmax(0, 1fr); }
+    @media (min-width: 860px) { .fit { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); } }
+    .fit .card h3 { margin-bottom: 18px; }
+    .fit-yes { border-color: rgba(155, 187, 46, 0.4); }
+    .ticks { list-style: none; padding: 0; display: grid; gap: 14px; }
+    .ticks li { display: flex; gap: 12px; color: #D4D4D4; font-size: 16px; }
+    .ticks li::before { content: "\2713"; color: var(--leaf); font-weight: 800; flex: none; }
+    .ticks.no li { color: var(--muted); }
+    .ticks.no li::before { content: "\2715"; color: var(--dim); }
+
+    /* The system: feature rows with a product mock */
+    .feature { display: grid; gap: 40px; align-items: center; margin-top: 72px; grid-template-columns: minmax(0, 1fr); }
+    @media (min-width: 960px) {
+      .feature { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; }
+      .feature.flip .mock { order: -1; }
+    }
+    .feature-item + .feature-item { margin-top: 28px; }
+    .feature-item h3 { font-size: 22px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+    .feature-item p { color: var(--muted); font-size: 16px; max-width: 480px; }
+
+    /* What else we do */
+    .svc { display: grid; gap: 18px; margin-top: 44px; grid-template-columns: minmax(0, 1fr); }
+    @media (min-width: 760px) { .svc { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .svc-card { display: flex; flex-direction: column; }
+    .svc-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--orange-soft); color: var(--orange); display: grid; place-items: center; margin-bottom: 18px; }
+    .svc-icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .svc-card h3 { font-size: 21px; }
+    .svc-card p.for { margin-top: auto; padding-top: 18px; font-size: 14px; color: #D4D4D4; }
+    .svc-card p.for span { display: block; color: var(--dim); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+    html[dir="rtl"] .svc-card p.for span { letter-spacing: 0; font-size: 13px; }
+
+    /* Pricing */
+    .price-card { display: flex; flex-direction: column; }
+    .price-card.featured { border-color: rgba(255, 87, 34, 0.5); }
+    .price-label { color: var(--muted); font-size: 14px; font-weight: 600; }
+    .price { font-size: 32px; font-weight: 900; line-height: 1.2; margin: 6px 0 4px; letter-spacing: -0.01em; }
+    .price-when { color: var(--leaf); font-size: 14px; font-weight: 600; }
+    .price-card .ticks { margin-top: 22px; gap: 10px; }
+    .price-card .ticks li { font-size: 15px; }
+    .promise {
+      margin-top: 18px;
+      display: flex; gap: 14px; align-items: flex-start;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      background: var(--panel);
+    }
+    .alt .promise { background: var(--dark); }
+    .promise b { color: var(--leaf); font-size: 20px; line-height: 1.4; }
+    .promise p { color: #D4D4D4; font-size: 16px; }
 
     /* Case study */
     .case { display: grid; gap: 40px; align-items: center; grid-template-columns: minmax(0, 1fr); }
@@ -255,12 +356,17 @@
     @media (min-width: 640px) { .clients { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
     @media (min-width: 960px) { .clients { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
     .client { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 14px; text-align: center; }
-    .logo-tile { background: #fff; border-radius: 10px; height: 84px; display: flex; align-items: center; justify-content: center; padding: 12px; }
-    .logo-tile.dark { background: #111; border: 1px solid var(--line); }
-    .logo-tile img { max-height: 100%; width: auto; object-fit: contain; }
-    .logo-tile.text { background: var(--orange-soft); color: var(--orange); font-weight: 800; font-size: 17px; }
+    .alt .client { background: var(--dark); }
+    a.client { display: block; transition: border-color 0.25s ease, transform 0.25s ease; }
+    a.client:hover, a.client:focus-visible { border-color: rgba(255, 87, 34, 0.45); transform: translateY(-2px); }
+    .logo-tile { position: relative; height: 84px; display: flex; align-items: center; justify-content: center; }
+    .logo-tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0.85; transition: opacity 0.25s ease; }
+    .logo-tile img.c, .client:hover .logo-tile img:not(.c), .client:focus-visible .logo-tile img:not(.c) { opacity: 0; }
+    .client:hover .logo-tile img.c, .client:focus-visible .logo-tile img.c { opacity: 1; }
+    .logo-tile.text { color: #fff; opacity: 0.85; font-weight: 900; font-size: 19px; letter-spacing: -0.02em; }
     .client h3 { font-size: 14px; font-weight: 700; margin-top: 12px; line-height: 1.3; }
     .client p { font-size: 12px; color: var(--dim); margin-top: 2px; }
+    .client p.scope { color: var(--orange); font-weight: 600; margin-top: 6px; }
 
     /* About */
     .about { display: grid; gap: 44px; align-items: center; grid-template-columns: minmax(0, 1fr); }
@@ -268,7 +374,23 @@
     .about p { color: var(--muted); font-size: 17px; margin-top: 16px; max-width: 560px; }
     .about p strong { color: #fff; font-weight: 600; }
     .about .who { color: #D4D4D4; font-size: 15px; margin-top: 8px; }
+    #pricing .note { margin-top: 18px; }
     .about-img { border-radius: 22px; overflow: hidden; border: 1px solid var(--line); }
+
+    /* FAQ */
+    .faq { margin-top: 36px; max-width: 820px; }
+    .faq details { border-bottom: 1px solid var(--line); }
+    .faq summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 20px;
+      padding: 22px 0;
+      font-size: 18px; font-weight: 700;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; color: var(--orange); font-size: 26px; font-weight: 400; line-height: 1; flex: none; }
+    .faq details[open] summary::after { content: "\2212"; }
+    .faq details p { color: var(--muted); font-size: 16px; padding-bottom: 22px; max-width: 720px; }
 
     /* CTA */
     .cta { text-align: center; background: radial-gradient(ellipse at 50% 100%, rgba(255, 87, 34, 0.14) 0%, transparent 60%), var(--dark); }
@@ -280,13 +402,33 @@
     .foot { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; justify-content: space-between; }
     .foot a:hover { color: #fff; }
 
+    /* Sticky booking bar on phones */
+    .mbar {
+      position: fixed;
+      inset: auto 0 0 0;
+      z-index: 40;
+      display: flex; align-items: center; gap: 14px;
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+      background: rgba(26, 26, 26, 0.96);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--line);
+      transform: translateY(110%);
+      transition: transform 0.3s ease;
+    }
+    .mbar.show { transform: none; }
+    .mbar .btn { flex: 1; padding: 13px 18px; }
+    .mbar-note { color: var(--muted); font-size: 13px; line-height: 1.3; }
+    @media (max-width: 959px) { footer { padding-bottom: 104px; } }
+    @media (min-width: 960px) { .mbar { display: none; } }
+
     /* Scroll reveal (only when JS is running) */
     .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .js .reveal.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .js .reveal { opacity: 1; transform: none; transition: none; }
-      .btn { transition: none; }
+      .btn, .mbar, a.client, .logo-tile img, .strip-logos img { transition: none; }
+      a.client:hover { transform: none; }
     }
   </style>
 </head>
@@ -294,112 +436,128 @@
   <nav class="nav">
     <div class="wrap nav-row">
       <a href="#top" class="brand">
-        <img src="assets/meshmesh-logo.png" alt="" width="36" height="36">
+        <img src="/assets/meshmesh-logo.png" alt="" width="36" height="36">
         <span>MeshMesh</span>
       </a>
 
       <div class="nav-links">
-        <a href="#leak" data-en="The leak" data-ar="المشكلة">The leak</a>
         <a href="#system" data-en="The system" data-ar="السيستم">The system</a>
-        <a href="#method" data-en="How it works" data-ar="بنشتغل إزاي">How it works</a>
+        <a href="#services" data-en="Services" data-ar="خدماتنا">Services</a>
+        <a href="#pricing" data-en="Pricing" data-ar="الأسعار">Pricing</a>
         <a href="#clients" data-en="Clients" data-ar="عملاءنا">Clients</a>
-        <a href="#about" data-en="About" data-ar="عننا">About</a>
+        <a href="#faq" data-en="FAQ" data-ar="أسئلة">FAQ</a>
       </div>
 
       <div class="nav-actions">
-        <button id="langToggle" class="lang" type="button" aria-label="Switch language">عربي</button>
+        <a id="langToggle" class="lang" href="/ar/" hreflang="ar" lang="ar" data-en="عربي" data-ar="English" data-ar-href="/" data-ar-hreflang="en" data-ar-lang="en">عربي</a>
         <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary btn-sm nav-cta" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' data-en="Free audit" data-ar="فحص مجاني">Free audit</a>
-        <button id="burger" class="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <button id="burger" class="burger" type="button" aria-label="Menu" data-ar-aria-label="القايمة" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
 
     <div id="menu" class="menu">
-      <a href="#leak" data-en="The leak" data-ar="المشكلة">The leak</a>
       <a href="#system" data-en="The system" data-ar="السيستم">The system</a>
-      <a href="#method" data-en="How it works" data-ar="بنشتغل إزاي">How it works</a>
+      <a href="#services" data-en="Services" data-ar="خدماتنا">Services</a>
+      <a href="#pricing" data-en="Pricing" data-ar="الأسعار">Pricing</a>
       <a href="#clients" data-en="Clients" data-ar="عملاءنا">Clients</a>
-      <a href="#about" data-en="About" data-ar="عننا">About</a>
+      <a href="#faq" data-en="FAQ" data-ar="أسئلة">FAQ</a>
       <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' data-en="Book the free audit" data-ar="احجز الفحص المجاني">Book the free audit</a>
     </div>
   </nav>
 
   <!-- Hero -->
   <header id="top" class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow" data-en="Sales systems for B2B companies" data-ar="أنظمة مبيعات لشركات الـ B2B">Sales systems for B2B companies</span>
-        <h1>
-          <span data-en="You already paid for the leads." data-ar="إنت دفعت تمن الليدز خلاص.">You already paid for the leads.</span>
-          <span class="accent" data-en="Most of them never got a call." data-ar="وأغلبهم محدش كلّمهم.">Most of them never got a call.</span>
-        </h1>
-        <p class="lede" data-en="We build and run the system that gets every inquiry called, followed up and priced, so the ad budget you already spend turns into orders." data-ar="بنبني وبنشغّل السيستم اللي بيخلّي كل استفسار يتكلّم ويتابَع ويتسعّر، عشان ميزانية الإعلانات اللي بتدفعها فعلاً تتحوّل لأوردرات.">We build and run the system that gets every inquiry called, followed up and priced, so the ad budget you already spend turns into orders.</p>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow" data-en="Sales systems for B2B companies" data-ar="أنظمة مبيعات لشركات الـ B2B">Sales systems for B2B companies</span>
+          <h1>
+            <span data-en="You already paid for the leads." data-ar="إنت دفعت تمن الليدز خلاص.">You already paid for the leads.</span>
+            <span class="accent" data-en="Most of them never got a call." data-ar="وأغلبهم محدش كلّمهم.">Most of them never got a call.</span>
+          </h1>
+          <p class="lede" data-en="We build and run the system that gets every inquiry called, followed up and priced, so the ad budget you already spend turns into orders." data-ar="بنبني وبنشغّل السيستم اللي بيخلّي كل استفسار يتكلّم ويتابَع ويتسعّر، عشان ميزانية الإعلانات اللي بتدفعها فعلاً تتحوّل لأوردرات.">We build and run the system that gets every inquiry called, followed up and priced, so the ad budget you already spend turns into orders.</p>
 
-        <div class="hero-cta">
-          <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
-            <span data-en="Book the free audit" data-ar="احجز الفحص المجاني">Book the free audit</span>
-            <span class="arrow" aria-hidden="true"></span>
-          </a>
-          <a href="#system" class="btn btn-ghost" data-en="See the system" data-ar="شوف السيستم">See the system</a>
+          <div class="hero-cta">
+            <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+              <span data-en="Book the free audit" data-ar="احجز الفحص المجاني">Book the free audit</span>
+              <span class="arrow" aria-hidden="true"></span>
+            </a>
+            <a href="#system" class="btn btn-ghost" data-en="See the system" data-ar="شوف السيستم">See the system</a>
+          </div>
+
+          <div class="hero-notes">
+            <span data-en="45-minute call" data-ar="مكالمة 45 دقيقة">45-minute call</span>
+            <span data-en="Free for qualified businesses" data-ar="مجاني للشركات المؤهلة">Free for qualified businesses</span>
+            <span data-en="English and Arabic" data-ar="عربي وإنجليزي">English and Arabic</span>
+          </div>
         </div>
 
-        <div class="hero-notes">
-          <span data-en="45-minute call" data-ar="مكالمة 45 دقيقة">45-minute call</span>
-          <span data-en="Free for qualified businesses" data-ar="مجاني للشركات المؤهلة">Free for qualified businesses</span>
-          <span data-en="English and Arabic" data-ar="عربي وإنجليزي">English and Arabic</span>
+        <!-- What the sales team sees every morning (demo data) -->
+        <div class="mock reveal" aria-hidden="true">
+          <div class="mock-head">
+            <strong data-en="Today" data-ar="النهارده">Today</strong>
+            <span data-en="14 people to call" data-ar="14 واحد هتكلّمهم">14 people to call</span>
+          </div>
+
+          <div class="lead">
+            <div class="lead-top">
+              <div>
+                <div class="lead-name" data-en="Ahmed, food distributor" data-ar="أحمد، توزيع أغذية">Ahmed, food distributor</div>
+                <div class="lead-meta" data-en="Facebook form, 2 minutes ago" data-ar="فورم فيسبوك، من دقيقتين">Facebook form, 2 minutes ago</div>
+              </div>
+              <span class="tag tag-new" data-en="New" data-ar="جديد">New</span>
+            </div>
+            <div class="lead-actions">
+              <span class="pill pill-call" data-en="Call" data-ar="اتصال">Call</span>
+              <span class="pill" data-en="WhatsApp" data-ar="واتساب">WhatsApp</span>
+            </div>
+          </div>
+
+          <div class="lead">
+            <div class="lead-top">
+              <div>
+                <div class="lead-name" data-en="Sara, clinic chain" data-ar="سارة، سلسلة عيادات">Sara, clinic chain</div>
+                <div class="lead-meta" data-en="Asked for a quote last week" data-ar="طلبت عرض سعر الأسبوع اللي فات">Asked for a quote last week</div>
+              </div>
+              <span class="tag tag-due" data-en="Follow-up due" data-ar="متابعة النهارده">Follow-up due</span>
+            </div>
+          </div>
+
+          <div class="lead">
+            <div class="lead-top">
+              <div>
+                <div class="lead-name" data-en="Omar, private school" data-ar="عمر، مدرسة خاصة">Omar, private school</div>
+                <div class="lead-meta" data-en="No contact for 74 days" data-ar="74 يوم من غير تواصل">No contact for 74 days</div>
+              </div>
+              <span class="tag tag-cold" data-en="Worth another try" data-ar="يستاهل محاولة تانية">Worth another try</span>
+            </div>
+          </div>
+
+          <div class="sheet">
+            <div class="sheet-title" data-en="What happened on the call?" data-ar="إيه اللي حصل في المكالمة؟">What happened on the call?</div>
+            <div class="chips">
+              <span class="chip chip-on" data-en="Send a quote" data-ar="ابعت عرض سعر">Send a quote</span>
+              <span class="chip" data-en="Call back" data-ar="كلّمه تاني">Call back</span>
+              <span class="chip" data-en="No answer" data-ar="مردّش">No answer</span>
+              <span class="chip" data-en="Not interested" data-ar="مش مهتم">Not interested</span>
+            </div>
+          </div>
+          <div class="mock-foot" data-en="Demo data" data-ar="بيانات تجريبية">Demo data</div>
         </div>
       </div>
 
-      <!-- What the sales team sees every morning (demo data) -->
-      <div class="mock reveal" aria-hidden="true">
-        <div class="mock-head">
-          <strong data-en="Today" data-ar="النهارده">Today</strong>
-          <span data-en="14 people to call" data-ar="14 واحد هتكلّمهم">14 people to call</span>
+      <div class="strip">
+        <p class="strip-title" data-en="Some of the teams we've worked with" data-ar="من الشركات اللي اشتغلنا معاها">Some of the teams we've worked with</p>
+        <div class="strip-logos">
+          <a href="https://technesummit.com/" target="_blank" rel="noopener" title="Techne Summit"><img src="/assets/logos/techne-summit.png" alt="Techne Summit" width="400" height="200"><img class="c" src="/assets/logos/color/techne-summit.png" alt="" width="400" height="200"></a>
+          <a href="https://sennoelite.com/" target="_blank" rel="noopener" title="Senno Elite"><img src="/assets/logos/senno-elite.png" alt="Senno Elite" width="400" height="200"><img class="c" src="/assets/logos/color/senno-elite.png" alt="" width="400" height="200"></a>
+          <div><img src="/assets/logos/infinity-elite.png" alt="Infinity Elite Group" width="400" height="200"><img class="c" src="/assets/logos/color/infinity-elite.png" alt="" width="400" height="200"></div>
+          <a href="https://proactclinics.com/" target="_blank" rel="noopener" title="Proact Clinics"><img src="/assets/logos/proact.png" alt="Proact Clinics" width="400" height="200"><img class="c" src="/assets/logos/color/proact.png" alt="" width="400" height="200"></a>
+          <a href="https://alexandriaangels.com/" target="_blank" rel="noopener" title="Alexandria Angels"><img src="/assets/logos/alexandria-angels.png" alt="Alexandria Angels" width="400" height="200"><img class="c" src="/assets/logos/color/alexandria-angels.png" alt="" width="400" height="200"></a>
+          <div><img src="/assets/logos/ahead-energies.png" alt="Ahead Energies" width="400" height="200"><img class="c" src="/assets/logos/color/ahead-energies.png" alt="" width="400" height="200"></div>
+          <div><img src="/assets/logos/investors-med.png" alt="Investors of the Mediterranean" width="400" height="200"><img class="c" src="/assets/logos/color/investors-med.png" alt="" width="400" height="200"></div>
+          <a href="https://cooleycomics.com/" target="_blank" rel="noopener" title="Cooley Comics"><img src="/assets/logos/cooley-comics.png" alt="Cooley Comics" width="400" height="200"><img class="c" src="/assets/logos/color/cooley-comics.png" alt="" width="400" height="200"></a>
         </div>
-
-        <div class="lead">
-          <div class="lead-top">
-            <div>
-              <div class="lead-name" data-en="Ahmed, food distributor" data-ar="أحمد، توزيع أغذية">Ahmed, food distributor</div>
-              <div class="lead-meta" data-en="Facebook form, 2 minutes ago" data-ar="فورم فيسبوك، من دقيقتين">Facebook form, 2 minutes ago</div>
-            </div>
-            <span class="tag tag-new" data-en="New" data-ar="جديد">New</span>
-          </div>
-          <div class="lead-actions">
-            <span class="pill pill-call" data-en="Call" data-ar="اتصال">Call</span>
-            <span class="pill" data-en="WhatsApp" data-ar="واتساب">WhatsApp</span>
-          </div>
-        </div>
-
-        <div class="lead">
-          <div class="lead-top">
-            <div>
-              <div class="lead-name" data-en="Sara, clinic chain" data-ar="سارة، سلسلة عيادات">Sara, clinic chain</div>
-              <div class="lead-meta" data-en="Asked for a quote last week" data-ar="طلبت عرض سعر الأسبوع اللي فات">Asked for a quote last week</div>
-            </div>
-            <span class="tag tag-due" data-en="Follow-up due" data-ar="متابعة النهارده">Follow-up due</span>
-          </div>
-        </div>
-
-        <div class="lead">
-          <div class="lead-top">
-            <div>
-              <div class="lead-name" data-en="Omar, private school" data-ar="عمر، مدرسة خاصة">Omar, private school</div>
-              <div class="lead-meta" data-en="No contact for 74 days" data-ar="74 يوم من غير تواصل">No contact for 74 days</div>
-            </div>
-            <span class="tag tag-cold" data-en="Worth another try" data-ar="يستاهل محاولة تانية">Worth another try</span>
-          </div>
-        </div>
-
-        <div class="sheet">
-          <div class="sheet-title" data-en="What happened on the call?" data-ar="إيه اللي حصل في المكالمة؟">What happened on the call?</div>
-          <div class="chips">
-            <span class="chip chip-on" data-en="Send a quote" data-ar="ابعت عرض سعر">Send a quote</span>
-            <span class="chip" data-en="Call back" data-ar="كلّمه تاني">Call back</span>
-            <span class="chip" data-en="No answer" data-ar="مردّش">No answer</span>
-            <span class="chip" data-en="Not interested" data-ar="مش مهتم">Not interested</span>
-          </div>
-        </div>
-        <div class="mock-foot" data-en="Demo data" data-ar="بيانات تجريبية">Demo data</div>
       </div>
     </div>
   </header>
@@ -446,52 +604,220 @@
     </div>
   </section>
 
+  <!-- Who it's for -->
+  <section id="fit">
+    <div class="wrap">
+      <span class="eyebrow" data-en="Who it's for" data-ar="مناسب لمين">Who it's for</span>
+      <h2 class="reveal" data-en="Built for B2B teams that already get inquiries." data-ar="معمول لشركات B2B اللي الاستفسارات بتوصلها فعلاً.">Built for B2B teams that already get inquiries.</h2>
+
+      <div class="fit">
+        <div class="card fit-yes reveal">
+          <h3 data-en="A good fit if" data-ar="مناسب ليك لو">A good fit if</h3>
+          <ul class="ticks">
+            <li data-en="You sell to other businesses: factories, distributors, clinics, schools, developers, events." data-ar="بتبيع لشركات تانية: مصانع، موزّعين، عيادات، مدارس، مطوّرين عقاريين، إيفنتات.">You sell to other businesses: factories, distributors, clinics, schools, developers, events.</li>
+            <li data-en="Inquiries reach you every week, from ads, your website or WhatsApp." data-ar="الاستفسارات بتوصلك كل أسبوع، من الإعلانات أو الموقع أو الواتساب.">Inquiries reach you every week, from ads, your website or WhatsApp.</li>
+            <li data-en="Someone on your team is meant to call them back." data-ar="فيه حد في فريقك المفروض يرجع يكلّمهم.">Someone on your team is meant to call them back.</li>
+            <li data-en="One lost deal costs you more than the system does." data-ar="صفقة واحدة ضايعة بتكلّفك أكتر من السيستم نفسه.">One lost deal costs you more than the system does.</li>
+            <li data-en="You want to see the numbers, not hear about them." data-ar="عايز تشوف الأرقام بعينك، مش تسمع عنها.">You want to see the numbers, not hear about them.</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3 data-en="Probably not a fit if" data-ar="غالباً مش مناسب لو">Probably not a fit if</h3>
+          <ul class="ticks no">
+            <li data-en="You don't get inquiries yet. Start with ads first, and we can help with that on its own." data-ar="لسه مفيش استفسارات بتوصلك. ابدأ بالإعلانات الأول، ودي نقدر نساعدك فيها لوحدها.">You don't get inquiries yet. Start with ads first, and we can help with that on its own.</li>
+            <li data-en="You sell low-priced products that customers buy straight from your website." data-ar="بتبيع منتجات سعرها قليل والعميل بيشتريها من الموقع على طول.">You sell low-priced products that customers buy straight from your website.</li>
+            <li data-en="Nobody on the team has time to make calls, and you don't plan to hire." data-ar="محدش في الفريق عنده وقت يعمل مكالمات، ومش ناوي تعيّن حد.">Nobody on the team has time to make calls, and you don't plan to hire.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- The system -->
-  <section id="system">
+  <section id="system" class="alt">
     <div class="wrap">
       <span class="eyebrow" data-en="The system" data-ar="السيستم">The system</span>
       <h2 class="reveal" data-en="One place for every lead. One list for every morning." data-ar="مكان واحد لكل الليدز. وقايمة واحدة كل يوم الصبح.">One place for every lead. One list for every morning.</h2>
       <p class="lede" data-en="A sales CRM set up around how your team already works, on their phones, in English and Arabic." data-ar="CRM مبيعات معمول على طريقة شغل فريقك، على الموبايل، بالعربي والإنجليزي.">A sales CRM set up around how your team already works, on their phones, in English and Arabic.</p>
 
-      <div class="grid-3">
-        <div class="card reveal">
-          <span class="num">01</span>
-          <h3 data-en="Every lead, in seconds" data-ar="كل ليد، في ثواني">Every lead, in seconds</h3>
-          <p data-en="Facebook lead forms, your website and your old spreadsheets feed one CRM. A new inquiry reaches your team's phones seconds after it is submitted." data-ar="فورمات فيسبوك، موقعك وشيتاتك القديمة كلهم بيصبّوا في CRM واحد. الاستفسار الجديد بيوصل موبايلات فريقك بعد ثواني من تسجيله.">Facebook lead forms, your website and your old spreadsheets feed one CRM. A new inquiry reaches your team's phones seconds after it is submitted.</p>
+      <!-- 1. Leads come in -->
+      <div class="feature">
+        <div class="reveal">
+          <div class="feature-item">
+            <span class="num">01</span>
+            <h3 data-en="Every lead, in seconds" data-ar="كل ليد، في ثواني">Every lead, in seconds</h3>
+            <p data-en="Facebook lead forms, your website and your old spreadsheets feed one CRM. A new inquiry reaches your team's phones seconds after it is submitted." data-ar="فورمات فيسبوك، موقعك وشيتاتك القديمة كلهم بيصبّوا في CRM واحد. الاستفسار الجديد بيوصل موبايلات فريقك بعد ثواني من تسجيله.">Facebook lead forms, your website and your old spreadsheets feed one CRM. A new inquiry reaches your team's phones seconds after it is submitted.</p>
+          </div>
+          <div class="feature-item">
+            <span class="num">02</span>
+            <h3 data-en="A call list every morning" data-ar="قايمة مكالمات كل يوم الصبح">A call list every morning</h3>
+            <p data-en="New inquiries, follow-ups due, and the cold leads worth another try, in order. Nobody decides who to call. They just start." data-ar="الاستفسارات الجديدة، المتابعات اللي ميعادها جه، والليدز القديمة اللي تستاهل محاولة تانية، بالترتيب. محدش بيفكّر يكلّم مين. بيبدأ على طول.">New inquiries, follow-ups due, and the cold leads worth another try, in order. Nobody decides who to call. They just start.</p>
+          </div>
         </div>
-        <div class="card reveal">
-          <span class="num">02</span>
-          <h3 data-en="A call list every morning" data-ar="قايمة مكالمات كل يوم الصبح">A call list every morning</h3>
-          <p data-en="New inquiries, follow-ups due, and the cold leads worth another try, in order. Nobody decides who to call. They just start." data-ar="الاستفسارات الجديدة، المتابعات اللي ميعادها جه، والليدز القديمة اللي تستاهل محاولة تانية، بالترتيب. محدش بيفكّر يكلّم مين. بيبدأ على طول.">New inquiries, follow-ups due, and the cold leads worth another try, in order. Nobody decides who to call. They just start.</p>
-        </div>
-        <div class="card reveal">
-          <span class="num">03</span>
-          <h3 data-en="Call, then one tap" data-ar="مكالمة، وبعدها ضغطة واحدة">Call, then one tap</h3>
-          <p data-en="Call or WhatsApp straight from the lead. When they come back to the app, one tap records what happened and sets the next step." data-ar="اتصال أو واتساب من صفحة الليد نفسها. ولما يرجع للأبلكيشن، ضغطة واحدة بتسجّل اللي حصل وبتحدّد الخطوة الجاية.">Call or WhatsApp straight from the lead. When they come back to the app, one tap records what happened and sets the next step.</p>
-        </div>
-        <div class="card reveal">
-          <span class="num">04</span>
-          <h3 data-en="Follow-ups that don't rely on memory" data-ar="متابعة مش ماشية على الذاكرة">Follow-ups that don't rely on memory</h3>
-          <p data-en="Every outcome schedules the next touch. Leads that go quiet come back onto the list instead of disappearing." data-ar="كل نتيجة مكالمة بتحدّد ميعاد التواصل الجاي. والليد اللي يسكت بيرجع على القايمة بدل ما يختفي.">Every outcome schedules the next touch. Leads that go quiet come back onto the list instead of disappearing.</p>
-        </div>
-        <div class="card reveal">
-          <span class="num">05</span>
-          <h3 data-en="Quotes tied to the lead" data-ar="عرض السعر مربوط بالليد">Quotes tied to the lead</h3>
-          <p data-en="Items, quantities and prices sit on the lead, so your pipeline is counted in money, not guesses." data-ar="الأصناف والكميات والأسعار متسجّلة على الليد، فتبقى شايف البايبلاين بالفلوس مش بالتخمين.">Items, quantities and prices sit on the lead, so your pipeline is counted in money, not guesses.</p>
-        </div>
-        <div class="card reveal">
-          <span class="num">06</span>
-          <h3 data-en="You see everything" data-ar="إنت شايف كل حاجة">You see everything</h3>
-          <p data-en="Calls made, leads priced and deals won, per person and per week, from your phone." data-ar="المكالمات اللي اتعملت، الليدز اللي اتسعّرت والصفقات اللي اتقفلت، لكل موظف ولكل أسبوع، من موبايلك.">Calls made, leads priced and deals won, per person and per week, from your phone.</p>
+        <div class="mock reveal" aria-hidden="true">
+          <div class="toast">
+            <span class="dot"></span>
+            <div>
+              <div class="toast-title" data-en="New lead, Facebook form" data-ar="ليد جديد، فورم فيسبوك">New lead, Facebook form</div>
+              <div class="toast-body" data-en="Hany, building materials, 4 seconds ago" data-ar="هاني، مواد بناء، من 4 ثواني">Hany, building materials, 4 seconds ago</div>
+            </div>
+          </div>
+          <div class="mock-head">
+            <strong data-en="All leads" data-ar="كل الليدز">All leads</strong>
+            <span data-en="One list, every source" data-ar="قايمة واحدة لكل المصادر">One list, every source</span>
+          </div>
+          <div class="lead">
+            <div class="lead-top">
+              <div>
+                <div class="lead-name" data-en="Mariam, hotel group" data-ar="مريم، مجموعة فنادق">Mariam, hotel group</div>
+                <div class="lead-meta" data-en="Today, 9:12" data-ar="النهارده، 9:12">Today, 9:12</div>
+              </div>
+              <span class="tag tag-new" data-en="Website" data-ar="الموقع">Website</span>
+            </div>
+          </div>
+          <div class="lead">
+            <div class="lead-top">
+              <div>
+                <div class="lead-name" data-en="Khaled, pharma distributor" data-ar="خالد، توزيع أدوية">Khaled, pharma distributor</div>
+                <div class="lead-meta" data-en="Yesterday, 16:40" data-ar="امبارح، 16:40">Yesterday, 16:40</div>
+              </div>
+              <span class="tag tag-new" data-en="Facebook" data-ar="فيسبوك">Facebook</span>
+            </div>
+          </div>
+          <div class="lead">
+            <div class="lead-top">
+              <div>
+                <div class="lead-name" data-en="Nour, logistics company" data-ar="نور، شركة شحن">Nour, logistics company</div>
+                <div class="lead-meta" data-en="From your 2024 sheet" data-ar="من شيت 2024 بتاعك">From your 2024 sheet</div>
+              </div>
+              <span class="tag tag-cold" data-en="Imported" data-ar="متنقل">Imported</span>
+            </div>
+          </div>
+          <div class="mock-foot" data-en="Demo data" data-ar="بيانات تجريبية">Demo data</div>
         </div>
       </div>
 
-      <div class="toolbox reveal">
-        <strong data-en="Also in the toolbox:" data-ar="وكمان بنعمل:">Also in the toolbox:</strong>
-        <span data-en="Meta ads" data-ar="إعلانات ميتا">Meta ads</span>
-        <span data-en="Websites that capture leads" data-ar="مواقع بتجيب ليدز">Websites that capture leads</span>
-        <span data-en="Outbound email" data-ar="حملات إيميل">Outbound email</span>
-        <span data-en="Automation and AI" data-ar="أتمتة و AI">Automation and AI</span>
+      <!-- 2. Calling and follow-up -->
+      <div class="feature flip">
+        <div class="reveal">
+          <div class="feature-item">
+            <span class="num">03</span>
+            <h3 data-en="Call, then one tap" data-ar="مكالمة، وبعدها ضغطة واحدة">Call, then one tap</h3>
+            <p data-en="Call or WhatsApp straight from the lead. When they come back to the app, one tap records what happened and sets the next step." data-ar="اتصال أو واتساب من صفحة الليد نفسها. ولما يرجع للأبلكيشن، ضغطة واحدة بتسجّل اللي حصل وبتحدّد الخطوة الجاية.">Call or WhatsApp straight from the lead. When they come back to the app, one tap records what happened and sets the next step.</p>
+          </div>
+          <div class="feature-item">
+            <span class="num">04</span>
+            <h3 data-en="Follow-ups that don't rely on memory" data-ar="متابعة مش ماشية على الذاكرة">Follow-ups that don't rely on memory</h3>
+            <p data-en="Every outcome schedules the next touch. Leads that go quiet come back onto the list instead of disappearing." data-ar="كل نتيجة مكالمة بتحدّد ميعاد التواصل الجاي. والليد اللي يسكت بيرجع على القايمة بدل ما يختفي.">Every outcome schedules the next touch. Leads that go quiet come back onto the list instead of disappearing.</p>
+          </div>
+        </div>
+        <div class="mock reveal" aria-hidden="true">
+          <div class="lead">
+            <div class="lead-top">
+              <div>
+                <div class="lead-name" data-en="Mariam, hotel group" data-ar="مريم، مجموعة فنادق">Mariam, hotel group</div>
+                <div class="lead-meta" data-en="Asked for a quote for 300 units" data-ar="طلبت عرض سعر لـ 300 قطعة">Asked for a quote for 300 units</div>
+              </div>
+              <span class="tag tag-due" data-en="Follow-up due" data-ar="متابعة النهارده">Follow-up due</span>
+            </div>
+            <div class="lead-actions">
+              <span class="pill pill-call" data-en="Call" data-ar="اتصال">Call</span>
+              <span class="pill" data-en="WhatsApp" data-ar="واتساب">WhatsApp</span>
+            </div>
+          </div>
+          <div class="sheet">
+            <div class="sheet-title" data-en="What happened on the call?" data-ar="إيه اللي حصل في المكالمة؟">What happened on the call?</div>
+            <div class="chips">
+              <span class="chip chip-on" data-en="Send a quote" data-ar="ابعت عرض سعر">Send a quote</span>
+              <span class="chip" data-en="Call back" data-ar="كلّمه تاني">Call back</span>
+              <span class="chip" data-en="No answer" data-ar="مردّش">No answer</span>
+            </div>
+          </div>
+          <div class="row">
+            <span data-en="Next follow-up" data-ar="المتابعة الجاية">Next follow-up</span>
+            <strong data-en="Thursday, 11:00" data-ar="الخميس، 11:00">Thursday, 11:00</strong>
+          </div>
+          <div class="hist">
+            <div data-en="Tue: called, asked for prices" data-ar="التلات: اتكلّمت، طلبت الأسعار">Tue: called, asked for prices</div>
+            <div data-en="Mon: no answer, retry set for Tue" data-ar="الاتنين: مردّتش، اتحدّد ميعاد تاني التلات">Mon: no answer, retry set for Tue</div>
+          </div>
+          <div class="mock-foot" data-en="Demo data" data-ar="بيانات تجريبية">Demo data</div>
+        </div>
+      </div>
+
+      <!-- 3. Quotes and the owner's view -->
+      <div class="feature">
+        <div class="reveal">
+          <div class="feature-item">
+            <span class="num">05</span>
+            <h3 data-en="Quotes tied to the lead" data-ar="عرض السعر مربوط بالليد">Quotes tied to the lead</h3>
+            <p data-en="Items, quantities and prices sit on the lead, so your pipeline is counted in money, not guesses." data-ar="الأصناف والكميات والأسعار متسجّلة على الليد، فتبقى شايف البايبلاين بالفلوس مش بالتخمين.">Items, quantities and prices sit on the lead, so your pipeline is counted in money, not guesses.</p>
+          </div>
+          <div class="feature-item">
+            <span class="num">06</span>
+            <h3 data-en="You see everything" data-ar="إنت شايف كل حاجة">You see everything</h3>
+            <p data-en="Calls made, leads priced and deals won, per person and per week, from your phone." data-ar="المكالمات اللي اتعملت، الليدز اللي اتسعّرت والصفقات اللي اتقفلت، لكل موظف ولكل أسبوع، من موبايلك.">Calls made, leads priced and deals won, per person and per week, from your phone.</p>
+          </div>
+        </div>
+        <div class="mock reveal" aria-hidden="true">
+          <div class="mock-head">
+            <strong data-en="This week" data-ar="الأسبوع ده">This week</strong>
+            <span data-en="Owner view" data-ar="شاشة صاحب الشركة">Owner view</span>
+          </div>
+          <div class="stats3">
+            <div class="stat"><b>212</b><span data-en="calls made" data-ar="مكالمة">calls made</span></div>
+            <div class="stat"><b>38</b><span data-en="quotes sent" data-ar="عرض سعر">quotes sent</span></div>
+            <div class="stat"><b>1.4M</b><span data-en="EGP in quotes" data-ar="جنيه عروض أسعار">EGP in quotes</span></div>
+          </div>
+          <div class="bars">
+            <div class="bars-title" data-en="Calls per person" data-ar="المكالمات لكل موظف">Calls per person</div>
+            <div class="bar-row"><span data-en="Mona" data-ar="منى">Mona</span><div class="bar"><i style="width: 100%"></i></div><span>84</span></div>
+            <div class="bar-row"><span data-en="Karim" data-ar="كريم">Karim</span><div class="bar"><i style="width: 85%"></i></div><span>71</span></div>
+            <div class="bar-row"><span data-en="Youssef" data-ar="يوسف">Youssef</span><div class="bar"><i style="width: 68%"></i></div><span>57</span></div>
+          </div>
+          <div class="row">
+            <span data-en="Quote for Mariam, 3 items" data-ar="عرض سعر مريم، 3 أصناف">Quote for Mariam, 3 items</span>
+            <strong data-en="EGP 186,000" data-ar="186,000 جنيه">EGP 186,000</strong>
+          </div>
+          <div class="mock-foot" data-en="Demo data" data-ar="بيانات تجريبية">Demo data</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- What else we do -->
+  <section id="services">
+    <div class="wrap">
+      <span class="eyebrow" data-en="What else we do" data-ar="وكمان بنعمل">What else we do</span>
+      <h2 class="reveal" data-en="The system closes the leads. We can bring them in too." data-ar="السيستم بيحوّل الليدز لمبيعات. وكمان نقدر نجيبلك الليدز نفسها.">The system closes the leads. We can bring them in too.</h2>
+      <p class="lede" data-en="Everything we build feeds the same CRM, so every lead it brings in gets called." data-ar="كل حاجة بنبنيها بتصبّ في نفس الـ CRM، فكل ليد بتجيبه بيتكلّم.">Everything we build feeds the same CRM, so every lead it brings in gets called.</p>
+
+      <div class="svc">
+        <div class="card svc-card reveal">
+          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></span>
+          <h3 data-en="Websites" data-ar="مواقع إلكترونية">Websites</h3>
+          <p data-en="Fast sites in English, Arabic or both, with forms that drop straight into your CRM, so no inquiry waits in an inbox." data-ar="مواقع سريعة بالعربي أو الإنجليزي أو الاتنين، فورماتها بتصبّ في الـ CRM على طول، فمفيش استفسار يستنى في الإيميل.">Fast sites in English, Arabic or both, with forms that drop straight into your CRM, so no inquiry waits in an inbox.</p>
+          <p class="for"><span data-en="Done for" data-ar="عملناها لـ">Done for</span> Proact Clinics, Pr Ankh, Micro Era Power, Daffodil Project, RocGrowth</p>
+        </div>
+        <div class="card svc-card reveal">
+          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10v4a1 1 0 0 0 1 1h3l6 4V5L7 9H4a1 1 0 0 0-1 1z"/><path d="M17 8.5a5 5 0 0 1 0 7M19.5 6a8.5 8.5 0 0 1 0 12"/></svg></span>
+          <h3 data-en="Meta ads and marketing" data-ar="إعلانات ميتا وتسويق">Meta ads and marketing</h3>
+          <p data-en="Campaigns, funnels and lead forms, with reporting you can read. With the CRM in place, you see which campaign brought the deals, not just the clicks." data-ar="حملات، فانلز وفورمات ليدز، وتقارير مفهومة. ومع الـ CRM، بتشوف أنهي حملة جابت الصفقات، مش بس الكليكات.">Campaigns, funnels and lead forms, with reporting you can read. With the CRM in place, you see which campaign brought the deals, not just the clicks.</p>
+          <p class="for"><span data-en="Done for" data-ar="عملناها لـ">Done for</span> Techne Summit, Senno Elite, Infinity Elite Group, Investors of the Mediterranean</p>
+        </div>
+        <div class="card svc-card reveal">
+          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
+          <h3 data-en="AI and automation" data-ar="AI وأتمتة">AI and automation</h3>
+          <p data-en="Tools that take the repetitive work off your team: routing leads, follow-up messages, reports and internal apps." data-ar="أدوات بتشيل الشغل المتكرر من على فريقك: توزيع الليدز، رسايل المتابعة، التقارير والأبلكيشنز الداخلية.">Tools that take the repetitive work off your team: routing leads, follow-up messages, reports and internal apps.</p>
+          <p class="for"><span data-en="Done for" data-ar="عملناها لـ">Done for</span> Cooley Comics, RockeToday, Techne Summit, Investors of the Mediterranean</p>
+        </div>
+        <div class="card svc-card reveal">
+          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3V9z"/></svg></span>
+          <h3 data-en="Video and content" data-ar="فيديو ومحتوى">Video and content</h3>
+          <p data-en="Promo films, explainer videos and short ads in English or Egyptian Arabic, made to run in your campaigns." data-ar="أفلام ترويجية، فيديوهات شرح وإعلانات قصيرة بالإنجليزي أو بالمصري، معمولة عشان تشتغل في حملاتك.">Promo films, explainer videos and short ads in English or Egyptian Arabic, made to run in your campaigns.</p>
+          <p class="for"><span data-en="Done for" data-ar="عملناها لـ">Done for</span> Senno Elite, Cooley Comics</p>
+        </div>
       </div>
     </div>
   </section>
@@ -522,11 +848,63 @@
     </div>
   </section>
 
+  <!-- Pricing. Values marked .tbd are placeholders: fill them in and drop the class before publishing. -->
+  <section id="pricing">
+    <div class="wrap">
+      <span class="eyebrow" data-en="Pricing" data-ar="الأسعار">Pricing</span>
+      <h2 class="reveal" data-en="Clear steps. Clear prices." data-ar="خطوات واضحة. وأسعار واضحة.">Clear steps. Clear prices.</h2>
+      <p class="lede" data-en="You know what you'll pay and when it will be live before anything starts." data-ar="بتعرف هتدفع كام وهيشتغل إمتى قبل ما أي حاجة تبدأ.">You know what you'll pay and when it will be live before anything starts.</p>
+
+      <div class="grid-3">
+        <div class="card price-card reveal">
+          <span class="num">01</span>
+          <span class="price-label" data-en="Audit" data-ar="الفحص">Audit</span>
+          <div class="price" data-en="Free" data-ar="مجاناً">Free</div>
+          <span class="price-when" data-en="45-minute video call" data-ar="مكالمة فيديو 45 دقيقة">45-minute video call</span>
+          <ul class="ticks">
+            <li data-en="A map of where your inquiries come in and where they stall" data-ar="خريطة الاستفسارات بتدخل منين وبتقف فين">A map of where your inquiries come in and where they stall</li>
+            <li data-en="Your top three leaks, in order" data-ar="أكبر 3 تسريبات عندك، بالترتيب">Your top three leaks, in order</li>
+            <li data-en="Yours to keep, whether we work together or not" data-ar="بتاعتك، سواء اشتغلنا مع بعض أو لأ">Yours to keep, whether we work together or not</li>
+          </ul>
+        </div>
+        <div class="card price-card featured reveal">
+          <span class="num">02</span>
+          <span class="price-label" data-en="Build, one-time setup" data-ar="البناء، تجهيز مرة واحدة">Build, one-time setup</span>
+          <div class="price tbd" data-en="From EGP [X]" data-ar="من [X] جنيه">From EGP [X]</div>
+          <span class="price-when tbd" data-en="Live in [2 to 3] weeks" data-ar="شغّال خلال [2 لـ 3] أسابيع">Live in [2 to 3] weeks</span>
+          <ul class="ticks">
+            <li data-en="Your CRM set up for your team, in English and Arabic" data-ar="الـ CRM متجهّز لفريقك، بالعربي والإنجليزي">Your CRM set up for your team, in English and Arabic</li>
+            <li data-en="Facebook lead forms and your website connected" data-ar="فورمات فيسبوك وموقعك مربوطين">Facebook lead forms and your website connected</li>
+            <li data-en="Your old leads imported, cleaned and de-duplicated" data-ar="الليدز القديمة متنقلة ومتنضّفة ومن غير تكرار">Your old leads imported, cleaned and de-duplicated</li>
+            <li data-en="Your team trained on their own phones" data-ar="تدريب فريقك على موبايلاتهم">Your team trained on their own phones</li>
+          </ul>
+        </div>
+        <div class="card price-card reveal">
+          <span class="num">03</span>
+          <span class="price-label" data-en="Run, monthly" data-ar="التشغيل، شهري">Run, monthly</span>
+          <div class="price tbd" data-en="EGP [Y] / month" data-ar="[Y] جنيه / شهر">EGP [Y] / month</div>
+          <span class="price-when" data-en="Starts once you're live" data-ar="بيبدأ أول ما السيستم يشتغل">Starts once you're live</span>
+          <ul class="ticks">
+            <li data-en="Regular numbers review with you" data-ar="مراجعة دورية للأرقام معاك">Regular numbers review with you</li>
+            <li data-en="Fixes and changes when your team needs them" data-ar="تعديلات وتصليحات وقت ما فريقك يحتاجها">Fixes and changes when your team needs them</li>
+            <li data-en="New pieces added as you grow" data-ar="إضافات جديدة مع نمو شغلك">New pieces added as you grow</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="promise reveal">
+        <b aria-hidden="true">&#10003;</b>
+        <p class="tbd" data-en="If your team isn't using it every day 30 days after launch, we fix it at no extra cost." data-ar="لو فريقك مش بيستخدمه كل يوم بعد 30 يوم من التشغيل، بنظبطه من غير أي تكلفة إضافية.">If your team isn't using it every day 30 days after launch, we fix it at no extra cost.</p>
+      </div>
+      <p class="note" data-en="Websites, ads and video are quoted per project, after a short call about what you need." data-ar="المواقع والإعلانات والفيديو بتتسعّر حسب كل مشروع، بعد مكالمة قصيرة عن اللي محتاجه.">Websites, ads and video are quoted per project, after a short call about what you need.</p>
+    </div>
+  </section>
+
   <!-- Case study -->
-  <section id="case-study">
+  <section id="case-study" class="alt">
     <div class="wrap case">
       <div class="case-img reveal">
-        <img src="assets/img/techne.jpg" alt="Techne Summit 2025" loading="lazy" width="1600" height="893">
+        <img src="/assets/img/techne.jpg" alt="Techne Summit 2025" loading="lazy" width="1600" height="893">
         <div class="case-stats">
           <div>
             <div class="big">55,000+</div>
@@ -551,36 +929,36 @@
   </section>
 
   <!-- Clients -->
-  <section id="clients" class="alt">
+  <section id="clients">
     <div class="wrap">
       <span class="eyebrow" data-en="Clients" data-ar="عملاءنا">Clients</span>
-      <h2 class="reveal" data-en="Companies we've worked with" data-ar="شركات اشتغلنا معاها">Companies we've worked with</h2>
+      <h2 class="reveal" data-en="Companies we've worked with, and what we did" data-ar="شركات اشتغلنا معاها، وعملنالها إيه">Companies we've worked with, and what we did</h2>
 
       <div class="clients">
-        <div class="client"><div class="logo-tile"><img src="assets/clients/aheadenergieslogo.jpg" alt="" loading="lazy"></div><h3>Ahead Energies</h3><p data-en="Energy" data-ar="طاقة">Energy</p></div>
-        <div class="client"><div class="logo-tile"><img src="assets/clients/alexandriaangelslogo.jpg" alt="" loading="lazy"></div><h3>Alexandria Angels</h3><p data-en="Investment community" data-ar="مجتمع استثمار">Investment community</p></div>
-        <div class="client"><div class="logo-tile"><img src="assets/clients/blackdogcomunicationlogo.png" alt="" loading="lazy"></div><h3>Black Dog Communication</h3><p data-en="Telecommunications" data-ar="اتصالات">Telecommunications</p></div>
-        <div class="client"><div class="logo-tile"><img src="assets/clients/cooleycomicslogo.png" alt="" loading="lazy"></div><h3>Cooley Comics</h3><p data-en="Education and comics" data-ar="تعليم وكوميكس">Education and comics</p></div>
-        <div class="client"><div class="logo-tile"><img src="assets/img/daffodilprojectlogo.png" alt="" loading="lazy"></div><h3>Daffodil Project</h3><p data-en="Charity" data-ar="عمل خيري">Charity</p></div>
-        <div class="client"><div class="logo-tile"><img src="assets/img/infinityelitegroup.png" alt="" loading="lazy"></div><h3>Infinity Elite Group</h3><p data-en="Real estate and construction" data-ar="عقارات ومقاولات">Real estate and construction</p></div>
-        <div class="client"><div class="logo-tile"><img src="assets/clients/investorsofthemediterraneanlogo.jpg" alt="" loading="lazy"></div><h3>Investors of the Mediterranean</h3><p data-en="Investment community" data-ar="مجتمع استثمار">Investment community</p></div>
-        <div class="client"><div class="logo-tile text">Kaf Market</div><h3>Kaf Market</h3><p data-en="E-commerce" data-ar="تجارة إلكترونية">E-commerce</p></div>
-        <div class="client"><div class="logo-tile"><img src="assets/img/microerapowerlogo.png" alt="" loading="lazy"></div><h3>Micro Era Power</h3><p data-en="Energy" data-ar="طاقة">Energy</p></div>
-        <div class="client"><div class="logo-tile"><img src="assets/clients/ozworksgrouplogo.png" alt="" loading="lazy"></div><h3>Ozworks</h3><p data-en="Wealth consulting" data-ar="استشارات ثروات">Wealth consulting</p></div>
-        <div class="client"><div class="logo-tile"><img src="assets/clients/prankhlogo.jpg" alt="" loading="lazy"></div><h3>Pr Ankh</h3><p data-en="Real estate" data-ar="عقارات">Real estate</p></div>
-        <div class="client"><div class="logo-tile"><img src="assets/img/proactlogo.png" alt="" loading="lazy"></div><h3>Proact Clinics</h3><p data-en="Health" data-ar="صحة">Health</p></div>
-        <div class="client"><div class="logo-tile"><img src="assets/clients/rocgrowth-logo-2x.png" alt="" loading="lazy"></div><h3>RocGrowth</h3><p data-en="Community" data-ar="مجتمع أعمال">Community</p></div>
-        <div class="client"><div class="logo-tile"><img src="assets/img/rocketodaylogo.png" alt="" loading="lazy"></div><h3>RockeToday</h3><p data-en="Marketing" data-ar="تسويق">Marketing</p></div>
-        <div class="client"><div class="logo-tile"><img src="assets/clients/sennoelitelogo.png" alt="" loading="lazy"></div><h3>Senno Elite</h3><p data-en="Uniforms and apparel" data-ar="يونيفورم وملابس">Uniforms and apparel</p></div>
-        <div class="client"><div class="logo-tile dark"><img src="assets/img/sestosynergylogo.png" alt="" loading="lazy"></div><h3>Sesto Synergy</h3><p data-en="Jewelry" data-ar="مجوهرات">Jewelry</p></div>
-        <div class="client"><div class="logo-tile"><img src="assets/clients/technesummitlogo.jpg" alt="" loading="lazy"></div><h3>Techne Summit</h3><p data-en="Tech summit" data-ar="قمة تكنولوجيا">Tech summit</p></div>
-        <div class="client"><div class="logo-tile"><img src="assets/clients/troyconsultinglogo.png" alt="" loading="lazy"></div><h3>Troy Consulting</h3><p data-en="Software" data-ar="برمجيات">Software</p></div>
+        <div class="client"><div class="logo-tile"><img src="/assets/logos/ahead-energies.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/ahead-energies.png" alt="" loading="lazy" width="400" height="200"></div><h3>Ahead Energies</h3><p data-en="Energy" data-ar="طاقة">Energy</p><p class="scope" data-en="Website" data-ar="موقع إلكتروني">Website</p></div>
+        <a class="client" href="https://alexandriaangels.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/alexandria-angels.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/alexandria-angels.png" alt="" loading="lazy" width="400" height="200"></div><h3>Alexandria Angels</h3><p data-en="Investment community" data-ar="مجتمع استثمار">Investment community</p><p class="scope" data-en="Growth consulting, website" data-ar="استشارات نمو، موقع">Growth consulting, website</p></a>
+        <a class="client" href="https://blackdogcommunications.us.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/black-dog.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/black-dog.png" alt="" loading="lazy" width="400" height="200"></div><h3>Black Dog Communication</h3><p data-en="Telecommunications" data-ar="اتصالات">Telecommunications</p><p class="scope" data-en="Consulting" data-ar="استشارات">Consulting</p></a>
+        <a class="client" href="https://cooleycomics.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/cooley-comics.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/cooley-comics.png" alt="" loading="lazy" width="400" height="200"></div><h3>Cooley Comics</h3><p data-en="Education and comics" data-ar="تعليم وكوميكس">Education and comics</p><p class="scope" data-en="AI, marketing, automation" data-ar="AI، تسويق، أتمتة">AI, marketing, automation</p></a>
+        <a class="client" href="https://daffodilprojectroc.org/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/daffodil-project.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/daffodil-project.png" alt="" loading="lazy" width="400" height="200"></div><h3>Daffodil Project</h3><p data-en="Charity" data-ar="عمل خيري">Charity</p><p class="scope" data-en="Website" data-ar="موقع إلكتروني">Website</p></a>
+        <div class="client"><div class="logo-tile"><img src="/assets/logos/infinity-elite.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/infinity-elite.png" alt="" loading="lazy" width="400" height="200"></div><h3>Infinity Elite Group</h3><p data-en="Real estate and construction" data-ar="عقارات ومقاولات">Real estate and construction</p><p class="scope" data-en="Marketing, website" data-ar="تسويق، موقع">Marketing, website</p></div>
+        <div class="client"><div class="logo-tile"><img src="/assets/logos/investors-med.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/investors-med.png" alt="" loading="lazy" width="400" height="200"></div><h3>Investors of the Mediterranean</h3><p data-en="Investment community" data-ar="مجتمع استثمار">Investment community</p><p class="scope" data-en="Marketing, AI, automation" data-ar="تسويق، AI، أتمتة">Marketing, AI, automation</p></div>
+        <a class="client" href="https://kafmarket.com/" target="_blank" rel="noopener"><div class="logo-tile text">Kaf Market</div><h3>Kaf Market</h3><p data-en="E-commerce" data-ar="تجارة إلكترونية">E-commerce</p><p class="scope" data-en="Full partnership" data-ar="شراكة كاملة">Full partnership</p></a>
+        <a class="client" href="https://www.microerapower.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/micro-era-power.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/micro-era-power.png" alt="" loading="lazy" width="400" height="200"></div><h3>Micro Era Power</h3><p data-en="Energy" data-ar="طاقة">Energy</p><p class="scope" data-en="Website" data-ar="موقع إلكتروني">Website</p></a>
+        <div class="client"><div class="logo-tile"><img src="/assets/logos/ozworks.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/ozworks.png" alt="" loading="lazy" width="400" height="200"></div><h3>Ozworks</h3><p data-en="Wealth consulting" data-ar="استشارات ثروات">Wealth consulting</p><p class="scope" data-en="Consulting, marketing" data-ar="استشارات، تسويق">Consulting, marketing</p></div>
+        <div class="client"><div class="logo-tile"><img src="/assets/logos/pr-ankh.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/pr-ankh.png" alt="" loading="lazy" width="400" height="200"></div><h3>Pr Ankh</h3><p data-en="Real estate" data-ar="عقارات">Real estate</p><p class="scope" data-en="Website, marketing" data-ar="موقع، تسويق">Website, marketing</p></div>
+        <a class="client" href="https://proactclinics.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/proact.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/proact.png" alt="" loading="lazy" width="400" height="200"></div><h3>Proact Clinics</h3><p data-en="Health" data-ar="صحة">Health</p><p class="scope" data-en="Website, marketing consulting" data-ar="موقع، استشارات تسويق">Website, marketing consulting</p></a>
+        <a class="client" href="https://rocgrowth.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/rocgrowth.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/rocgrowth.png" alt="" loading="lazy" width="400" height="200"></div><h3>RocGrowth</h3><p data-en="Community" data-ar="مجتمع أعمال">Community</p><p class="scope" data-en="Website, email marketing" data-ar="موقع، إيميل ماركتنج">Website, email marketing</p></a>
+        <a class="client" href="https://rocketoday.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/rocketoday.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/rocketoday.png" alt="" loading="lazy" width="400" height="200"></div><h3>RockeToday</h3><p data-en="Marketing" data-ar="تسويق">Marketing</p><p class="scope" data-en="AI and automation, website" data-ar="AI وأتمتة، موقع">AI and automation, website</p></a>
+        <a class="client" href="https://sennoelite.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/senno-elite.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/senno-elite.png" alt="" loading="lazy" width="400" height="200"></div><h3>Senno Elite</h3><p data-en="Uniforms and apparel" data-ar="يونيفورم وملابس">Uniforms and apparel</p><p class="scope" data-en="Full partnership: marketing, AI, website" data-ar="شراكة كاملة: تسويق، AI، موقع">Full partnership: marketing, AI, website</p></a>
+        <a class="client" href="https://sestosynergy.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/sesto-synergy.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/sesto-synergy.png" alt="" loading="lazy" width="400" height="200"></div><h3>Sesto Synergy</h3><p data-en="Jewelry" data-ar="مجوهرات">Jewelry</p><p class="scope" data-en="Marketing consulting" data-ar="استشارات تسويق">Marketing consulting</p></a>
+        <a class="client" href="https://technesummit.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/techne-summit.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/techne-summit.png" alt="" loading="lazy" width="400" height="200"></div><h3>Techne Summit</h3><p data-en="Tech summit" data-ar="قمة تكنولوجيا">Tech summit</p><p class="scope" data-en="Marketing, AI, automation" data-ar="تسويق، AI، أتمتة">Marketing, AI, automation</p></a>
+        <a class="client" href="https://www.troyweb.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/troy-consulting.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/troy-consulting.png" alt="" loading="lazy" width="400" height="200"></div><h3>Troy Consulting</h3><p data-en="Software" data-ar="برمجيات">Software</p><p class="scope" data-en="Marketing consulting" data-ar="استشارات تسويق">Marketing consulting</p></a>
       </div>
     </div>
   </section>
 
   <!-- About -->
-  <section id="about">
+  <section id="about" class="alt">
     <div class="wrap about">
       <div class="reveal">
         <span class="eyebrow" data-en="About" data-ar="عننا">About</span>
@@ -591,7 +969,50 @@
         <p data-en="Built and scaled multiple 7-figure operations. The systems we install are ones we run in our own companies first. If it isn't efficient, it doesn't stay." data-ar="بنى وكبّر أكتر من بيزنس وصل لـ 7 أرقام. الأنظمة اللي بنركّبها بنشغّلها في شركاتنا الأول. ولو مش فعّالة، مش بتفضل.">Built and scaled multiple 7-figure operations. The systems we install are ones we run in our own companies first. If it isn't efficient, it doesn't stay.</p>
       </div>
       <div class="about-img reveal">
-        <img src="assets/img/adham.jpg" alt="Adham Mashaly" loading="lazy" width="1400" height="781">
+        <img src="/assets/img/adham.jpg" alt="Adham Mashaly" loading="lazy" width="1400" height="781">
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <span class="eyebrow" data-en="FAQ" data-ar="أسئلة">FAQ</span>
+      <h2 class="reveal" data-en="Questions we get on every audit." data-ar="أسئلة بتتسأل في كل فحص.">Questions we get on every audit.</h2>
+
+      <div class="faq reveal">
+        <details>
+          <summary data-en="We already have a CRM. Why would we need you?" data-ar="عندنا CRM أصلاً. محتاجينكم ليه؟">We already have a CRM. Why would we need you?</summary>
+          <p data-en="Most teams we meet have one. The question is whether anyone opens it every morning. In the audit we look at what you have. If your team uses it, we work on what feeds it and the follow-up around it. If nobody opens it, we set up one they will." data-ar="أغلب الفرق اللي بنقابلها عندها واحد. السؤال: حد بيفتحه كل يوم الصبح؟ في الفحص بنبص على اللي عندك. لو فريقك بيستخدمه، بنشتغل على اللي بيغذّيه وعلى المتابعة حواليه. ولو محدش بيفتحه، بنجهّز واحد هيستخدموه فعلاً.">Most teams we meet have one. The question is whether anyone opens it every morning. In the audit we look at what you have. If your team uses it, we work on what feeds it and the follow-up around it. If nobody opens it, we set up one they will.</p>
+        </details>
+        <details>
+          <summary data-en="My sales team won't use another tool." data-ar="فريق المبيعات مش هيستخدم أداة جديدة.">My sales team won't use another tool.</summary>
+          <p data-en="It's built around their day, on their phone: open it, see who to call, call, one tap to log it. There are no reports to type. And you can see who is using it, so it doesn't quietly get abandoned." data-ar="معمول على يومهم وعلى موبايلهم: يفتح، يشوف يكلّم مين، يتصل، وضغطة واحدة يسجّل. مفيش تقارير يكتبها. وإنت شايف مين بيستخدمه، فمش هيتساب ويتنسى.">It's built around their day, on their phone: open it, see who to call, call, one tap to log it. There are no reports to type. And you can see who is using it, so it doesn't quietly get abandoned.</p>
+        </details>
+        <details>
+          <summary data-en="Do you only build CRMs?" data-ar="إنتوا بتعملوا CRM بس؟">Do you only build CRMs?</summary>
+          <p data-en="No. We also build websites, run Meta ads, make video and set up automation. The CRM is usually where we start, because it makes everything else measurable: you can see which website form or campaign turned into a deal." data-ar="لأ. بنعمل كمان مواقع، بنشغّل إعلانات ميتا، بنعمل فيديو وبنجهّز أتمتة. بس غالباً بنبدأ بالـ CRM، عشان هو اللي بيخلّي كل حاجة تانية تتقاس: بتشوف أنهي فورم أو حملة اتحوّلت لصفقة.">No. We also build websites, run Meta ads, make video and set up automation. The CRM is usually where we start, because it makes everything else measurable: you can see which website form or campaign turned into a deal.</p>
+        </details>
+        <details>
+          <summary data-en="How long until it's running?" data-ar="هياخد قد إيه لحد ما يشتغل؟">How long until it's running?</summary>
+          <p class="tbd" data-en="About [2 to 3] weeks from the audit to your team's first morning list. Your old leads are imported, so they start with a full list on day one." data-ar="حوالي [2 لـ 3] أسابيع من الفحص لحد أول قايمة صباحية لفريقك. والليدز القديمة بتتنقل، فبيبدأوا بقايمة مليانة من أول يوم.">About [2 to 3] weeks from the audit to your team's first morning list. Your old leads are imported, so they start with a full list on day one.</p>
+        </details>
+        <details>
+          <summary data-en="What do you need from us?" data-ar="محتاجين مننا إيه؟">What do you need from us?</summary>
+          <p data-en="Access to your lead sources, such as your Facebook page and website forms, the lead sheets you already have, your price list for quotes, and an hour with whoever runs sales." data-ar="صلاحية على مصادر الليدز زي صفحة الفيسبوك وفورمات الموقع، شيتات الليدز اللي عندك، قايمة أسعارك عشان عروض الأسعار، وساعة مع المسؤول عن المبيعات.">Access to your lead sources, such as your Facebook page and website forms, the lead sheets you already have, your price list for quotes, and an hour with whoever runs sales.</p>
+        </details>
+        <details>
+          <summary data-en="Is our data safe?" data-ar="بياناتنا في أمان؟">Is our data safe?</summary>
+          <p data-en="Your leads stay yours. Each client gets their own system, only your team can sign in, and you can have a full export of your data whenever you ask." data-ar="الليدز بتاعتك وتفضل بتاعتك. كل عميل ليه سيستم لوحده، محدش يقدر يدخل غير فريقك، وتقدر تاخد نسخة كاملة من بياناتك وقت ما تطلب.">Your leads stay yours. Each client gets their own system, only your team can sign in, and you can have a full export of your data whenever you ask.</p>
+        </details>
+        <details>
+          <summary data-en="Do you work outside Egypt?" data-ar="بتشتغلوا برّه مصر؟">Do you work outside Egypt?</summary>
+          <p data-en="Yes. We work in English and Arabic over video calls, and we've worked with teams in Egypt and the US." data-ar="أيوه. بنشتغل بالعربي والإنجليزي على مكالمات فيديو، واشتغلنا مع فرق في مصر وأمريكا.">Yes. We work in English and Arabic over video calls, and we've worked with teams in Egypt and the US.</p>
+        </details>
+        <details>
+          <summary data-en="What happens after the audit?" data-ar="إيه اللي بيحصل بعد الفحص؟">What happens after the audit?</summary>
+          <p data-en="You keep the map and your top three leaks either way. If it's a fit, we send a fixed quote for the build. There's no pressure to sign." data-ar="الخريطة وأكبر 3 تسريبات بيفضلوا معاك في كل الأحوال. ولو مناسب، بنبعتلك عرض سعر ثابت للبناء. ومن غير أي ضغط إنك تمضي.">You keep the map and your top three leaks either way. If it's a fit, we send a fixed quote for the build. There's no pressure to sign.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -616,13 +1037,19 @@
   <footer>
     <div class="wrap foot">
       <a href="#top" class="brand">
-        <img src="assets/meshmesh-logo.png" alt="" width="36" height="36" loading="lazy">
+        <img src="/assets/meshmesh-logo.png" alt="" width="36" height="36" loading="lazy">
         <span>MeshMesh Consulting</span>
       </a>
       <a href="mailto:adham@meshmeshconsulting.com">adham@meshmeshconsulting.com</a>
       <span>&copy; 2026 MeshMesh Consulting</span>
     </div>
   </footer>
+
+  <!-- Sticky booking bar on phones, shown once the hero has scrolled away -->
+  <div id="mbar" class="mbar">
+    <span class="mbar-note" data-en="45 min, free" data-ar="45 دقيقة، مجاناً">45 min, free</span>
+    <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' data-en="Book the free audit" data-ar="احجز الفحص المجاني">Book the free audit</a>
+  </div>
 
   <!-- Cal element-click embed code begins -->
   <script type="text/javascript">
@@ -635,27 +1062,10 @@
   <script>
     document.documentElement.classList.add('js');
 
-    // Language toggle
-    const html = document.documentElement;
-    const langToggle = document.getElementById('langToggle');
-
-    function setLang(lang) {
-      html.lang = lang;
-      html.dir = lang === 'ar' ? 'rtl' : 'ltr';
-      langToggle.textContent = lang === 'ar' ? 'English' : 'عربي';
-      document.querySelectorAll('[data-en][data-ar]').forEach(el => {
-        el.textContent = el.getAttribute('data-' + lang);
-      });
-      try { localStorage.setItem('meshmesh-lang', lang); } catch (e) {}
+    // Old links used ?lang=ar; the Arabic page now lives at /ar/
+    if (document.documentElement.lang === 'en' && new URLSearchParams(location.search).get('lang') === 'ar') {
+      location.replace('/ar/' + location.hash);
     }
-
-    let startLang = new URLSearchParams(location.search).get('lang');
-    if (!startLang) {
-      try { startLang = localStorage.getItem('meshmesh-lang'); } catch (e) {}
-    }
-    if (startLang === 'ar') setLang('ar');
-
-    langToggle.addEventListener('click', () => setLang(html.lang === 'ar' ? 'en' : 'ar'));
 
     // Mobile menu
     const burger = document.getElementById('burger');
@@ -669,6 +1079,16 @@
         burger.setAttribute('aria-expanded', 'false');
       });
     });
+
+    // Sticky booking bar: show after the hero, hide again at the final call to action
+    const mbar = document.getElementById('mbar');
+    const seen = { hero: true, cta: false };
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { seen[entry.target.id === 'top' ? 'hero' : 'cta'] = entry.isIntersecting; });
+      mbar.classList.toggle('show', !seen.hero && !seen.cta);
+    });
+    barObserver.observe(document.getElementById('top'));
+    barObserver.observe(document.getElementById('audit'));
 
     // Scroll reveal
     const revealObserver = new IntersectionObserver((entries) => {
