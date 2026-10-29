@@ -87,9 +87,6 @@
     .lede { color: var(--muted); font-size: 18px; max-width: 640px; margin-top: 16px; }
     .accent { color: var(--orange); }
 
-    /* Placeholder values still to be confirmed. Remove the class once filled in. */
-    .tbd { outline: 2px dashed #F5C542; outline-offset: 2px; background: rgba(245, 197, 66, 0.14); border-radius: 4px; }
-
     /* Buttons */
     .btn {
       display: inline-flex;
@@ -325,20 +322,10 @@
     .price-card.featured { border-color: rgba(255, 87, 34, 0.5); }
     .price-label { color: var(--muted); font-size: 14px; font-weight: 600; }
     .price { font-size: 32px; font-weight: 900; line-height: 1.2; margin: 6px 0 4px; letter-spacing: -0.01em; }
+    .price-quote { font-size: 24px; }
     .price-when { color: var(--leaf); font-size: 14px; font-weight: 600; }
     .price-card .ticks { margin-top: 22px; gap: 10px; }
     .price-card .ticks li { font-size: 15px; }
-    .promise {
-      margin-top: 18px;
-      display: flex; gap: 14px; align-items: flex-start;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 20px 24px;
-      background: var(--panel);
-    }
-    .alt .promise { background: var(--dark); }
-    .promise b { color: var(--leaf); font-size: 20px; line-height: 1.4; }
-    .promise p { color: #D4D4D4; font-size: 16px; }
 
     /* Case study */
     .case { display: grid; gap: 40px; align-items: center; grid-template-columns: minmax(0, 1fr); }
@@ -848,11 +835,11 @@
     </div>
   </section>
 
-  <!-- Pricing. Values marked .tbd are placeholders: fill them in and drop the class before publishing. -->
+  <!-- Pricing: amounts hidden for now, quoted after the audit -->
   <section id="pricing">
     <div class="wrap">
       <span class="eyebrow" data-en="Pricing" data-ar="الأسعار">الأسعار</span>
-      <h2 class="reveal" data-en="Clear steps. Clear prices." data-ar="خطوات واضحة. وأسعار واضحة.">خطوات واضحة. وأسعار واضحة.</h2>
+      <h2 class="reveal" data-en="Clear steps, quoted up front." data-ar="خطوات واضحة، وسعر بتعرفه من الأول.">خطوات واضحة، وسعر بتعرفه من الأول.</h2>
       <p class="lede" data-en="You know what you'll pay and when it will be live before anything starts." data-ar="بتعرف هتدفع كام وهيشتغل إمتى قبل ما أي حاجة تبدأ.">بتعرف هتدفع كام وهيشتغل إمتى قبل ما أي حاجة تبدأ.</p>
 
       <div class="grid-3">
@@ -870,8 +857,8 @@
         <div class="card price-card featured reveal">
           <span class="num">02</span>
           <span class="price-label" data-en="Build, one-time setup" data-ar="البناء، تجهيز مرة واحدة">البناء، تجهيز مرة واحدة</span>
-          <div class="price tbd" data-en="From EGP [X]" data-ar="من [X] جنيه">من [X] جنيه</div>
-          <span class="price-when tbd" data-en="Live in [2 to 3] weeks" data-ar="شغّال خلال [2 لـ 3] أسابيع">شغّال خلال [2 لـ 3] أسابيع</span>
+          <div class="price price-quote" data-en="Quoted after the audit" data-ar="السعر بيتحدّد بعد الفحص">السعر بيتحدّد بعد الفحص</div>
+          <span class="price-when" data-en="Fixed fee, with a go-live date" data-ar="مبلغ ثابت، ومعاه ميعاد التشغيل">مبلغ ثابت، ومعاه ميعاد التشغيل</span>
           <ul class="ticks">
             <li data-en="Your CRM set up for your team, in English and Arabic" data-ar="الـ CRM متجهّز لفريقك، بالعربي والإنجليزي">الـ CRM متجهّز لفريقك، بالعربي والإنجليزي</li>
             <li data-en="Facebook lead forms and your website connected" data-ar="فورمات فيسبوك وموقعك مربوطين">فورمات فيسبوك وموقعك مربوطين</li>
@@ -882,7 +869,7 @@
         <div class="card price-card reveal">
           <span class="num">03</span>
           <span class="price-label" data-en="Run, monthly" data-ar="التشغيل، شهري">التشغيل، شهري</span>
-          <div class="price tbd" data-en="EGP [Y] / month" data-ar="[Y] جنيه / شهر">[Y] جنيه / شهر</div>
+          <div class="price price-quote" data-en="Quoted after the audit" data-ar="السعر بيتحدّد بعد الفحص">السعر بيتحدّد بعد الفحص</div>
           <span class="price-when" data-en="Starts once you're live" data-ar="بيبدأ أول ما السيستم يشتغل">بيبدأ أول ما السيستم يشتغل</span>
           <ul class="ticks">
             <li data-en="Regular numbers review with you" data-ar="مراجعة دورية للأرقام معاك">مراجعة دورية للأرقام معاك</li>
@@ -892,10 +879,6 @@
         </div>
       </div>
 
-      <div class="promise reveal">
-        <b aria-hidden="true">&#10003;</b>
-        <p class="tbd" data-en="If your team isn't using it every day 30 days after launch, we fix it at no extra cost." data-ar="لو فريقك مش بيستخدمه كل يوم بعد 30 يوم من التشغيل، بنظبطه من غير أي تكلفة إضافية.">لو فريقك مش بيستخدمه كل يوم بعد 30 يوم من التشغيل، بنظبطه من غير أي تكلفة إضافية.</p>
-      </div>
       <p class="note" data-en="Websites, ads and video are quoted per project, after a short call about what you need." data-ar="المواقع والإعلانات والفيديو بتتسعّر حسب كل مشروع، بعد مكالمة قصيرة عن اللي محتاجه.">المواقع والإعلانات والفيديو بتتسعّر حسب كل مشروع، بعد مكالمة قصيرة عن اللي محتاجه.</p>
     </div>
   </section>
@@ -983,7 +966,7 @@
       <div class="faq reveal">
         <details>
           <summary data-en="We already have a CRM. Why would we need you?" data-ar="عندنا CRM أصلاً. محتاجينكم ليه؟">عندنا CRM أصلاً. محتاجينكم ليه؟</summary>
-          <p data-en="Most teams we meet have one. The question is whether anyone opens it every morning. In the audit we look at what you have. If your team uses it, we work on what feeds it and the follow-up around it. If nobody opens it, we set up one they will." data-ar="أغلب الفرق اللي بنقابلها عندها واحد. السؤال: حد بيفتحه كل يوم الصبح؟ في الفحص بنبص على اللي عندك. لو فريقك بيستخدمه، بنشتغل على اللي بيغذّيه وعلى المتابعة حواليه. ولو محدش بيفتحه، بنجهّز واحد هيستخدموه فعلاً.">أغلب الفرق اللي بنقابلها عندها واحد. السؤال: حد بيفتحه كل يوم الصبح؟ في الفحص بنبص على اللي عندك. لو فريقك بيستخدمه، بنشتغل على اللي بيغذّيه وعلى المتابعة حواليه. ولو محدش بيفتحه، بنجهّز واحد هيستخدموه فعلاً.</p>
+          <p data-en="Most teams we meet have one. The question is whether anyone opens it every morning. In the audit we look at what you have. If your team uses it, we keep it: we work with any CRM that has an API, which most do, including HubSpot, Zoho and Salesforce, and connect your lead sources and follow-up to it. If nobody opens it, we set up one they will." data-ar="أغلب الفرق اللي بنقابلها عندها واحد. السؤال: حد بيفتحه كل يوم الصبح؟ في الفحص بنبص على اللي عندك. لو فريقك بيستخدمه، بنفضل عليه: بنشتغل مع أي CRM ليه API، وده أغلبهم زي HubSpot وZoho وSalesforce، وبنربط بيه مصادر الليدز والمتابعة. ولو محدش بيفتحه، بنجهّز واحد هيستخدموه فعلاً.">أغلب الفرق اللي بنقابلها عندها واحد. السؤال: حد بيفتحه كل يوم الصبح؟ في الفحص بنبص على اللي عندك. لو فريقك بيستخدمه، بنفضل عليه: بنشتغل مع أي CRM ليه API، وده أغلبهم زي HubSpot وZoho وSalesforce، وبنربط بيه مصادر الليدز والمتابعة. ولو محدش بيفتحه، بنجهّز واحد هيستخدموه فعلاً.</p>
         </details>
         <details>
           <summary data-en="My sales team won't use another tool." data-ar="فريق المبيعات مش هيستخدم أداة جديدة.">فريق المبيعات مش هيستخدم أداة جديدة.</summary>
@@ -995,7 +978,7 @@
         </details>
         <details>
           <summary data-en="How long until it's running?" data-ar="هياخد قد إيه لحد ما يشتغل؟">هياخد قد إيه لحد ما يشتغل؟</summary>
-          <p class="tbd" data-en="About [2 to 3] weeks from the audit to your team's first morning list. Your old leads are imported, so they start with a full list on day one." data-ar="حوالي [2 لـ 3] أسابيع من الفحص لحد أول قايمة صباحية لفريقك. والليدز القديمة بتتنقل، فبيبدأوا بقايمة مليانة من أول يوم.">حوالي [2 لـ 3] أسابيع من الفحص لحد أول قايمة صباحية لفريقك. والليدز القديمة بتتنقل، فبيبدأوا بقايمة مليانة من أول يوم.</p>
+          <p data-en="It depends on how many lead sources and old sheets you have. You get a go-live date with the quote, before anything starts. Your old leads are imported, so your team starts with a full list on day one." data-ar="بيعتمد على عدد مصادر الليدز والشيتات القديمة اللي عندك. بتاخد ميعاد التشغيل مع عرض السعر، قبل ما أي حاجة تبدأ. والليدز القديمة بتتنقل، ففريقك بيبدأ بقايمة مليانة من أول يوم.">بيعتمد على عدد مصادر الليدز والشيتات القديمة اللي عندك. بتاخد ميعاد التشغيل مع عرض السعر، قبل ما أي حاجة تبدأ. والليدز القديمة بتتنقل، ففريقك بيبدأ بقايمة مليانة من أول يوم.</p>
         </details>
         <details>
           <summary data-en="What do you need from us?" data-ar="محتاجين مننا إيه؟">محتاجين مننا إيه؟</summary>
