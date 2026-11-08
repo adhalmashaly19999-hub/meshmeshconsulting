@@ -4,16 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title data-en="MeshMesh Consulting | Sales systems for B2B companies" data-ar="MeshMesh Consulting | أنظمة مبيعات لشركات الـ B2B">MeshMesh Consulting | أنظمة مبيعات لشركات الـ B2B</title>
-  <meta name="description" content="إنت دفعت تمن الليدز خلاص. إحنا بنبني وبنشغّل السيستم اللي بيخلّي كل استفسار يتكلّم ويتابَع ويتسعّر. فحص مجاني 45 دقيقة." data-ar-content="إنت دفعت تمن الليدز خلاص. إحنا بنبني وبنشغّل السيستم اللي بيخلّي كل استفسار يتكلّم ويتابَع ويتسعّر. فحص مجاني 45 دقيقة.">
+  <title data-en="MeshMesh Consulting | AI for businesses, built and run" data-ar="MeshMesh Consulting | ذكاء اصطناعي لشركتك، بنبنيه ونشغّله">MeshMesh Consulting | ذكاء اصطناعي لشركتك، بنبنيه ونشغّله</title>
+  <meta name="description" content="بنحدد فين الـ AI هيوفّر لشركتك وقت وفلوس، وبعدين بنبنيه ونشغّله: أنظمة مبيعات، أتمتة، مساعدين AI، محتوى ومواقع. فحص AI مجاني 45 دقيقة." data-ar-content="بنحدد فين الـ AI هيوفّر لشركتك وقت وفلوس، وبعدين بنبنيه ونشغّله: أنظمة مبيعات، أتمتة، مساعدين AI، محتوى ومواقع. فحص AI مجاني 45 دقيقة.">
   <link rel="canonical" href="https://meshmeshconsulting.com/ar/" data-ar-href="https://meshmeshconsulting.com/ar/">
   <link rel="alternate" hreflang="en" href="https://meshmeshconsulting.com/">
   <link rel="alternate" hreflang="ar" href="https://meshmeshconsulting.com/ar/">
   <link rel="alternate" hreflang="x-default" href="https://meshmeshconsulting.com/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://meshmeshconsulting.com/ar/" data-ar-content="https://meshmeshconsulting.com/ar/">
-  <meta property="og:title" content="MeshMesh Consulting | أنظمة مبيعات لشركات الـ B2B" data-ar-content="MeshMesh Consulting | أنظمة مبيعات لشركات الـ B2B">
-  <meta property="og:description" content="إنت دفعت تمن الليدز خلاص. إحنا بنبني وبنشغّل السيستم اللي بيخلّي كل استفسار يتكلّم ويتابَع ويتسعّر." data-ar-content="إنت دفعت تمن الليدز خلاص. إحنا بنبني وبنشغّل السيستم اللي بيخلّي كل استفسار يتكلّم ويتابَع ويتسعّر.">
+  <meta property="og:title" content="MeshMesh Consulting | ذكاء اصطناعي لشركتك، بنبنيه ونشغّله" data-ar-content="MeshMesh Consulting | ذكاء اصطناعي لشركتك، بنبنيه ونشغّله">
+  <meta property="og:description" content="بنحدد فين الـ AI هيوفّر لشركتك وقت وفلوس، وبعدين بنبنيه ونشغّله: أنظمة مبيعات، أتمتة، مساعدين AI، محتوى ومواقع. فحص AI مجاني 45 دقيقة." data-ar-content="بنحدد فين الـ AI هيوفّر لشركتك وقت وفلوس، وبعدين بنبنيه ونشغّله: أنظمة مبيعات، أتمتة، مساعدين AI، محتوى ومواقع. فحص AI مجاني 45 دقيقة.">
   <meta property="og:image" content="https://meshmeshconsulting.com/assets/og-ar.png" data-ar-content="https://meshmeshconsulting.com/assets/og-ar.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -309,6 +309,26 @@
     /* What else we do */
     .svc { display: grid; gap: 18px; margin-top: 44px; grid-template-columns: minmax(0, 1fr); }
     @media (min-width: 760px) { .svc { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1080px) { .svc { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .svc-card { position: relative; }
+    .svc-start, .svc-flag { border-color: rgba(255, 87, 34, 0.45); }
+    .svc-badge { position: absolute; top: 22px; inset-inline-end: 22px; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: var(--orange-soft); color: var(--orange); }
+    .svc-card p.for b { font-weight: 600; }
+    .svc-card p.for a { color: var(--orange); font-weight: 600; }
+    .svc-card p.for a:hover { text-decoration: underline; }
+
+    /* AI course */
+    .course { display: grid; gap: 18px; margin-top: 44px; grid-template-columns: minmax(0, 1fr); align-items: start; }
+    @media (min-width: 900px) { .course { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); } }
+    .course-card .ticks { gap: 12px; }
+    .course-price { margin: 24px 0 20px; color: var(--muted); font-size: 15px; }
+    .course-price b { color: #fff; font-size: 28px; font-weight: 900; margin-inline-end: 6px; }
+    .days { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+    .days li { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; }
+    .days li .num { margin-bottom: 8px; }
+    .days h3 { font-size: 19px; margin: 0 0 6px; }
+    .days p { color: var(--muted); font-size: 15px; }
+    #method .note { margin-top: 18px; }
     .svc-card { display: flex; flex-direction: column; }
     .svc-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--orange-soft); color: var(--orange); display: grid; place-items: center; margin-bottom: 18px; }
     .svc-icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
@@ -428,27 +448,27 @@
       </a>
 
       <div class="nav-links">
-        <a href="#system" data-en="The system" data-ar="السيستم">السيستم</a>
         <a href="#services" data-en="Services" data-ar="خدماتنا">خدماتنا</a>
-        <a href="#pricing" data-en="Pricing" data-ar="الأسعار">الأسعار</a>
+        <a href="#system" data-en="Sales system" data-ar="سيستم المبيعات">سيستم المبيعات</a>
+        <a href="#course" data-en="AI course" data-ar="كورس الـ AI">كورس الـ AI</a>
         <a href="#clients" data-en="Clients" data-ar="عملاءنا">عملاءنا</a>
         <a href="#faq" data-en="FAQ" data-ar="أسئلة">أسئلة</a>
       </div>
 
       <div class="nav-actions">
         <a id="langToggle" class="lang" href="/" hreflang="en" lang="en" data-en="عربي" data-ar="English" data-ar-href="/" data-ar-hreflang="en" data-ar-lang="en">English</a>
-        <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary btn-sm nav-cta" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' data-en="Free audit" data-ar="فحص مجاني">فحص مجاني</a>
+        <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary btn-sm nav-cta" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' data-en="Free AI audit" data-ar="فحص AI مجاني">فحص AI مجاني</a>
         <button id="burger" class="burger" type="button" aria-label="القايمة" data-ar-aria-label="القايمة" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
 
     <div id="menu" class="menu">
-      <a href="#system" data-en="The system" data-ar="السيستم">السيستم</a>
       <a href="#services" data-en="Services" data-ar="خدماتنا">خدماتنا</a>
-      <a href="#pricing" data-en="Pricing" data-ar="الأسعار">الأسعار</a>
+      <a href="#system" data-en="Sales system" data-ar="سيستم المبيعات">سيستم المبيعات</a>
+      <a href="#course" data-en="AI course" data-ar="كورس الـ AI">كورس الـ AI</a>
       <a href="#clients" data-en="Clients" data-ar="عملاءنا">عملاءنا</a>
       <a href="#faq" data-en="FAQ" data-ar="أسئلة">أسئلة</a>
-      <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' data-en="Book the free audit" data-ar="احجز الفحص المجاني">احجز الفحص المجاني</a>
+      <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' data-en="Book the free AI audit" data-ar="احجز فحص الـ AI المجاني">احجز فحص الـ AI المجاني</a>
     </div>
   </nav>
 
@@ -457,19 +477,19 @@
     <div class="wrap">
       <div class="hero-grid">
         <div>
-          <span class="eyebrow" data-en="Sales systems for B2B companies" data-ar="أنظمة مبيعات لشركات الـ B2B">أنظمة مبيعات لشركات الـ B2B</span>
+          <span class="eyebrow" data-en="AI for businesses, built and run for you" data-ar="ذكاء اصطناعي لشركتك، بنبنيه ونشغّله">ذكاء اصطناعي لشركتك، بنبنيه ونشغّله</span>
           <h1>
-            <span data-en="You already paid for the leads." data-ar="إنت دفعت تمن الليدز خلاص.">إنت دفعت تمن الليدز خلاص.</span>
-            <span class="accent" data-en="Most of them never got a call." data-ar="وأغلبهم محدش كلّمهم.">وأغلبهم محدش كلّمهم.</span>
+            <span data-en="Everyone's talking about AI." data-ar="الكل بيتكلم عن الـ AI.">الكل بيتكلم عن الـ AI.</span>
+            <span class="accent" data-en="We put it to work in your business." data-ar="إحنا بنخلّيه يشتغل في شركتك.">إحنا بنخلّيه يشتغل في شركتك.</span>
           </h1>
-          <p class="lede" data-en="We build and run the system that gets every inquiry called, followed up and priced, so the ad budget you already spend turns into orders." data-ar="بنبني وبنشغّل السيستم اللي بيخلّي كل استفسار يتكلّم ويتابَع ويتسعّر، عشان ميزانية الإعلانات اللي بتدفعها فعلاً تتحوّل لأوردرات.">بنبني وبنشغّل السيستم اللي بيخلّي كل استفسار يتكلّم ويتابَع ويتسعّر، عشان ميزانية الإعلانات اللي بتدفعها فعلاً تتحوّل لأوردرات.</p>
+          <p class="lede" data-en="We find where AI saves you time and money, then build and run it with your team: sales systems, automations, AI assistants, content and websites." data-ar="بنحدد فين الـ AI هيوفّرلك وقت وفلوس، وبعدين بنبنيه ونشغّله مع فريقك: أنظمة مبيعات، أتمتة، مساعدين AI، محتوى ومواقع.">بنحدد فين الـ AI هيوفّرلك وقت وفلوس، وبعدين بنبنيه ونشغّله مع فريقك: أنظمة مبيعات، أتمتة، مساعدين AI، محتوى ومواقع.</p>
 
           <div class="hero-cta">
             <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
-              <span data-en="Book the free audit" data-ar="احجز الفحص المجاني">احجز الفحص المجاني</span>
+              <span data-en="Book the free AI audit" data-ar="احجز فحص الـ AI المجاني">احجز فحص الـ AI المجاني</span>
               <span class="arrow" aria-hidden="true"></span>
             </a>
-            <a href="#system" class="btn btn-ghost" data-en="See the system" data-ar="شوف السيستم">شوف السيستم</a>
+            <a href="#services" class="btn btn-ghost" data-en="See what we build" data-ar="شوف بنعمل إيه">شوف بنعمل إيه</a>
           </div>
 
           <div class="hero-notes">
@@ -479,57 +499,53 @@
           </div>
         </div>
 
-        <!-- What the sales team sees every morning (demo data) -->
+        <!-- What an audit hands back (demo data) -->
         <div class="mock reveal" aria-hidden="true">
           <div class="mock-head">
-            <strong data-en="Today" data-ar="النهارده">النهارده</strong>
-            <span data-en="14 people to call" data-ar="14 واحد هتكلّمهم">14 واحد هتكلّمهم</span>
+            <strong data-en="Your AI map" data-ar="خريطة الـ AI بتاعتك">خريطة الـ AI بتاعتك</strong>
+            <span data-en="4 places it pays off" data-ar="4 أماكن هتفرق معاك">4 أماكن هتفرق معاك</span>
           </div>
 
           <div class="lead">
             <div class="lead-top">
               <div>
-                <div class="lead-name" data-en="Ahmed, food distributor" data-ar="أحمد، توزيع أغذية">أحمد، توزيع أغذية</div>
-                <div class="lead-meta" data-en="Facebook form, 2 minutes ago" data-ar="فورم فيسبوك، من دقيقتين">فورم فيسبوك، من دقيقتين</div>
+                <div class="lead-name" data-en="Every inquiry called and followed up" data-ar="كل استفسار يتكلّم ويتابَع">كل استفسار يتكلّم ويتابَع</div>
+                <div class="lead-meta" data-en="Sales system" data-ar="سيستم مبيعات">سيستم مبيعات</div>
               </div>
-              <span class="tag tag-new" data-en="New" data-ar="جديد">جديد</span>
-            </div>
-            <div class="lead-actions">
-              <span class="pill pill-call" data-en="Call" data-ar="اتصال">اتصال</span>
-              <span class="pill" data-en="WhatsApp" data-ar="واتساب">واتساب</span>
+              <span class="tag tag-new" data-en="Start here" data-ar="ابدأ هنا">ابدأ هنا</span>
             </div>
           </div>
 
           <div class="lead">
             <div class="lead-top">
               <div>
-                <div class="lead-name" data-en="Sara, clinic chain" data-ar="سارة، سلسلة عيادات">سارة، سلسلة عيادات</div>
-                <div class="lead-meta" data-en="Asked for a quote last week" data-ar="طلبت عرض سعر الأسبوع اللي فات">طلبت عرض سعر الأسبوع اللي فات</div>
+                <div class="lead-name" data-en="Customer questions answered faster" data-ar="أسئلة العملاء تترد أسرع">أسئلة العملاء تترد أسرع</div>
+                <div class="lead-meta" data-en="AI assistant drafts the replies" data-ar="مساعد AI بيجهّز الردود">مساعد AI بيجهّز الردود</div>
               </div>
-              <span class="tag tag-due" data-en="Follow-up due" data-ar="متابعة النهارده">متابعة النهارده</span>
+              <span class="tag tag-due" data-en="Quick win" data-ar="مكسب سريع">مكسب سريع</span>
             </div>
           </div>
 
           <div class="lead">
             <div class="lead-top">
               <div>
-                <div class="lead-name" data-en="Omar, private school" data-ar="عمر، مدرسة خاصة">عمر، مدرسة خاصة</div>
-                <div class="lead-meta" data-en="No contact for 74 days" data-ar="74 يوم من غير تواصل">74 يوم من غير تواصل</div>
+                <div class="lead-name" data-en="Weekly report, no copy and paste" data-ar="تقرير أسبوعي من غير نسخ ولصق">تقرير أسبوعي من غير نسخ ولصق</div>
+                <div class="lead-meta" data-en="Automation" data-ar="أتمتة">أتمتة</div>
               </div>
-              <span class="tag tag-cold" data-en="Worth another try" data-ar="يستاهل محاولة تانية">يستاهل محاولة تانية</span>
+              <span class="tag tag-due" data-en="Quick win" data-ar="مكسب سريع">مكسب سريع</span>
             </div>
           </div>
 
-          <div class="sheet">
-            <div class="sheet-title" data-en="What happened on the call?" data-ar="إيه اللي حصل في المكالمة؟">إيه اللي حصل في المكالمة؟</div>
-            <div class="chips">
-              <span class="chip chip-on" data-en="Send a quote" data-ar="ابعت عرض سعر">ابعت عرض سعر</span>
-              <span class="chip" data-en="Call back" data-ar="كلّمه تاني">كلّمه تاني</span>
-              <span class="chip" data-en="No answer" data-ar="مردّش">مردّش</span>
-              <span class="chip" data-en="Not interested" data-ar="مش مهتم">مش مهتم</span>
+          <div class="lead">
+            <div class="lead-top">
+              <div>
+                <div class="lead-name" data-en="Product ads without a film crew" data-ar="إعلانات منتجات من غير فريق تصوير">إعلانات منتجات من غير فريق تصوير</div>
+                <div class="lead-meta" data-en="AI video" data-ar="فيديو AI">فيديو AI</div>
+              </div>
+              <span class="tag tag-cold" data-en="Next" data-ar="بعدين">بعدين</span>
             </div>
           </div>
-          <div class="mock-foot" data-en="Demo data" data-ar="بيانات تجريبية">بيانات تجريبية</div>
+          <div class="mock-foot" data-en="Example audit result" data-ar="مثال لنتيجة الفحص">مثال لنتيجة الفحص</div>
         </div>
       </div>
 
@@ -549,24 +565,149 @@
     </div>
   </header>
 
-  <!-- The leak -->
-  <section id="leak" class="alt">
+  <!-- The problem -->
+  <section id="why" class="alt">
     <div class="wrap">
-      <span class="eyebrow" data-en="The leak" data-ar="المشكلة">المشكلة</span>
-      <h2 class="reveal" data-en="The money isn't lost in your ads. It's sitting in your spreadsheets." data-ar="الفلوس مش بتضيع في الإعلانات. الفلوس قاعدة في شيتات الإكسل.">الفلوس مش بتضيع في الإعلانات. الفلوس قاعدة في شيتات الإكسل.</h2>
+      <span class="eyebrow" data-en="The problem" data-ar="المشكلة">المشكلة</span>
+      <h2 class="reveal" data-en="Everyone says use AI. Nobody says where." data-ar="الكل بيقولك استخدم AI. محدش بيقولك فين.">الكل بيقولك استخدم AI. محدش بيقولك فين.</h2>
 
       <div class="grid-3">
         <div class="card reveal">
-          <h3 data-en="Leads land in a sheet nobody opens" data-ar="الليدز بتنزل في شيت محدش بيفتحه">الليدز بتنزل في شيت محدش بيفتحه</h3>
-          <p data-en="Facebook forms, website inquiries, WhatsApp messages. Each goes somewhere different, and by the time someone looks, the buyer has moved on." data-ar="فورمات فيسبوك، استفسارات الموقع، رسايل واتساب. كل واحدة بتروح في حتة، وعلى ما حد يبص يكون العميل اشترى من غيرك.">فورمات فيسبوك، استفسارات الموقع، رسايل واتساب. كل واحدة بتروح في حتة، وعلى ما حد يبص يكون العميل اشترى من غيرك.</p>
+          <h3 data-en="Tools without a plan" data-ar="أدوات من غير خطة">أدوات من غير خطة</h3>
+          <p data-en="A few subscriptions, a chatbot someone tried once. Nothing connected to how the business actually makes money." data-ar="كام اشتراك، وشات بوت حد جرّبه مرة. ولا حاجة مربوطة بالطريقة اللي الشركة بتكسب بيها فعلاً.">كام اشتراك، وشات بوت حد جرّبه مرة. ولا حاجة مربوطة بالطريقة اللي الشركة بتكسب بيها فعلاً.</p>
         </div>
         <div class="card reveal">
-          <h3 data-en="Nobody knows who to call today" data-ar="محدش عارف يكلّم مين النهارده">محدش عارف يكلّم مين النهارده</h3>
-          <p data-en="Without a list, the team calls whoever they remember. Follow-ups depend on memory, and memory loses." data-ar="من غير قايمة، الفريق بيكلّم اللي فاكره. والمتابعة ماشية على الذاكرة، والذاكرة بتنسى.">من غير قايمة، الفريق بيكلّم اللي فاكره. والمتابعة ماشية على الذاكرة، والذاكرة بتنسى.</p>
+          <h3 data-en="A team that doesn't know where to start" data-ar="فريق مش عارف يبدأ منين">فريق مش عارف يبدأ منين</h3>
+          <p data-en="Your people are busy. Without someone showing them, AI stays something they read about." data-ar="فريقك مشغول. ومن غير حد يوريهم، الـ AI هيفضل حاجة بيقروا عنها بس.">فريقك مشغول. ومن غير حد يوريهم، الـ AI هيفضل حاجة بيقروا عنها بس.</p>
         </div>
         <div class="card reveal">
-          <h3 data-en="You can't see what happened" data-ar="إنت مش شايف إيه اللي حصل">إنت مش شايف إيه اللي حصل</h3>
-          <p data-en="You know what you spent on ads. You don't know how many leads were called, quoted or dropped." data-ar="عارف صرفت كام على الإعلانات. بس مش عارف كام ليد اتكلّم، كام اتسعّر، وكام اتنسى.">عارف صرفت كام على الإعلانات. بس مش عارف كام ليد اتكلّم، كام اتسعّر، وكام اتنسى.</p>
+          <h3 data-en="No way to see the payoff" data-ar="مش شايف العائد">مش شايف العائد</h3>
+          <p data-en="You can't tell whether AI saved an hour or a pound, so it never gets past the experiment." data-ar="مش عارف الـ AI وفّر ساعة ولا جنيه، فعمره ما بيعدّي مرحلة التجربة.">مش عارف الـ AI وفّر ساعة ولا جنيه، فعمره ما بيعدّي مرحلة التجربة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="wrap">
+      <span class="eyebrow" data-en="What we do" data-ar="بنعمل إيه">بنعمل إيه</span>
+      <h2 class="reveal" data-en="Six ways we put AI to work in your business." data-ar="6 طرق بنشغّل بيها الـ AI في شركتك.">6 طرق بنشغّل بيها الـ AI في شركتك.</h2>
+      <p class="lede" data-en="Start with the audit. Then pick what pays off first." data-ar="ابدأ بالفحص. وبعدين اختار اللي هيفرق معاك الأول.">ابدأ بالفحص. وبعدين اختار اللي هيفرق معاك الأول.</p>
+
+      <div class="svc">
+        <div class="card svc-card svc-start reveal">
+          <span class="svc-badge" data-en="Start here" data-ar="ابدأ هنا">ابدأ هنا</span>
+          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg></span>
+          <h3 data-en="AI audit" data-ar="فحص الـ AI">فحص الـ AI</h3>
+          <p data-en="A 45-minute call and a look at how you work today. You leave with the 3 to 5 places AI would pay off first, in order." data-ar="مكالمة 45 دقيقة ونظرة على طريقة شغلك النهارده. بتطلع بأهم 3 لـ 5 أماكن الـ AI هيفرق فيها، بالترتيب.">مكالمة 45 دقيقة ونظرة على طريقة شغلك النهارده. بتطلع بأهم 3 لـ 5 أماكن الـ AI هيفرق فيها، بالترتيب.</p>
+          <p class="for"><span data-en="Format" data-ar="الشكل">الشكل</span><b data-en="Free, video call, yours to keep" data-ar="مجاني، مكالمة فيديو، والنتيجة بتفضل معاك">مجاني، مكالمة فيديو، والنتيجة بتفضل معاك</b></p>
+        </div>
+        <div class="card svc-card svc-flag reveal">
+          <span class="svc-badge" data-en="Our flagship" data-ar="أهم خدمة عندنا">أهم خدمة عندنا</span>
+          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v4H4zM4 11h16v4H4zM4 17h10v2H4z"/></svg></span>
+          <h3 data-en="Sales and lead system" data-ar="سيستم مبيعات وليدز">سيستم مبيعات وليدز</h3>
+          <p data-en="Every inquiry from ads, your website and old sheets in one CRM, a call list every morning, and follow-ups that don't rely on memory." data-ar="كل استفسار من الإعلانات والموقع والشيتات القديمة في CRM واحد، قايمة مكالمات كل يوم الصبح، ومتابعة مش ماشية على الذاكرة.">كل استفسار من الإعلانات والموقع والشيتات القديمة في CRM واحد، قايمة مكالمات كل يوم الصبح، ومتابعة مش ماشية على الذاكرة.</p>
+          <p class="for"><span data-en="Proof" data-ar="الدليل">الدليل</span><a href="#system" data-en="882 leads in one factory's sheets, 91% never called" data-ar="882 ليد في شيتات مصنع واحد، 91% محدش كلّمهم">882 ليد في شيتات مصنع واحد، 91% محدش كلّمهم</a></p>
+        </div>
+        <div class="card svc-card reveal">
+          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
+          <h3 data-en="AI automations and assistants" data-ar="أتمتة ومساعدين AI">أتمتة ومساعدين AI</h3>
+          <p data-en="Tools that take the repetitive work off your team: routing leads, drafting replies, follow-up messages, reports and internal apps." data-ar="أدوات بتشيل الشغل المتكرر من على فريقك: توزيع الليدز، تجهيز الردود، رسايل المتابعة، التقارير والأبلكيشنز الداخلية.">أدوات بتشيل الشغل المتكرر من على فريقك: توزيع الليدز، تجهيز الردود، رسايل المتابعة، التقارير والأبلكيشنز الداخلية.</p>
+          <p class="for"><span data-en="Done for" data-ar="عملناها لـ">عملناها لـ</span>Cooley Comics, RockeToday, Techne Summit, Investors of the Mediterranean</p>
+        </div>
+        <div class="card svc-card reveal">
+          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3V9z"/></svg></span>
+          <h3 data-en="AI content and ads" data-ar="محتوى وإعلانات بالـ AI">محتوى وإعلانات بالـ AI</h3>
+          <p data-en="Promo films, explainer videos and short ads in English or Egyptian Arabic, made with AI, and Meta campaigns that put them in front of buyers." data-ar="أفلام ترويجية، فيديوهات شرح وإعلانات قصيرة بالإنجليزي أو بالمصري معمولة بالـ AI، وحملات ميتا توصّلها للمشترين.">أفلام ترويجية، فيديوهات شرح وإعلانات قصيرة بالإنجليزي أو بالمصري معمولة بالـ AI، وحملات ميتا توصّلها للمشترين.</p>
+          <p class="for"><span data-en="Done for" data-ar="عملناها لـ">عملناها لـ</span>Techne Summit, Senno Elite, Cooley Comics, Infinity Elite Group</p>
+        </div>
+        <div class="card svc-card reveal">
+          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></span>
+          <h3 data-en="Websites" data-ar="مواقع إلكترونية">مواقع إلكترونية</h3>
+          <p data-en="Fast sites in English, Arabic or both, with forms that drop straight into your CRM, so no inquiry waits in an inbox." data-ar="مواقع سريعة بالعربي أو الإنجليزي أو الاتنين، فورماتها بتصبّ في الـ CRM على طول، فمفيش استفسار يستنى في الإيميل.">مواقع سريعة بالعربي أو الإنجليزي أو الاتنين، فورماتها بتصبّ في الـ CRM على طول، فمفيش استفسار يستنى في الإيميل.</p>
+          <p class="for"><span data-en="Done for" data-ar="عملناها لـ">عملناها لـ</span>Proact Clinics, Pr Ankh, Micro Era Power, Daffodil Project, RocGrowth</p>
+        </div>
+        <div class="card svc-card reveal">
+          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg></span>
+          <h3 data-en="AI training for owners and teams" data-ar="تدريب AI لأصحاب الشركات والفرق">تدريب AI لأصحاب الشركات والفرق</h3>
+          <p data-en="Hands-on: you build real things with AI, from websites and automations to videos and proposals, instead of watching slides." data-ar="بإيدك: بتبني حاجات حقيقية بالـ AI، من مواقع وأتمتة لفيديوهات وعروض أسعار، بدل ما تتفرج على سلايدز.">بإيدك: بتبني حاجات حقيقية بالـ AI، من مواقع وأتمتة لفيديوهات وعروض أسعار، بدل ما تتفرج على سلايدز.</p>
+          <p class="for"><span data-en="Next course" data-ar="الكورس الجاي">الكورس الجاي</span><a href="#course" data-en="17 to 19 November, Alexandria" data-ar="17 و18 و19 نوفمبر، إسكندرية">17 و18 و19 نوفمبر، إسكندرية</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flagship: the sales system -->
+  <section id="system" class="alt">
+    <div class="wrap">
+      <span class="eyebrow" data-en="Our flagship" data-ar="أهم خدمة عندنا">أهم خدمة عندنا</span>
+      <h2 class="reveal" data-en="The sales system: every lead called, followed up and priced." data-ar="سيستم المبيعات: كل ليد يتكلّم ويتابَع ويتسعّر.">سيستم المبيعات: كل ليد يتكلّم ويتابَع ويتسعّر.</h2>
+      <p class="lede" data-en="A sales CRM set up around how your team already works, on their phones, in English and Arabic." data-ar="CRM مبيعات معمول على طريقة شغل فريقك، على الموبايل، بالعربي والإنجليزي.">CRM مبيعات معمول على طريقة شغل فريقك، على الموبايل، بالعربي والإنجليزي.</p>
+
+      <div class="feature">
+        <div class="reveal">
+          <div class="feature-item">
+            <span class="num">01</span>
+            <h3 data-en="Every lead, in seconds" data-ar="كل ليد، في ثواني">كل ليد، في ثواني</h3>
+            <p data-en="Facebook lead forms, your website and your old spreadsheets feed one CRM. A new inquiry reaches your team's phones seconds after it is submitted." data-ar="فورمات فيسبوك، موقعك وشيتاتك القديمة كلهم بيصبّوا في CRM واحد. الاستفسار الجديد بيوصل موبايلات فريقك بعد ثواني من تسجيله.">فورمات فيسبوك، موقعك وشيتاتك القديمة كلهم بيصبّوا في CRM واحد. الاستفسار الجديد بيوصل موبايلات فريقك بعد ثواني من تسجيله.</p>
+          </div>
+          <div class="feature-item">
+            <span class="num">02</span>
+            <h3 data-en="A call list every morning" data-ar="قايمة مكالمات كل يوم الصبح">قايمة مكالمات كل يوم الصبح</h3>
+            <p data-en="New inquiries, follow-ups due, and the cold leads worth another try, in order. One tap after each call sets the next step." data-ar="الاستفسارات الجديدة، المتابعات اللي ميعادها جه، والليدز القديمة اللي تستاهل محاولة تانية، بالترتيب. وضغطة واحدة بعد كل مكالمة بتحدّد الخطوة الجاية.">الاستفسارات الجديدة، المتابعات اللي ميعادها جه، والليدز القديمة اللي تستاهل محاولة تانية، بالترتيب. وضغطة واحدة بعد كل مكالمة بتحدّد الخطوة الجاية.</p>
+          </div>
+          <div class="feature-item">
+            <span class="num">03</span>
+            <h3 data-en="You see everything" data-ar="إنت شايف كل حاجة">إنت شايف كل حاجة</h3>
+            <p data-en="Calls made, leads priced and deals won, per person and per week, from your phone." data-ar="المكالمات اللي اتعملت، الليدز اللي اتسعّرت والصفقات اللي اتقفلت، لكل موظف ولكل أسبوع، من موبايلك.">المكالمات اللي اتعملت، الليدز اللي اتسعّرت والصفقات اللي اتقفلت، لكل موظف ولكل أسبوع، من موبايلك.</p>
+          </div>
+        </div>
+        <div class="mock reveal" aria-hidden="true">
+          <div class="mock-head">
+            <strong data-en="Today" data-ar="النهارده">النهارده</strong>
+            <span data-en="14 people to call" data-ar="14 واحد هتكلّمهم">14 واحد هتكلّمهم</span>
+          </div>
+          <div class="lead">
+            <div class="lead-top">
+              <div>
+                <div class="lead-name" data-en="Ahmed, food distributor" data-ar="أحمد، توزيع أغذية">أحمد، توزيع أغذية</div>
+                <div class="lead-meta" data-en="Facebook form, 2 minutes ago" data-ar="فورم فيسبوك، من دقيقتين">فورم فيسبوك، من دقيقتين</div>
+              </div>
+              <span class="tag tag-new" data-en="New" data-ar="جديد">جديد</span>
+            </div>
+            <div class="lead-actions">
+              <span class="pill pill-call" data-en="Call" data-ar="اتصال">اتصال</span>
+              <span class="pill" data-en="WhatsApp" data-ar="واتساب">واتساب</span>
+            </div>
+          </div>
+          <div class="lead">
+            <div class="lead-top">
+              <div>
+                <div class="lead-name" data-en="Sara, clinic chain" data-ar="سارة، سلسلة عيادات">سارة، سلسلة عيادات</div>
+                <div class="lead-meta" data-en="Asked for a quote last week" data-ar="طلبت عرض سعر الأسبوع اللي فات">طلبت عرض سعر الأسبوع اللي فات</div>
+              </div>
+              <span class="tag tag-due" data-en="Follow-up due" data-ar="متابعة النهارده">متابعة النهارده</span>
+            </div>
+          </div>
+          <div class="lead">
+            <div class="lead-top">
+              <div>
+                <div class="lead-name" data-en="Omar, private school" data-ar="عمر، مدرسة خاصة">عمر، مدرسة خاصة</div>
+                <div class="lead-meta" data-en="No contact for 74 days" data-ar="74 يوم من غير تواصل">74 يوم من غير تواصل</div>
+              </div>
+              <span class="tag tag-cold" data-en="Worth another try" data-ar="يستاهل محاولة تانية">يستاهل محاولة تانية</span>
+            </div>
+          </div>
+          <div class="sheet">
+            <div class="sheet-title" data-en="What happened on the call?" data-ar="إيه اللي حصل في المكالمة؟">إيه اللي حصل في المكالمة؟</div>
+            <div class="chips">
+              <span class="chip chip-on" data-en="Send a quote" data-ar="ابعت عرض سعر">ابعت عرض سعر</span>
+              <span class="chip" data-en="Call back" data-ar="كلّمه تاني">كلّمه تاني</span>
+              <span class="chip" data-en="No answer" data-ar="مردّش">مردّش</span>
+            </div>
+          </div>
+          <div class="mock-foot" data-en="Demo data" data-ar="بيانات تجريبية">بيانات تجريبية</div>
         </div>
       </div>
 
@@ -591,295 +732,100 @@
     </div>
   </section>
 
+  <!-- AI course -->
+  <section id="course">
+    <div class="wrap">
+      <span class="eyebrow" data-en="AI course" data-ar="كورس الـ AI">كورس الـ AI</span>
+      <h2 class="reveal" data-en="Rather learn it yourself? Three days, hands on." data-ar="عايز تتعلمه بنفسك؟ 3 أيام، بإيدك.">عايز تتعلمه بنفسك؟ 3 أيام، بإيدك.</h2>
+      <p class="lede" data-en="An intensive course for business owners. You build a website, an app, automations, videos and proposals with AI, and leave with your own version of each. No coding experience needed." data-ar="كورس مكثف لأصحاب البيزنس. بتعمل بإيدك موقع، تطبيق، أوتوميشن، فيديوهات وعروض أسعار بالـ AI، وبتطلع بنسختك إنت من كل واحدة. مش محتاج أي خبرة برمجة.">كورس مكثف لأصحاب البيزنس. بتعمل بإيدك موقع، تطبيق، أوتوميشن، فيديوهات وعروض أسعار بالـ AI، وبتطلع بنسختك إنت من كل واحدة. مش محتاج أي خبرة برمجة.</p>
+
+      <div class="course">
+        <div class="card course-card reveal">
+          <ul class="ticks">
+            <li data-en="17, 18 and 19 November 2026" data-ar="17 و18 و19 نوفمبر 2026">17 و18 و19 نوفمبر 2026</li>
+            <li data-en="Alexandria, in person" data-ar="إسكندرية، حضوري">إسكندرية، حضوري</li>
+            <li data-en="10:00 to 17:00 each day" data-ar="من 10 الصبح لـ 5 المغرب كل يوم">من 10 الصبح لـ 5 المغرب كل يوم</li>
+            <li data-en="15 seats only, so everyone gets help" data-ar="15 مكان بس، عشان كل واحد ياخد مساعدة">15 مكان بس، عشان كل واحد ياخد مساعدة</li>
+            <li data-en="With Adham Mashaly and Ashraf Salah El-Din" data-ar="مع أدهم مشالي وأشرف صلاح الدين">مع أدهم مشالي وأشرف صلاح الدين</li>
+          </ul>
+          <div class="course-price"><b data-en="EGP 5,500" data-ar="5,500 جنيه">5,500 جنيه</b> <span data-en="early bird, then EGP 7,500" data-ar="حجز مبكر، وبعدها 7,500 جنيه">حجز مبكر، وبعدها 7,500 جنيه</span></div>
+          <a href="https://hightechvision-ai-course.pages.dev/register" target="_blank" rel="noopener" class="btn btn-primary">
+            <span data-en="Details and registration" data-ar="التفاصيل والتسجيل">التفاصيل والتسجيل</span>
+            <span class="arrow" aria-hidden="true"></span>
+          </a>
+        </div>
+        <ol class="days reveal">
+          <li>
+            <span class="num" data-en="Day 1" data-ar="اليوم الأول">اليوم الأول</span>
+            <h3 data-en="Websites and apps" data-ar="المواقع والتطبيقات">المواقع والتطبيقات</h3>
+            <p data-en="A live website for your business, and an app with accounts and data." data-ar="موقع لبيزنسك ينزل على النت، وتطبيق فيه حسابات وبيانات.">موقع لبيزنسك ينزل على النت، وتطبيق فيه حسابات وبيانات.</p>
+          </li>
+          <li>
+            <span class="num" data-en="Day 2" data-ar="اليوم التاني">اليوم التاني</span>
+            <h3 data-en="Automations and videos" data-ar="الأوتوميشن والفيديوهات">الأوتوميشن والفيديوهات</h3>
+            <p data-en="Automatic replies and customer follow-up, and a short video ad for your business." data-ar="رد تلقائي ومتابعة للعملاء، وإعلان فيديو قصير لشغلك.">رد تلقائي ومتابعة للعملاء، وإعلان فيديو قصير لشغلك.</p>
+          </li>
+          <li>
+            <span class="num" data-en="Day 3" data-ar="اليوم التالت">اليوم التالت</span>
+            <h3 data-en="Games and proposals" data-ar="الألعاب والعروض">الألعاب والعروض</h3>
+            <p data-en="A complete browser game, and a ready-to-send quote for your client." data-ar="لعبة كاملة على المتصفح، وعرض سعر جاهز تبعته لعميلك.">لعبة كاملة على المتصفح، وعرض سعر جاهز تبعته لعميلك.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- How we work -->
+  <section id="method" class="alt">
+    <div class="wrap">
+      <span class="eyebrow" data-en="How we work" data-ar="بنشتغل إزاي">بنشتغل إزاي</span>
+      <h2 class="reveal" data-en="Audit, a quick win, then we stay on." data-ar="فحص، مكسب سريع، وبعدين بنكمّل معاك.">فحص، مكسب سريع، وبعدين بنكمّل معاك.</h2>
+
+      <div class="grid-3">
+        <div class="card reveal">
+          <span class="num">01</span>
+          <h3 data-en="Audit" data-ar="الفحص">الفحص</h3>
+          <p data-en="Free and 45 minutes long. You get the map of where AI pays off in your business, and it's yours to keep whether we work together or not." data-ar="مجاني و45 دقيقة. بتاخد خريطة الأماكن اللي الـ AI هيفرق فيها في شركتك، وبتفضل معاك سواء اشتغلنا مع بعض أو لأ.">مجاني و45 دقيقة. بتاخد خريطة الأماكن اللي الـ AI هيفرق فيها في شركتك، وبتفضل معاك سواء اشتغلنا مع بعض أو لأ.</p>
+        </div>
+        <div class="card reveal">
+          <span class="num">02</span>
+          <h3 data-en="Quick win" data-ar="مكسب سريع">مكسب سريع</h3>
+          <p data-en="We build the first piece, the one that pays off fastest, for a fixed price and a go-live date agreed before anything starts." data-ar="بنبني أول حاجة، اللي هتجيب نتيجة أسرع، بسعر ثابت وميعاد تشغيل متفق عليهم قبل ما أي حاجة تبدأ.">بنبني أول حاجة، اللي هتجيب نتيجة أسرع، بسعر ثابت وميعاد تشغيل متفق عليهم قبل ما أي حاجة تبدأ.</p>
+        </div>
+        <div class="card reveal">
+          <span class="num">03</span>
+          <h3 data-en="Run" data-ar="التشغيل">التشغيل</h3>
+          <p data-en="A monthly plan: we review the numbers with you, fix what gets in your team's way and add the next piece when you're ready." data-ar="خطة شهرية: بنراجع الأرقام سوا، بنصلّح اللي بيعطّل فريقك، وبنضيف الخطوة الجاية وقت ما تكون جاهز.">خطة شهرية: بنراجع الأرقام سوا، بنصلّح اللي بيعطّل فريقك، وبنضيف الخطوة الجاية وقت ما تكون جاهز.</p>
+        </div>
+      </div>
+      <p class="note" data-en="Project prices are quoted after the audit. The course has its own fixed price." data-ar="أسعار المشاريع بتتحدد بعد الفحص. والكورس ليه سعر ثابت لوحده.">أسعار المشاريع بتتحدد بعد الفحص. والكورس ليه سعر ثابت لوحده.</p>
+    </div>
+  </section>
+
   <!-- Who it's for -->
   <section id="fit">
     <div class="wrap">
       <span class="eyebrow" data-en="Who it's for" data-ar="مناسب لمين">مناسب لمين</span>
-      <h2 class="reveal" data-en="Built for B2B teams that already get inquiries." data-ar="معمول لشركات B2B اللي الاستفسارات بتوصلها فعلاً.">معمول لشركات B2B اللي الاستفسارات بتوصلها فعلاً.</h2>
+      <h2 class="reveal" data-en="Built for businesses that want results, not experiments." data-ar="معمول للشركات اللي عايزة نتيجة، مش تجارب.">معمول للشركات اللي عايزة نتيجة، مش تجارب.</h2>
 
       <div class="fit">
         <div class="card fit-yes reveal">
           <h3 data-en="A good fit if" data-ar="مناسب ليك لو">مناسب ليك لو</h3>
           <ul class="ticks">
-            <li data-en="You sell to other businesses: factories, distributors, clinics, schools, developers, events." data-ar="بتبيع لشركات تانية: مصانع، موزّعين، عيادات، مدارس، مطوّرين عقاريين، إيفنتات.">بتبيع لشركات تانية: مصانع، موزّعين، عيادات، مدارس، مطوّرين عقاريين، إيفنتات.</li>
-            <li data-en="Inquiries reach you every week, from ads, your website or WhatsApp." data-ar="الاستفسارات بتوصلك كل أسبوع، من الإعلانات أو الموقع أو الواتساب.">الاستفسارات بتوصلك كل أسبوع، من الإعلانات أو الموقع أو الواتساب.</li>
-            <li data-en="Someone on your team is meant to call them back." data-ar="فيه حد في فريقك المفروض يرجع يكلّمهم.">فيه حد في فريقك المفروض يرجع يكلّمهم.</li>
-            <li data-en="One lost deal costs you more than the system does." data-ar="صفقة واحدة ضايعة بتكلّفك أكتر من السيستم نفسه.">صفقة واحدة ضايعة بتكلّفك أكتر من السيستم نفسه.</li>
+            <li data-en="You run a business with a team, and repetitive work eats their week." data-ar="عندك بيزنس وفريق، والشغل المتكرر واكل أسبوعهم.">عندك بيزنس وفريق، والشغل المتكرر واكل أسبوعهم.</li>
+            <li data-en="Inquiries reach you from ads, your website or WhatsApp, and some slip through." data-ar="الاستفسارات بتوصلك من الإعلانات أو الموقع أو الواتساب، وفيه منها بيضيع.">الاستفسارات بتوصلك من الإعلانات أو الموقع أو الواتساب، وفيه منها بيضيع.</li>
+            <li data-en="You've tried AI tools, but nothing stuck." data-ar="جرّبت أدوات AI، بس ولا حاجة كمّلت.">جرّبت أدوات AI، بس ولا حاجة كمّلت.</li>
             <li data-en="You want to see the numbers, not hear about them." data-ar="عايز تشوف الأرقام بعينك، مش تسمع عنها.">عايز تشوف الأرقام بعينك، مش تسمع عنها.</li>
           </ul>
         </div>
         <div class="card reveal">
           <h3 data-en="Probably not a fit if" data-ar="غالباً مش مناسب لو">غالباً مش مناسب لو</h3>
           <ul class="ticks no">
-            <li data-en="You don't get inquiries yet. Start with ads first, and we can help with that on its own." data-ar="لسه مفيش استفسارات بتوصلك. ابدأ بالإعلانات الأول، ودي نقدر نساعدك فيها لوحدها.">لسه مفيش استفسارات بتوصلك. ابدأ بالإعلانات الأول، ودي نقدر نساعدك فيها لوحدها.</li>
-            <li data-en="You sell low-priced products that customers buy straight from your website." data-ar="بتبيع منتجات سعرها قليل والعميل بيشتريها من الموقع على طول.">بتبيع منتجات سعرها قليل والعميل بيشتريها من الموقع على طول.</li>
-            <li data-en="Nobody on the team has time to make calls, and you don't plan to hire." data-ar="محدش في الفريق عنده وقت يعمل مكالمات، ومش ناوي تعيّن حد.">محدش في الفريق عنده وقت يعمل مكالمات، ومش ناوي تعيّن حد.</li>
+            <li data-en="You want a tool to tick the AI box, with nobody to use it." data-ar="عايز أداة عشان تقول إنك بتستخدم AI، ومحدش هيستخدمها.">عايز أداة عشان تقول إنك بتستخدم AI، ومحدش هيستخدمها.</li>
+            <li data-en="You're not ready to change how even one thing is done." data-ar="مش مستعد تغيّر طريقة شغل ولو حاجة واحدة.">مش مستعد تغيّر طريقة شغل ولو حاجة واحدة.</li>
           </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- The system -->
-  <section id="system" class="alt">
-    <div class="wrap">
-      <span class="eyebrow" data-en="The system" data-ar="السيستم">السيستم</span>
-      <h2 class="reveal" data-en="One place for every lead. One list for every morning." data-ar="مكان واحد لكل الليدز. وقايمة واحدة كل يوم الصبح.">مكان واحد لكل الليدز. وقايمة واحدة كل يوم الصبح.</h2>
-      <p class="lede" data-en="A sales CRM set up around how your team already works, on their phones, in English and Arabic." data-ar="CRM مبيعات معمول على طريقة شغل فريقك، على الموبايل، بالعربي والإنجليزي.">CRM مبيعات معمول على طريقة شغل فريقك، على الموبايل، بالعربي والإنجليزي.</p>
-
-      <!-- 1. Leads come in -->
-      <div class="feature">
-        <div class="reveal">
-          <div class="feature-item">
-            <span class="num">01</span>
-            <h3 data-en="Every lead, in seconds" data-ar="كل ليد، في ثواني">كل ليد، في ثواني</h3>
-            <p data-en="Facebook lead forms, your website and your old spreadsheets feed one CRM. A new inquiry reaches your team's phones seconds after it is submitted." data-ar="فورمات فيسبوك، موقعك وشيتاتك القديمة كلهم بيصبّوا في CRM واحد. الاستفسار الجديد بيوصل موبايلات فريقك بعد ثواني من تسجيله.">فورمات فيسبوك، موقعك وشيتاتك القديمة كلهم بيصبّوا في CRM واحد. الاستفسار الجديد بيوصل موبايلات فريقك بعد ثواني من تسجيله.</p>
-          </div>
-          <div class="feature-item">
-            <span class="num">02</span>
-            <h3 data-en="A call list every morning" data-ar="قايمة مكالمات كل يوم الصبح">قايمة مكالمات كل يوم الصبح</h3>
-            <p data-en="New inquiries, follow-ups due, and the cold leads worth another try, in order. Nobody decides who to call. They just start." data-ar="الاستفسارات الجديدة، المتابعات اللي ميعادها جه، والليدز القديمة اللي تستاهل محاولة تانية، بالترتيب. محدش بيفكّر يكلّم مين. بيبدأ على طول.">الاستفسارات الجديدة، المتابعات اللي ميعادها جه، والليدز القديمة اللي تستاهل محاولة تانية، بالترتيب. محدش بيفكّر يكلّم مين. بيبدأ على طول.</p>
-          </div>
-        </div>
-        <div class="mock reveal" aria-hidden="true">
-          <div class="toast">
-            <span class="dot"></span>
-            <div>
-              <div class="toast-title" data-en="New lead, Facebook form" data-ar="ليد جديد، فورم فيسبوك">ليد جديد، فورم فيسبوك</div>
-              <div class="toast-body" data-en="Hany, building materials, 4 seconds ago" data-ar="هاني، مواد بناء، من 4 ثواني">هاني، مواد بناء، من 4 ثواني</div>
-            </div>
-          </div>
-          <div class="mock-head">
-            <strong data-en="All leads" data-ar="كل الليدز">كل الليدز</strong>
-            <span data-en="One list, every source" data-ar="قايمة واحدة لكل المصادر">قايمة واحدة لكل المصادر</span>
-          </div>
-          <div class="lead">
-            <div class="lead-top">
-              <div>
-                <div class="lead-name" data-en="Mariam, hotel group" data-ar="مريم، مجموعة فنادق">مريم، مجموعة فنادق</div>
-                <div class="lead-meta" data-en="Today, 9:12" data-ar="النهارده، 9:12">النهارده، 9:12</div>
-              </div>
-              <span class="tag tag-new" data-en="Website" data-ar="الموقع">الموقع</span>
-            </div>
-          </div>
-          <div class="lead">
-            <div class="lead-top">
-              <div>
-                <div class="lead-name" data-en="Khaled, pharma distributor" data-ar="خالد، توزيع أدوية">خالد، توزيع أدوية</div>
-                <div class="lead-meta" data-en="Yesterday, 16:40" data-ar="امبارح، 16:40">امبارح، 16:40</div>
-              </div>
-              <span class="tag tag-new" data-en="Facebook" data-ar="فيسبوك">فيسبوك</span>
-            </div>
-          </div>
-          <div class="lead">
-            <div class="lead-top">
-              <div>
-                <div class="lead-name" data-en="Nour, logistics company" data-ar="نور، شركة شحن">نور، شركة شحن</div>
-                <div class="lead-meta" data-en="From your 2024 sheet" data-ar="من شيت 2024 بتاعك">من شيت 2024 بتاعك</div>
-              </div>
-              <span class="tag tag-cold" data-en="Imported" data-ar="متنقل">متنقل</span>
-            </div>
-          </div>
-          <div class="mock-foot" data-en="Demo data" data-ar="بيانات تجريبية">بيانات تجريبية</div>
-        </div>
-      </div>
-
-      <!-- 2. Calling and follow-up -->
-      <div class="feature flip">
-        <div class="reveal">
-          <div class="feature-item">
-            <span class="num">03</span>
-            <h3 data-en="Call, then one tap" data-ar="مكالمة، وبعدها ضغطة واحدة">مكالمة، وبعدها ضغطة واحدة</h3>
-            <p data-en="Call or WhatsApp straight from the lead. When they come back to the app, one tap records what happened and sets the next step." data-ar="اتصال أو واتساب من صفحة الليد نفسها. ولما يرجع للأبلكيشن، ضغطة واحدة بتسجّل اللي حصل وبتحدّد الخطوة الجاية.">اتصال أو واتساب من صفحة الليد نفسها. ولما يرجع للأبلكيشن، ضغطة واحدة بتسجّل اللي حصل وبتحدّد الخطوة الجاية.</p>
-          </div>
-          <div class="feature-item">
-            <span class="num">04</span>
-            <h3 data-en="Follow-ups that don't rely on memory" data-ar="متابعة مش ماشية على الذاكرة">متابعة مش ماشية على الذاكرة</h3>
-            <p data-en="Every outcome schedules the next touch. Leads that go quiet come back onto the list instead of disappearing." data-ar="كل نتيجة مكالمة بتحدّد ميعاد التواصل الجاي. والليد اللي يسكت بيرجع على القايمة بدل ما يختفي.">كل نتيجة مكالمة بتحدّد ميعاد التواصل الجاي. والليد اللي يسكت بيرجع على القايمة بدل ما يختفي.</p>
-          </div>
-        </div>
-        <div class="mock reveal" aria-hidden="true">
-          <div class="lead">
-            <div class="lead-top">
-              <div>
-                <div class="lead-name" data-en="Mariam, hotel group" data-ar="مريم، مجموعة فنادق">مريم، مجموعة فنادق</div>
-                <div class="lead-meta" data-en="Asked for a quote for 300 units" data-ar="طلبت عرض سعر لـ 300 قطعة">طلبت عرض سعر لـ 300 قطعة</div>
-              </div>
-              <span class="tag tag-due" data-en="Follow-up due" data-ar="متابعة النهارده">متابعة النهارده</span>
-            </div>
-            <div class="lead-actions">
-              <span class="pill pill-call" data-en="Call" data-ar="اتصال">اتصال</span>
-              <span class="pill" data-en="WhatsApp" data-ar="واتساب">واتساب</span>
-            </div>
-          </div>
-          <div class="sheet">
-            <div class="sheet-title" data-en="What happened on the call?" data-ar="إيه اللي حصل في المكالمة؟">إيه اللي حصل في المكالمة؟</div>
-            <div class="chips">
-              <span class="chip chip-on" data-en="Send a quote" data-ar="ابعت عرض سعر">ابعت عرض سعر</span>
-              <span class="chip" data-en="Call back" data-ar="كلّمه تاني">كلّمه تاني</span>
-              <span class="chip" data-en="No answer" data-ar="مردّش">مردّش</span>
-            </div>
-          </div>
-          <div class="row">
-            <span data-en="Next follow-up" data-ar="المتابعة الجاية">المتابعة الجاية</span>
-            <strong data-en="Thursday, 11:00" data-ar="الخميس، 11:00">الخميس، 11:00</strong>
-          </div>
-          <div class="hist">
-            <div data-en="Tue: called, asked for prices" data-ar="التلات: اتكلّمت، طلبت الأسعار">التلات: اتكلّمت، طلبت الأسعار</div>
-            <div data-en="Mon: no answer, retry set for Tue" data-ar="الاتنين: مردّتش، اتحدّد ميعاد تاني التلات">الاتنين: مردّتش، اتحدّد ميعاد تاني التلات</div>
-          </div>
-          <div class="mock-foot" data-en="Demo data" data-ar="بيانات تجريبية">بيانات تجريبية</div>
-        </div>
-      </div>
-
-      <!-- 3. Quotes and the owner's view -->
-      <div class="feature">
-        <div class="reveal">
-          <div class="feature-item">
-            <span class="num">05</span>
-            <h3 data-en="Quotes tied to the lead" data-ar="عرض السعر مربوط بالليد">عرض السعر مربوط بالليد</h3>
-            <p data-en="Items, quantities and prices sit on the lead, so your pipeline is counted in money, not guesses." data-ar="الأصناف والكميات والأسعار متسجّلة على الليد، فتبقى شايف البايبلاين بالفلوس مش بالتخمين.">الأصناف والكميات والأسعار متسجّلة على الليد، فتبقى شايف البايبلاين بالفلوس مش بالتخمين.</p>
-          </div>
-          <div class="feature-item">
-            <span class="num">06</span>
-            <h3 data-en="You see everything" data-ar="إنت شايف كل حاجة">إنت شايف كل حاجة</h3>
-            <p data-en="Calls made, leads priced and deals won, per person and per week, from your phone." data-ar="المكالمات اللي اتعملت، الليدز اللي اتسعّرت والصفقات اللي اتقفلت، لكل موظف ولكل أسبوع، من موبايلك.">المكالمات اللي اتعملت، الليدز اللي اتسعّرت والصفقات اللي اتقفلت، لكل موظف ولكل أسبوع، من موبايلك.</p>
-          </div>
-        </div>
-        <div class="mock reveal" aria-hidden="true">
-          <div class="mock-head">
-            <strong data-en="This week" data-ar="الأسبوع ده">الأسبوع ده</strong>
-            <span data-en="Owner view" data-ar="شاشة صاحب الشركة">شاشة صاحب الشركة</span>
-          </div>
-          <div class="stats3">
-            <div class="stat"><b>212</b><span data-en="calls made" data-ar="مكالمة">مكالمة</span></div>
-            <div class="stat"><b>38</b><span data-en="quotes sent" data-ar="عرض سعر">عرض سعر</span></div>
-            <div class="stat"><b>1.4M</b><span data-en="EGP in quotes" data-ar="جنيه عروض أسعار">جنيه عروض أسعار</span></div>
-          </div>
-          <div class="bars">
-            <div class="bars-title" data-en="Calls per person" data-ar="المكالمات لكل موظف">المكالمات لكل موظف</div>
-            <div class="bar-row"><span data-en="Mona" data-ar="منى">منى</span><div class="bar"><i style="width: 100%"></i></div><span>84</span></div>
-            <div class="bar-row"><span data-en="Karim" data-ar="كريم">كريم</span><div class="bar"><i style="width: 85%"></i></div><span>71</span></div>
-            <div class="bar-row"><span data-en="Youssef" data-ar="يوسف">يوسف</span><div class="bar"><i style="width: 68%"></i></div><span>57</span></div>
-          </div>
-          <div class="row">
-            <span data-en="Quote for Mariam, 3 items" data-ar="عرض سعر مريم، 3 أصناف">عرض سعر مريم، 3 أصناف</span>
-            <strong data-en="EGP 186,000" data-ar="186,000 جنيه">186,000 جنيه</strong>
-          </div>
-          <div class="mock-foot" data-en="Demo data" data-ar="بيانات تجريبية">بيانات تجريبية</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- What else we do -->
-  <section id="services">
-    <div class="wrap">
-      <span class="eyebrow" data-en="What else we do" data-ar="وكمان بنعمل">وكمان بنعمل</span>
-      <h2 class="reveal" data-en="The system closes the leads. We can bring them in too." data-ar="السيستم بيحوّل الليدز لمبيعات. وكمان نقدر نجيبلك الليدز نفسها.">السيستم بيحوّل الليدز لمبيعات. وكمان نقدر نجيبلك الليدز نفسها.</h2>
-      <p class="lede" data-en="Everything we build feeds the same CRM, so every lead it brings in gets called." data-ar="كل حاجة بنبنيها بتصبّ في نفس الـ CRM، فكل ليد بتجيبه بيتكلّم.">كل حاجة بنبنيها بتصبّ في نفس الـ CRM، فكل ليد بتجيبه بيتكلّم.</p>
-
-      <div class="svc">
-        <div class="card svc-card reveal">
-          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></span>
-          <h3 data-en="Websites" data-ar="مواقع إلكترونية">مواقع إلكترونية</h3>
-          <p data-en="Fast sites in English, Arabic or both, with forms that drop straight into your CRM, so no inquiry waits in an inbox." data-ar="مواقع سريعة بالعربي أو الإنجليزي أو الاتنين، فورماتها بتصبّ في الـ CRM على طول، فمفيش استفسار يستنى في الإيميل.">مواقع سريعة بالعربي أو الإنجليزي أو الاتنين، فورماتها بتصبّ في الـ CRM على طول، فمفيش استفسار يستنى في الإيميل.</p>
-          <p class="for"><span data-en="Done for" data-ar="عملناها لـ">عملناها لـ</span> Proact Clinics, Pr Ankh, Micro Era Power, Daffodil Project, RocGrowth</p>
-        </div>
-        <div class="card svc-card reveal">
-          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10v4a1 1 0 0 0 1 1h3l6 4V5L7 9H4a1 1 0 0 0-1 1z"/><path d="M17 8.5a5 5 0 0 1 0 7M19.5 6a8.5 8.5 0 0 1 0 12"/></svg></span>
-          <h3 data-en="Meta ads and marketing" data-ar="إعلانات ميتا وتسويق">إعلانات ميتا وتسويق</h3>
-          <p data-en="Campaigns, funnels and lead forms, with reporting you can read. With the CRM in place, you see which campaign brought the deals, not just the clicks." data-ar="حملات، فانلز وفورمات ليدز، وتقارير مفهومة. ومع الـ CRM، بتشوف أنهي حملة جابت الصفقات، مش بس الكليكات.">حملات، فانلز وفورمات ليدز، وتقارير مفهومة. ومع الـ CRM، بتشوف أنهي حملة جابت الصفقات، مش بس الكليكات.</p>
-          <p class="for"><span data-en="Done for" data-ar="عملناها لـ">عملناها لـ</span> Techne Summit, Senno Elite, Infinity Elite Group, Investors of the Mediterranean</p>
-        </div>
-        <div class="card svc-card reveal">
-          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
-          <h3 data-en="AI and automation" data-ar="AI وأتمتة">AI وأتمتة</h3>
-          <p data-en="Tools that take the repetitive work off your team: routing leads, follow-up messages, reports and internal apps." data-ar="أدوات بتشيل الشغل المتكرر من على فريقك: توزيع الليدز، رسايل المتابعة، التقارير والأبلكيشنز الداخلية.">أدوات بتشيل الشغل المتكرر من على فريقك: توزيع الليدز، رسايل المتابعة، التقارير والأبلكيشنز الداخلية.</p>
-          <p class="for"><span data-en="Done for" data-ar="عملناها لـ">عملناها لـ</span> Cooley Comics, RockeToday, Techne Summit, Investors of the Mediterranean</p>
-        </div>
-        <div class="card svc-card reveal">
-          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3V9z"/></svg></span>
-          <h3 data-en="Video and content" data-ar="فيديو ومحتوى">فيديو ومحتوى</h3>
-          <p data-en="Promo films, explainer videos and short ads in English or Egyptian Arabic, made to run in your campaigns." data-ar="أفلام ترويجية، فيديوهات شرح وإعلانات قصيرة بالإنجليزي أو بالمصري، معمولة عشان تشتغل في حملاتك.">أفلام ترويجية، فيديوهات شرح وإعلانات قصيرة بالإنجليزي أو بالمصري، معمولة عشان تشتغل في حملاتك.</p>
-          <p class="for"><span data-en="Done for" data-ar="عملناها لـ">عملناها لـ</span> Senno Elite, Cooley Comics</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How it works -->
-  <section id="method" class="alt">
-    <div class="wrap">
-      <span class="eyebrow" data-en="How it works" data-ar="بنشتغل إزاي">بنشتغل إزاي</span>
-      <h2 class="reveal" data-en="Audit, build, run." data-ar="فحص، بناء، تشغيل.">فحص، بناء، تشغيل.</h2>
-
-      <div class="grid-3">
-        <div class="card reveal">
-          <span class="num">01</span>
-          <h3 data-en="Audit" data-ar="الفحص">الفحص</h3>
-          <p data-en="A 45-minute call and a look at your lead sheets. You leave with a map of where inquiries come in, where they stall, and your top three leaks." data-ar="مكالمة 45 دقيقة ونظرة على شيتات الليدز عندك. بتطلع بخريطة: الاستفسارات بتدخل منين، بتقف فين، وأكبر 3 تسريبات عندك.">مكالمة 45 دقيقة ونظرة على شيتات الليدز عندك. بتطلع بخريطة: الاستفسارات بتدخل منين، بتقف فين، وأكبر 3 تسريبات عندك.</p>
-        </div>
-        <div class="card reveal">
-          <span class="num">02</span>
-          <h3 data-en="Build" data-ar="البناء">البناء</h3>
-          <p data-en="We set up your CRM, connect your lead sources and import the leads you already have, cleaned and de-duplicated. Your team starts with a full list, not an empty screen." data-ar="بنجهّز الـ CRM، بنربط مصادر الليدز، وبننقل الليدز اللي عندك بعد تنضيفها وحذف المتكرر. فريقك بيبدأ بقايمة مليانة مش شاشة فاضية.">بنجهّز الـ CRM، بنربط مصادر الليدز، وبننقل الليدز اللي عندك بعد تنضيفها وحذف المتكرر. فريقك بيبدأ بقايمة مليانة مش شاشة فاضية.</p>
-        </div>
-        <div class="card reveal">
-          <span class="num">03</span>
-          <h3 data-en="Run" data-ar="التشغيل">التشغيل</h3>
-          <p data-en="We stay on. We review the numbers with you, fix what gets in your team's way, and add the next piece when you need it." data-ar="بنكمّل معاك. بنراجع الأرقام سوا، بنصلّح اللي بيعطّل فريقك، وبنضيف الخطوة الجاية وقت ما تحتاجها.">بنكمّل معاك. بنراجع الأرقام سوا، بنصلّح اللي بيعطّل فريقك، وبنضيف الخطوة الجاية وقت ما تحتاجها.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing: amounts hidden for now, quoted after the audit -->
-  <section id="pricing">
-    <div class="wrap">
-      <span class="eyebrow" data-en="Pricing" data-ar="الأسعار">الأسعار</span>
-      <h2 class="reveal" data-en="Clear steps, quoted up front." data-ar="خطوات واضحة، وسعر بتعرفه من الأول.">خطوات واضحة، وسعر بتعرفه من الأول.</h2>
-      <p class="lede" data-en="You know what you'll pay and when it will be live before anything starts." data-ar="بتعرف هتدفع كام وهيشتغل إمتى قبل ما أي حاجة تبدأ.">بتعرف هتدفع كام وهيشتغل إمتى قبل ما أي حاجة تبدأ.</p>
-
-      <div class="grid-3">
-        <div class="card price-card reveal">
-          <span class="num">01</span>
-          <span class="price-label" data-en="Audit" data-ar="الفحص">الفحص</span>
-          <div class="price" data-en="Free" data-ar="مجاناً">مجاناً</div>
-          <span class="price-when" data-en="45-minute video call" data-ar="مكالمة فيديو 45 دقيقة">مكالمة فيديو 45 دقيقة</span>
-          <ul class="ticks">
-            <li data-en="A map of where your inquiries come in and where they stall" data-ar="خريطة الاستفسارات بتدخل منين وبتقف فين">خريطة الاستفسارات بتدخل منين وبتقف فين</li>
-            <li data-en="Your top three leaks, in order" data-ar="أكبر 3 تسريبات عندك، بالترتيب">أكبر 3 تسريبات عندك، بالترتيب</li>
-            <li data-en="Yours to keep, whether we work together or not" data-ar="بتاعتك، سواء اشتغلنا مع بعض أو لأ">بتاعتك، سواء اشتغلنا مع بعض أو لأ</li>
-          </ul>
-        </div>
-        <div class="card price-card featured reveal">
-          <span class="num">02</span>
-          <span class="price-label" data-en="Build, one-time setup" data-ar="البناء، تجهيز مرة واحدة">البناء، تجهيز مرة واحدة</span>
-          <div class="price price-quote" data-en="Quoted after the audit" data-ar="السعر بيتحدّد بعد الفحص">السعر بيتحدّد بعد الفحص</div>
-          <span class="price-when" data-en="Fixed fee, with a go-live date" data-ar="مبلغ ثابت، ومعاه ميعاد التشغيل">مبلغ ثابت، ومعاه ميعاد التشغيل</span>
-          <ul class="ticks">
-            <li data-en="Your CRM set up for your team, in English and Arabic" data-ar="الـ CRM متجهّز لفريقك، بالعربي والإنجليزي">الـ CRM متجهّز لفريقك، بالعربي والإنجليزي</li>
-            <li data-en="Facebook lead forms and your website connected" data-ar="فورمات فيسبوك وموقعك مربوطين">فورمات فيسبوك وموقعك مربوطين</li>
-            <li data-en="Your old leads imported, cleaned and de-duplicated" data-ar="الليدز القديمة متنقلة ومتنضّفة ومن غير تكرار">الليدز القديمة متنقلة ومتنضّفة ومن غير تكرار</li>
-            <li data-en="Your team trained on their own phones" data-ar="تدريب فريقك على موبايلاتهم">تدريب فريقك على موبايلاتهم</li>
-          </ul>
-        </div>
-        <div class="card price-card reveal">
-          <span class="num">03</span>
-          <span class="price-label" data-en="Run, monthly" data-ar="التشغيل، شهري">التشغيل، شهري</span>
-          <div class="price price-quote" data-en="Quoted after the audit" data-ar="السعر بيتحدّد بعد الفحص">السعر بيتحدّد بعد الفحص</div>
-          <span class="price-when" data-en="Starts once you're live" data-ar="بيبدأ أول ما السيستم يشتغل">بيبدأ أول ما السيستم يشتغل</span>
-          <ul class="ticks">
-            <li data-en="Regular numbers review with you" data-ar="مراجعة دورية للأرقام معاك">مراجعة دورية للأرقام معاك</li>
-            <li data-en="Fixes and changes when your team needs them" data-ar="تعديلات وتصليحات وقت ما فريقك يحتاجها">تعديلات وتصليحات وقت ما فريقك يحتاجها</li>
-            <li data-en="New pieces added as you grow" data-ar="إضافات جديدة مع نمو شغلك">إضافات جديدة مع نمو شغلك</li>
-          </ul>
-        </div>
-      </div>
-
-      <p class="note" data-en="Websites, ads and video are quoted per project, after a short call about what you need." data-ar="المواقع والإعلانات والفيديو بتتسعّر حسب كل مشروع، بعد مكالمة قصيرة عن اللي محتاجه.">المواقع والإعلانات والفيديو بتتسعّر حسب كل مشروع، بعد مكالمة قصيرة عن اللي محتاجه.</p>
     </div>
   </section>
 
@@ -965,28 +911,28 @@
 
       <div class="faq reveal">
         <details>
-          <summary data-en="We already have a CRM. Why would we need you?" data-ar="عندنا CRM أصلاً. محتاجينكم ليه؟">عندنا CRM أصلاً. محتاجينكم ليه؟</summary>
-          <p data-en="Most teams we meet have one. The question is whether anyone opens it every morning. In the audit we look at what you have. If your team uses it, we keep it: we work with any CRM that has an API, which most do, including HubSpot, Zoho and Salesforce, and connect your lead sources and follow-up to it. If nobody opens it, we set up one they will." data-ar="أغلب الفرق اللي بنقابلها عندها واحد. السؤال: حد بيفتحه كل يوم الصبح؟ في الفحص بنبص على اللي عندك. لو فريقك بيستخدمه، بنفضل عليه: بنشتغل مع أي CRM ليه API، وده أغلبهم زي HubSpot وZoho وSalesforce، وبنربط بيه مصادر الليدز والمتابعة. ولو محدش بيفتحه، بنجهّز واحد هيستخدموه فعلاً.">أغلب الفرق اللي بنقابلها عندها واحد. السؤال: حد بيفتحه كل يوم الصبح؟ في الفحص بنبص على اللي عندك. لو فريقك بيستخدمه، بنفضل عليه: بنشتغل مع أي CRM ليه API، وده أغلبهم زي HubSpot وZoho وSalesforce، وبنربط بيه مصادر الليدز والمتابعة. ولو محدش بيفتحه، بنجهّز واحد هيستخدموه فعلاً.</p>
+          <summary data-en="Do we need technical people on our team?" data-ar="محتاجين حد تقني في الفريق؟">محتاجين حد تقني في الفريق؟</summary>
+          <p data-en="No. We build and set it up, train the people who will use it, and stay on to fix what gets in the way. Your team needs to use it, not code it." data-ar="لأ. إحنا بنبني وبنجهّز، بندرّب اللي هيستخدموه، وبنكمّل معاك نصلّح أي حاجة بتعطّل. فريقك محتاج يستخدمه، مش يبرمجه.">لأ. إحنا بنبني وبنجهّز، بندرّب اللي هيستخدموه، وبنكمّل معاك نصلّح أي حاجة بتعطّل. فريقك محتاج يستخدمه، مش يبرمجه.</p>
         </details>
         <details>
-          <summary data-en="My sales team won't use another tool." data-ar="فريق المبيعات مش هيستخدم أداة جديدة.">فريق المبيعات مش هيستخدم أداة جديدة.</summary>
-          <p data-en="It's built around their day, on their phone: open it, see who to call, call, one tap to log it. There are no reports to type. And you can see who is using it, so it doesn't quietly get abandoned." data-ar="معمول على يومهم وعلى موبايلهم: يفتح، يشوف يكلّم مين، يتصل، وضغطة واحدة يسجّل. مفيش تقارير يكتبها. وإنت شايف مين بيستخدمه، فمش هيتساب ويتنسى.">معمول على يومهم وعلى موبايلهم: يفتح، يشوف يكلّم مين، يتصل، وضغطة واحدة يسجّل. مفيش تقارير يكتبها. وإنت شايف مين بيستخدمه، فمش هيتساب ويتنسى.</p>
-        </details>
-        <details>
-          <summary data-en="Do you only build CRMs?" data-ar="إنتوا بتعملوا CRM بس؟">إنتوا بتعملوا CRM بس؟</summary>
-          <p data-en="No. We also build websites, run Meta ads, make video and set up automation. The CRM is usually where we start, because it makes everything else measurable: you can see which website form or campaign turned into a deal." data-ar="لأ. بنعمل كمان مواقع، بنشغّل إعلانات ميتا، بنعمل فيديو وبنجهّز أتمتة. بس غالباً بنبدأ بالـ CRM، عشان هو اللي بيخلّي كل حاجة تانية تتقاس: بتشوف أنهي فورم أو حملة اتحوّلت لصفقة.">لأ. بنعمل كمان مواقع، بنشغّل إعلانات ميتا، بنعمل فيديو وبنجهّز أتمتة. بس غالباً بنبدأ بالـ CRM، عشان هو اللي بيخلّي كل حاجة تانية تتقاس: بتشوف أنهي فورم أو حملة اتحوّلت لصفقة.</p>
-        </details>
-        <details>
-          <summary data-en="How long until it's running?" data-ar="هياخد قد إيه لحد ما يشتغل؟">هياخد قد إيه لحد ما يشتغل؟</summary>
-          <p data-en="It depends on how many lead sources and old sheets you have. You get a go-live date with the quote, before anything starts. Your old leads are imported, so your team starts with a full list on day one." data-ar="بيعتمد على عدد مصادر الليدز والشيتات القديمة اللي عندك. بتاخد ميعاد التشغيل مع عرض السعر، قبل ما أي حاجة تبدأ. والليدز القديمة بتتنقل، ففريقك بيبدأ بقايمة مليانة من أول يوم.">بيعتمد على عدد مصادر الليدز والشيتات القديمة اللي عندك. بتاخد ميعاد التشغيل مع عرض السعر، قبل ما أي حاجة تبدأ. والليدز القديمة بتتنقل، ففريقك بيبدأ بقايمة مليانة من أول يوم.</p>
-        </details>
-        <details>
-          <summary data-en="What do you need from us?" data-ar="محتاجين مننا إيه؟">محتاجين مننا إيه؟</summary>
-          <p data-en="Access to your lead sources, such as your Facebook page and website forms, the lead sheets you already have, your price list for quotes, and an hour with whoever runs sales." data-ar="صلاحية على مصادر الليدز زي صفحة الفيسبوك وفورمات الموقع، شيتات الليدز اللي عندك، قايمة أسعارك عشان عروض الأسعار، وساعة مع المسؤول عن المبيعات.">صلاحية على مصادر الليدز زي صفحة الفيسبوك وفورمات الموقع، شيتات الليدز اللي عندك، قايمة أسعارك عشان عروض الأسعار، وساعة مع المسؤول عن المبيعات.</p>
+          <summary data-en="Where should we start?" data-ar="نبدأ منين؟">نبدأ منين؟</summary>
+          <p data-en="With the free audit. Most businesses have one place where AI pays off fast, often the sales follow-up or a report someone builds by hand every week. We start there, then add the next piece." data-ar="بالفحص المجاني. أغلب الشركات عندها مكان واحد الـ AI بيجيب فيه نتيجة بسرعة، غالباً متابعة المبيعات أو تقرير حد بيعمله بإيده كل أسبوع. بنبدأ من هناك، وبعدين نضيف الخطوة الجاية.">بالفحص المجاني. أغلب الشركات عندها مكان واحد الـ AI بيجيب فيه نتيجة بسرعة، غالباً متابعة المبيعات أو تقرير حد بيعمله بإيده كل أسبوع. بنبدأ من هناك، وبعدين نضيف الخطوة الجاية.</p>
         </details>
         <details>
           <summary data-en="Is our data safe?" data-ar="بياناتنا في أمان؟">بياناتنا في أمان؟</summary>
-          <p data-en="Your leads stay yours. Each client gets their own system, only your team can sign in, and you can have a full export of your data whenever you ask." data-ar="الليدز بتاعتك وتفضل بتاعتك. كل عميل ليه سيستم لوحده، محدش يقدر يدخل غير فريقك، وتقدر تاخد نسخة كاملة من بياناتك وقت ما تطلب.">الليدز بتاعتك وتفضل بتاعتك. كل عميل ليه سيستم لوحده، محدش يقدر يدخل غير فريقك، وتقدر تاخد نسخة كاملة من بياناتك وقت ما تطلب.</p>
+          <p data-en="Your data stays yours. Each client gets their own system, only your team can sign in, and you can have a full export of your data whenever you ask." data-ar="البيانات بتاعتك وتفضل بتاعتك. كل عميل ليه سيستم لوحده، محدش يقدر يدخل غير فريقك، وتقدر تاخد نسخة كاملة من بياناتك وقت ما تطلب.">البيانات بتاعتك وتفضل بتاعتك. كل عميل ليه سيستم لوحده، محدش يقدر يدخل غير فريقك، وتقدر تاخد نسخة كاملة من بياناتك وقت ما تطلب.</p>
+        </details>
+        <details>
+          <summary data-en="We already have a CRM. Why would we need you?" data-ar="عندنا CRM أصلاً. محتاجينكم ليه؟">عندنا CRM أصلاً. محتاجينكم ليه؟</summary>
+          <p data-en="Most teams we meet have one. The question is whether anyone opens it every morning. If your team uses it, we keep it: we work with any CRM that has an API, which most do, including HubSpot, Zoho and Salesforce, and connect your lead sources and follow-up to it. If nobody opens it, we set up one they will." data-ar="أغلب الفرق اللي بنقابلها عندها واحد. السؤال: حد بيفتحه كل يوم الصبح؟ لو فريقك بيستخدمه، بنفضل عليه: بنشتغل مع أي CRM ليه API، وده أغلبهم زي HubSpot وZoho وSalesforce، وبنربط بيه مصادر الليدز والمتابعة. ولو محدش بيفتحه، بنجهّز واحد هيستخدموه فعلاً.">أغلب الفرق اللي بنقابلها عندها واحد. السؤال: حد بيفتحه كل يوم الصبح؟ لو فريقك بيستخدمه، بنفضل عليه: بنشتغل مع أي CRM ليه API، وده أغلبهم زي HubSpot وZoho وSalesforce، وبنربط بيه مصادر الليدز والمتابعة. ولو محدش بيفتحه، بنجهّز واحد هيستخدموه فعلاً.</p>
+        </details>
+        <details>
+          <summary data-en="My team won't use another tool." data-ar="فريقي مش هيستخدم أداة جديدة.">فريقي مش هيستخدم أداة جديدة.</summary>
+          <p data-en="That's why we build around their day, on their phone, and train them on it. And you can see who is using it, so it doesn't quietly get abandoned." data-ar="عشان كده بنبنيها على يومهم وعلى موبايلهم، وبندرّبهم عليها. وإنت شايف مين بيستخدمها، فمش هتتساب وتتنسى.">عشان كده بنبنيها على يومهم وعلى موبايلهم، وبندرّبهم عليها. وإنت شايف مين بيستخدمها، فمش هتتساب وتتنسى.</p>
+        </details>
+        <details>
+          <summary data-en="Is the course the same as working with you?" data-ar="الكورس زي الشغل معاكم؟">الكورس زي الشغل معاكم؟</summary>
+          <p data-en="No. In the course you learn to build things yourself. In a project, we build and run them for you. You can start with either." data-ar="لأ. في الكورس بتتعلم تبني الحاجات بنفسك. وفي المشروع إحنا اللي بنبنيها ونشغّلها ليك. وتقدر تبدأ بأي واحد فيهم.">لأ. في الكورس بتتعلم تبني الحاجات بنفسك. وفي المشروع إحنا اللي بنبنيها ونشغّلها ليك. وتقدر تبدأ بأي واحد فيهم.</p>
         </details>
         <details>
           <summary data-en="Do you work outside Egypt?" data-ar="بتشتغلوا برّه مصر؟">بتشتغلوا برّه مصر؟</summary>
@@ -994,7 +940,7 @@
         </details>
         <details>
           <summary data-en="What happens after the audit?" data-ar="إيه اللي بيحصل بعد الفحص؟">إيه اللي بيحصل بعد الفحص؟</summary>
-          <p data-en="You keep the map and your top three leaks either way. If it's a fit, we send a fixed quote for the build. There's no pressure to sign." data-ar="الخريطة وأكبر 3 تسريبات بيفضلوا معاك في كل الأحوال. ولو مناسب، بنبعتلك عرض سعر ثابت للبناء. ومن غير أي ضغط إنك تمضي.">الخريطة وأكبر 3 تسريبات بيفضلوا معاك في كل الأحوال. ولو مناسب، بنبعتلك عرض سعر ثابت للبناء. ومن غير أي ضغط إنك تمضي.</p>
+          <p data-en="You keep the map either way. If it's a fit, we send a fixed quote and a go-live date for the first piece. There's no pressure to sign." data-ar="الخريطة بتفضل معاك في كل الأحوال. ولو مناسب، بنبعتلك عرض سعر ثابت وميعاد تشغيل لأول حاجة. ومن غير أي ضغط إنك تمضي.">الخريطة بتفضل معاك في كل الأحوال. ولو مناسب، بنبعتلك عرض سعر ثابت وميعاد تشغيل لأول حاجة. ومن غير أي ضغط إنك تمضي.</p>
         </details>
       </div>
     </div>
@@ -1003,10 +949,10 @@
   <!-- Final CTA -->
   <section id="audit" class="cta">
     <div class="wrap">
-      <h2 class="reveal" data-en="Find out what's sitting in your lead sheets." data-ar="اعرف إيه اللي قاعد في شيتات الليدز عندك.">اعرف إيه اللي قاعد في شيتات الليدز عندك.</h2>
-      <p class="lede" data-en="Book the free 45-minute audit. We'll map where your inquiries go and show you your top three leaks. No commitment." data-ar="احجز فحص 45 دقيقة مجاناً. هنرسم معاك الاستفسارات بتروح فين ونوريك أكبر 3 تسريبات. من غير أي التزام.">احجز فحص 45 دقيقة مجاناً. هنرسم معاك الاستفسارات بتروح فين ونوريك أكبر 3 تسريبات. من غير أي التزام.</p>
+      <h2 class="reveal" data-en="Find out where AI pays off in your business." data-ar="اعرف الـ AI هيفرق فين في شركتك.">اعرف الـ AI هيفرق فين في شركتك.</h2>
+      <p class="lede" data-en="Book the free 45-minute AI audit. We'll map where it saves you time and money, and what to do first. No commitment." data-ar="احجز فحص الـ AI المجاني، 45 دقيقة. هنحدد معاك فين هيوفّرلك وقت وفلوس، وتبدأ بإيه الأول. من غير أي التزام.">احجز فحص الـ AI المجاني، 45 دقيقة. هنحدد معاك فين هيوفّرلك وقت وفلوس، وتبدأ بإيه الأول. من غير أي التزام.</p>
       <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
-        <span data-en="Book the free audit" data-ar="احجز الفحص المجاني">احجز الفحص المجاني</span>
+        <span data-en="Book the free AI audit" data-ar="احجز فحص الـ AI المجاني">احجز فحص الـ AI المجاني</span>
         <span class="arrow" aria-hidden="true"></span>
       </a>
       <div class="hero-notes">
@@ -1031,7 +977,7 @@
   <!-- Sticky booking bar on phones, shown once the hero has scrolled away -->
   <div id="mbar" class="mbar">
     <span class="mbar-note" data-en="45 min, free" data-ar="45 دقيقة، مجاناً">45 دقيقة، مجاناً</span>
-    <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' data-en="Book the free audit" data-ar="احجز الفحص المجاني">احجز الفحص المجاني</a>
+    <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' data-en="Book the free AI audit" data-ar="احجز فحص الـ AI المجاني">احجز فحص الـ AI المجاني</a>
   </div>
 
   <!-- Cal element-click embed code begins -->
