@@ -20,6 +20,15 @@
   <meta property="og:locale" content="ar_EG" data-ar-content="ar_EG">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#1A1A1A">
+  <script>
+    // First visit from an Arabic-language browser: open the Arabic page. The language button remembers a choice.
+    (function () {
+      try {
+        if (document.documentElement.lang !== 'en' || localStorage.getItem('mm-lang')) return;
+        if (/^ar\b/i.test(navigator.language || '')) location.replace('/ar/' + location.search + location.hash);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="icon" type="image/png" href="/assets/meshmesh-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -428,6 +437,81 @@
     @media (max-width: 959px) { footer { padding-bottom: 104px; } }
     @media (min-width: 960px) { .mbar { display: none; } }
 
+    [hidden] { display: none !important; }
+
+    /* Hero: course pill and booking steps */
+    .hero-pill { margin-bottom: 22px; }
+    .pill-link { display: inline-flex; align-items: center; gap: 10px; padding-block: 6px; padding-inline: 6px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; color: #D4D4D4; background: rgba(255, 255, 255, 0.04); transition: border-color 0.2s ease, color 0.2s ease; }
+    .pill-link b { background: var(--orange); color: #fff; font-size: 12px; padding: 3px 10px; border-radius: 999px; }
+    .pill-link:hover { border-color: rgba(255, 87, 34, 0.5); color: #fff; }
+    .steps { list-style: none; margin: 26px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 22px; counter-reset: step; color: #D4D4D4; font-size: 14px; }
+    .steps li { counter-increment: step; display: flex; align-items: center; gap: 8px; }
+    .steps li::before { content: counter(step); width: 22px; height: 22px; border-radius: 50%; background: var(--orange-soft); color: var(--orange); font-weight: 800; font-size: 12px; display: grid; place-items: center; flex: none; }
+    .steps-note { color: var(--dim); font-size: 13px; margin-top: 12px; }
+    .cta .steps { justify-content: center; }
+    .cta-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 32px; }
+    .cta .cta-btns .btn { margin-top: 0; }
+
+    /* Booking button after a section (the sticky bar does this job on phones) */
+    .cta-row { display: none; }
+    @media (min-width: 960px) { .cta-row { display: flex; align-items: center; flex-wrap: wrap; gap: 14px 18px; margin-top: 44px; } }
+    .cta-row-note { color: var(--dim); font-size: 14px; }
+
+    /* WhatsApp */
+    .btn-wa { border-color: rgba(37, 211, 102, 0.45); }
+    .btn-wa:hover { border-color: #25D366; background: rgba(37, 211, 102, 0.08); }
+    .btn-wa svg { width: 20px; height: 20px; fill: #25D366; flex: none; }
+    .mbar .mbar-wa { flex: none; width: 50px; height: 50px; padding: 0; }
+    .foot-wa { display: inline-flex; align-items: center; gap: 8px; }
+    .foot-wa svg { width: 16px; height: 16px; fill: #25D366; }
+
+    /* Compact service cards */
+    .svc-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .svc-head .svc-icon { margin: 0; flex: none; }
+    .svc-head h3 { margin: 0; flex: 1; font-size: 19px; }
+    .svc-head .svc-badge { position: static; flex: none; }
+    .svc-card p.for { padding-top: 14px; }
+    .svc-card p.for span { display: inline; margin: 0; margin-inline-end: 8px; }
+
+    /* How we work, who it's for */
+    .flow { list-style: none; margin: 40px 0 0; padding: 0; display: grid; gap: 24px; }
+    @media (min-width: 860px) { .flow { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; } }
+    .flow li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; }
+    .flow .num { margin: 4px 0 0; }
+    .flow h3 { font-size: 19px; margin: 0 0 6px; }
+    .flow p { color: var(--muted); font-size: 15px; }
+    .fit-one { margin-top: 44px; }
+    .fit-one h3 { margin-bottom: 18px; }
+    @media (min-width: 860px) { .ticks.two { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 32px; } }
+    #fit .note { margin-top: 18px; }
+    .alt .days li { background: var(--dark); }
+
+    /* Clients: compact logo wall on phones until opened */
+    .clients-more { display: none; background: none; color: #fff; font-family: inherit; }
+    @media (max-width: 639px) {
+      .js .clients-more { display: inline-flex; margin-top: 18px; }
+      .js .clients:not(.open) { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+      .js .clients:not(.open) .client { padding: 8px; border-radius: 12px; }
+      .js .clients:not(.open) .client h3, .js .clients:not(.open) .client p { display: none; }
+      .js .clients:not(.open) .logo-tile { height: 52px; }
+      .js .clients:not(.open) .logo-tile.text { font-size: 13px; }
+    }
+
+    /* Tighter spacing on phones */
+    @media (max-width: 639px) {
+      section { padding: 64px 0; }
+      .hero { padding: 108px 0 48px; }
+      .strip { margin-top: 44px; }
+      .grid-3, .svc, .course, .clients, .fit-one, .proof { margin-top: 32px; }
+      .feature { margin-top: 44px; }
+      .proof { padding: 24px 20px; }
+      .proof-grid { gap: 16px; }
+      .proof-grid > div { display: grid; grid-template-columns: 138px minmax(0, 1fr); gap: 12px; align-items: center; }
+      .proof-grid .big { font-size: 26px; white-space: nowrap; }
+      .proof-grid p { margin-top: 0; font-size: 14px; }
+      .days li { padding: 16px 18px; }
+    }
+
     /* Scroll reveal (only when JS is running) */
     .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .js .reveal.in { opacity: 1; transform: none; }
@@ -477,26 +561,29 @@
     <div class="wrap">
       <div class="hero-grid">
         <div>
+          <p class="hero-pill"><a class="pill-link" href="#course"><b data-en="New" data-ar="جديد">جديد</b><span data-en="3-day AI course for business owners" data-ar="كورس AI لأصحاب البيزنس، 3 أيام">كورس AI لأصحاب البيزنس، 3 أيام</span><span class="arrow" aria-hidden="true"></span></a></p>
           <span class="eyebrow" data-en="AI for businesses, built and run for you" data-ar="ذكاء اصطناعي لشركتك، بنبنيه ونشغّله">ذكاء اصطناعي لشركتك، بنبنيه ونشغّله</span>
           <h1>
             <span data-en="Everyone's talking about AI." data-ar="الكل بيتكلم عن الـ AI.">الكل بيتكلم عن الـ AI.</span>
             <span class="accent" data-en="We put it to work in your business." data-ar="إحنا بنخلّيه يشتغل في شركتك.">إحنا بنخلّيه يشتغل في شركتك.</span>
           </h1>
-          <p class="lede" data-en="We find where AI saves you time and money, then build and run it with your team: sales systems, automations, AI assistants, content and websites." data-ar="بنحدد فين الـ AI هيوفّرلك وقت وفلوس، وبعدين بنبنيه ونشغّله مع فريقك: أنظمة مبيعات، أتمتة، مساعدين AI، محتوى ومواقع.">بنحدد فين الـ AI هيوفّرلك وقت وفلوس، وبعدين بنبنيه ونشغّله مع فريقك: أنظمة مبيعات، أتمتة، مساعدين AI، محتوى ومواقع.</p>
+          <p class="lede" data-en="We find where AI saves you time and money, then build and run it with your team." data-ar="بنحدد فين الـ AI هيوفّرلك وقت وفلوس، وبعدين بنبنيه ونشغّله مع فريقك.">بنحدد فين الـ AI هيوفّرلك وقت وفلوس، وبعدين بنبنيه ونشغّله مع فريقك.</p>
 
           <div class="hero-cta">
             <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
               <span data-en="Book the free AI audit" data-ar="احجز فحص الـ AI المجاني">احجز فحص الـ AI المجاني</span>
               <span class="arrow" aria-hidden="true"></span>
             </a>
-            <a href="#services" class="btn btn-ghost" data-en="See what we build" data-ar="شوف بنعمل إيه">شوف بنعمل إيه</a>
+            <a class="btn btn-wa" data-wa hidden target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span data-en="WhatsApp us" data-ar="كلّمنا واتساب">كلّمنا واتساب</span></a>
+            <a href="#services" class="btn btn-ghost" data-wa-alt data-en="See what we build" data-ar="شوف بنعمل إيه">شوف بنعمل إيه</a>
           </div>
 
-          <div class="hero-notes">
-            <span data-en="45-minute call" data-ar="مكالمة 45 دقيقة">مكالمة 45 دقيقة</span>
-            <span data-en="Free for qualified businesses" data-ar="مجاني للشركات المؤهلة">مجاني للشركات المؤهلة</span>
-            <span data-en="English and Arabic" data-ar="عربي وإنجليزي">عربي وإنجليزي</span>
-          </div>
+          <ol class="steps">
+            <li data-en="Pick a time" data-ar="اختار ميعاد">اختار ميعاد</li>
+            <li data-en="Tell us about your business" data-ar="احكيلنا عن شغلك">احكيلنا عن شغلك</li>
+            <li data-en="Get your AI map on the call" data-ar="خد خريطة الـ AI في المكالمة">خد خريطة الـ AI في المكالمة</li>
+          </ol>
+          <p class="steps-note" data-en="45 minutes. Free for qualified businesses. English or Arabic." data-ar="45 دقيقة. مجاني للشركات المؤهلة. عربي أو إنجليزي.">45 دقيقة. مجاني للشركات المؤهلة. عربي أو إنجليزي.</p>
         </div>
 
         <!-- What an audit hands back (demo data) -->
@@ -565,31 +652,8 @@
     </div>
   </header>
 
-  <!-- The problem -->
-  <section id="why" class="alt">
-    <div class="wrap">
-      <span class="eyebrow" data-en="The problem" data-ar="المشكلة">المشكلة</span>
-      <h2 class="reveal" data-en="Everyone says use AI. Nobody says where." data-ar="الكل بيقولك استخدم AI. محدش بيقولك فين.">الكل بيقولك استخدم AI. محدش بيقولك فين.</h2>
-
-      <div class="grid-3">
-        <div class="card reveal">
-          <h3 data-en="Tools without a plan" data-ar="أدوات من غير خطة">أدوات من غير خطة</h3>
-          <p data-en="A few subscriptions, a chatbot someone tried once. Nothing connected to how the business actually makes money." data-ar="كام اشتراك، وشات بوت حد جرّبه مرة. ولا حاجة مربوطة بالطريقة اللي الشركة بتكسب بيها فعلاً.">كام اشتراك، وشات بوت حد جرّبه مرة. ولا حاجة مربوطة بالطريقة اللي الشركة بتكسب بيها فعلاً.</p>
-        </div>
-        <div class="card reveal">
-          <h3 data-en="A team that doesn't know where to start" data-ar="فريق مش عارف يبدأ منين">فريق مش عارف يبدأ منين</h3>
-          <p data-en="Your people are busy. Without someone showing them, AI stays something they read about." data-ar="فريقك مشغول. ومن غير حد يوريهم، الـ AI هيفضل حاجة بيقروا عنها بس.">فريقك مشغول. ومن غير حد يوريهم، الـ AI هيفضل حاجة بيقروا عنها بس.</p>
-        </div>
-        <div class="card reveal">
-          <h3 data-en="No way to see the payoff" data-ar="مش شايف العائد">مش شايف العائد</h3>
-          <p data-en="You can't tell whether AI saved an hour or a pound, so it never gets past the experiment." data-ar="مش عارف الـ AI وفّر ساعة ولا جنيه، فعمره ما بيعدّي مرحلة التجربة.">مش عارف الـ AI وفّر ساعة ولا جنيه، فعمره ما بيعدّي مرحلة التجربة.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Services -->
-  <section id="services">
+  <section id="services" class="alt">
     <div class="wrap">
       <span class="eyebrow" data-en="What we do" data-ar="بنعمل إيه">بنعمل إيه</span>
       <h2 class="reveal" data-en="Six ways we put AI to work in your business." data-ar="6 طرق بنشغّل بيها الـ AI في شركتك.">6 طرق بنشغّل بيها الـ AI في شركتك.</h2>
@@ -597,49 +661,50 @@
 
       <div class="svc">
         <div class="card svc-card svc-start reveal">
-          <span class="svc-badge" data-en="Start here" data-ar="ابدأ هنا">ابدأ هنا</span>
-          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg></span>
-          <h3 data-en="AI audit" data-ar="فحص الـ AI">فحص الـ AI</h3>
-          <p data-en="A 45-minute call and a look at how you work today. You leave with the 3 to 5 places AI would pay off first, in order." data-ar="مكالمة 45 دقيقة ونظرة على طريقة شغلك النهارده. بتطلع بأهم 3 لـ 5 أماكن الـ AI هيفرق فيها، بالترتيب.">مكالمة 45 دقيقة ونظرة على طريقة شغلك النهارده. بتطلع بأهم 3 لـ 5 أماكن الـ AI هيفرق فيها، بالترتيب.</p>
-          <p class="for"><span data-en="Format" data-ar="الشكل">الشكل</span><b data-en="Free, video call, yours to keep" data-ar="مجاني، مكالمة فيديو، والنتيجة بتفضل معاك">مجاني، مكالمة فيديو، والنتيجة بتفضل معاك</b></p>
+          <div class="svc-head"><span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg></span><h3 data-en="AI audit" data-ar="فحص الـ AI">فحص الـ AI</h3><span class="svc-badge" data-en="Start here" data-ar="ابدأ هنا">ابدأ هنا</span></div>
+          <p data-en="A 45-minute call. You leave with the 3 to 5 places AI would pay off first." data-ar="مكالمة 45 دقيقة. بتطلع بأهم 3 لـ 5 أماكن الـ AI هيفرق فيها.">مكالمة 45 دقيقة. بتطلع بأهم 3 لـ 5 أماكن الـ AI هيفرق فيها.</p>
+          <p class="for"><span data-en="Format" data-ar="الشكل">الشكل</span><b data-en="Free, yours to keep" data-ar="مجاني، والنتيجة بتفضل معاك">مجاني، والنتيجة بتفضل معاك</b></p>
         </div>
         <div class="card svc-card svc-flag reveal">
-          <span class="svc-badge" data-en="Our flagship" data-ar="أهم خدمة عندنا">أهم خدمة عندنا</span>
-          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v4H4zM4 11h16v4H4zM4 17h10v2H4z"/></svg></span>
-          <h3 data-en="Sales and lead system" data-ar="سيستم مبيعات وليدز">سيستم مبيعات وليدز</h3>
-          <p data-en="Every inquiry from ads, your website and old sheets in one CRM, a call list every morning, and follow-ups that don't rely on memory." data-ar="كل استفسار من الإعلانات والموقع والشيتات القديمة في CRM واحد، قايمة مكالمات كل يوم الصبح، ومتابعة مش ماشية على الذاكرة.">كل استفسار من الإعلانات والموقع والشيتات القديمة في CRM واحد، قايمة مكالمات كل يوم الصبح، ومتابعة مش ماشية على الذاكرة.</p>
+          <div class="svc-head"><span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v4H4zM4 11h16v4H4zM4 17h10v2H4z"/></svg></span><h3 data-en="Sales and lead system" data-ar="سيستم مبيعات وليدز">سيستم مبيعات وليدز</h3><span class="svc-badge" data-en="Our flagship" data-ar="أهم خدمة عندنا">أهم خدمة عندنا</span></div>
+          <p data-en="Every inquiry in one CRM, a call list every morning, and follow-ups that don't rely on memory." data-ar="كل استفسار في CRM واحد، قايمة مكالمات كل يوم الصبح، ومتابعة مش ماشية على الذاكرة.">كل استفسار في CRM واحد، قايمة مكالمات كل يوم الصبح، ومتابعة مش ماشية على الذاكرة.</p>
           <p class="for"><span data-en="Proof" data-ar="الدليل">الدليل</span><a href="#system" data-en="882 leads in one factory's sheets, 91% never called" data-ar="882 ليد في شيتات مصنع واحد، 91% محدش كلّمهم">882 ليد في شيتات مصنع واحد، 91% محدش كلّمهم</a></p>
         </div>
         <div class="card svc-card reveal">
-          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
-          <h3 data-en="AI automations and assistants" data-ar="أتمتة ومساعدين AI">أتمتة ومساعدين AI</h3>
-          <p data-en="Tools that take the repetitive work off your team: routing leads, drafting replies, follow-up messages, reports and internal apps." data-ar="أدوات بتشيل الشغل المتكرر من على فريقك: توزيع الليدز، تجهيز الردود، رسايل المتابعة، التقارير والأبلكيشنز الداخلية.">أدوات بتشيل الشغل المتكرر من على فريقك: توزيع الليدز، تجهيز الردود، رسايل المتابعة، التقارير والأبلكيشنز الداخلية.</p>
+          <div class="svc-head"><span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span><h3 data-en="AI automations and assistants" data-ar="أتمتة ومساعدين AI">أتمتة ومساعدين AI</h3></div>
+          <p data-en="Lead routing, reply drafts, reports and internal apps, taken off your team's plate." data-ar="توزيع الليدز، تجهيز الردود، التقارير والأبلكيشنز الداخلية، من غير ما فريقك يشيلها.">توزيع الليدز، تجهيز الردود، التقارير والأبلكيشنز الداخلية، من غير ما فريقك يشيلها.</p>
           <p class="for"><span data-en="Done for" data-ar="عملناها لـ">عملناها لـ</span>Cooley Comics, RockeToday, Techne Summit, Investors of the Mediterranean</p>
         </div>
         <div class="card svc-card reveal">
-          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3V9z"/></svg></span>
-          <h3 data-en="AI content and ads" data-ar="محتوى وإعلانات بالـ AI">محتوى وإعلانات بالـ AI</h3>
-          <p data-en="Promo films, explainer videos and short ads in English or Egyptian Arabic, made with AI, and Meta campaigns that put them in front of buyers." data-ar="أفلام ترويجية، فيديوهات شرح وإعلانات قصيرة بالإنجليزي أو بالمصري معمولة بالـ AI، وحملات ميتا توصّلها للمشترين.">أفلام ترويجية، فيديوهات شرح وإعلانات قصيرة بالإنجليزي أو بالمصري معمولة بالـ AI، وحملات ميتا توصّلها للمشترين.</p>
+          <div class="svc-head"><span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3V9z"/></svg></span><h3 data-en="AI content and ads" data-ar="محتوى وإعلانات بالـ AI">محتوى وإعلانات بالـ AI</h3></div>
+          <p data-en="Video ads and promos in English or Egyptian Arabic, and the Meta campaigns that run them." data-ar="إعلانات وفيديوهات بالإنجليزي أو بالمصري، وحملات ميتا اللي بتشغّلها.">إعلانات وفيديوهات بالإنجليزي أو بالمصري، وحملات ميتا اللي بتشغّلها.</p>
           <p class="for"><span data-en="Done for" data-ar="عملناها لـ">عملناها لـ</span>Techne Summit, Senno Elite, Cooley Comics, Infinity Elite Group</p>
         </div>
         <div class="card svc-card reveal">
-          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></span>
-          <h3 data-en="Websites" data-ar="مواقع إلكترونية">مواقع إلكترونية</h3>
-          <p data-en="Fast sites in English, Arabic or both, with forms that drop straight into your CRM, so no inquiry waits in an inbox." data-ar="مواقع سريعة بالعربي أو الإنجليزي أو الاتنين، فورماتها بتصبّ في الـ CRM على طول، فمفيش استفسار يستنى في الإيميل.">مواقع سريعة بالعربي أو الإنجليزي أو الاتنين، فورماتها بتصبّ في الـ CRM على طول، فمفيش استفسار يستنى في الإيميل.</p>
+          <div class="svc-head"><span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></span><h3 data-en="Websites" data-ar="مواقع إلكترونية">مواقع إلكترونية</h3></div>
+          <p data-en="Fast sites in English and Arabic, with forms that feed straight into your CRM." data-ar="مواقع سريعة بالعربي والإنجليزي، فورماتها بتصبّ في الـ CRM على طول.">مواقع سريعة بالعربي والإنجليزي، فورماتها بتصبّ في الـ CRM على طول.</p>
           <p class="for"><span data-en="Done for" data-ar="عملناها لـ">عملناها لـ</span>Proact Clinics, Pr Ankh, Micro Era Power, Daffodil Project, RocGrowth</p>
         </div>
         <div class="card svc-card reveal">
-          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg></span>
-          <h3 data-en="AI training for owners and teams" data-ar="تدريب AI لأصحاب الشركات والفرق">تدريب AI لأصحاب الشركات والفرق</h3>
-          <p data-en="Hands-on: you build real things with AI, from websites and automations to videos and proposals, instead of watching slides." data-ar="بإيدك: بتبني حاجات حقيقية بالـ AI، من مواقع وأتمتة لفيديوهات وعروض أسعار، بدل ما تتفرج على سلايدز.">بإيدك: بتبني حاجات حقيقية بالـ AI، من مواقع وأتمتة لفيديوهات وعروض أسعار، بدل ما تتفرج على سلايدز.</p>
-          <p class="for"><span data-en="Next course" data-ar="الكورس الجاي">الكورس الجاي</span><a href="#course" data-en="17 to 19 November, Alexandria" data-ar="17 و18 و19 نوفمبر، إسكندرية">17 و18 و19 نوفمبر، إسكندرية</a></p>
+          <div class="svc-head"><span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg></span><h3 data-en="AI training for owners and teams" data-ar="تدريب AI لأصحاب الشركات والفرق">تدريب AI لأصحاب الشركات والفرق</h3></div>
+          <p data-en="Hands-on: you build real things with AI instead of watching slides." data-ar="بإيدك: بتبني حاجات حقيقية بالـ AI بدل ما تتفرج على سلايدز.">بإيدك: بتبني حاجات حقيقية بالـ AI بدل ما تتفرج على سلايدز.</p>
+          <p class="for"><span data-en="Course" data-ar="الكورس">الكورس</span><a href="#course" data-en="3 days, in person, in Alexandria" data-ar="3 أيام، حضوري، في إسكندرية">3 أيام، حضوري، في إسكندرية</a></p>
         </div>
+      </div>
+
+      <div class="cta-row reveal">
+        <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+          <span data-en="Book the free AI audit" data-ar="احجز فحص الـ AI المجاني">احجز فحص الـ AI المجاني</span>
+          <span class="arrow" aria-hidden="true"></span>
+        </a>
+        <a class="btn btn-wa" data-wa hidden target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span data-en="WhatsApp us" data-ar="كلّمنا واتساب">كلّمنا واتساب</span></a>
+        <span class="cta-row-note" data-en="45 minutes, free, no commitment" data-ar="45 دقيقة، مجاناً، من غير التزام">45 دقيقة، مجاناً، من غير التزام</span>
       </div>
     </div>
   </section>
 
   <!-- Flagship: the sales system -->
-  <section id="system" class="alt">
+  <section id="system">
     <div class="wrap">
       <span class="eyebrow" data-en="Our flagship" data-ar="أهم خدمة عندنا">أهم خدمة عندنا</span>
       <h2 class="reveal" data-en="The sales system: every lead called, followed up and priced." data-ar="سيستم المبيعات: كل ليد يتكلّم ويتابَع ويتسعّر.">سيستم المبيعات: كل ليد يتكلّم ويتابَع ويتسعّر.</h2>
@@ -650,7 +715,7 @@
           <div class="feature-item">
             <span class="num">01</span>
             <h3 data-en="Every lead, in seconds" data-ar="كل ليد، في ثواني">كل ليد، في ثواني</h3>
-            <p data-en="Facebook lead forms, your website and your old spreadsheets feed one CRM. A new inquiry reaches your team's phones seconds after it is submitted." data-ar="فورمات فيسبوك، موقعك وشيتاتك القديمة كلهم بيصبّوا في CRM واحد. الاستفسار الجديد بيوصل موبايلات فريقك بعد ثواني من تسجيله.">فورمات فيسبوك، موقعك وشيتاتك القديمة كلهم بيصبّوا في CRM واحد. الاستفسار الجديد بيوصل موبايلات فريقك بعد ثواني من تسجيله.</p>
+            <p data-en="Facebook forms, your website and old spreadsheets feed one CRM. New inquiries reach your team's phones in seconds." data-ar="فورمات فيسبوك، موقعك وشيتاتك القديمة بيصبّوا في CRM واحد. والاستفسار الجديد بيوصل موبايلات فريقك في ثواني.">فورمات فيسبوك، موقعك وشيتاتك القديمة بيصبّوا في CRM واحد. والاستفسار الجديد بيوصل موبايلات فريقك في ثواني.</p>
           </div>
           <div class="feature-item">
             <span class="num">02</span>
@@ -729,27 +794,35 @@
         </div>
         <p class="note" data-en="*Each lead's minimum requested quantity multiplied by the client's lowest item price, about US$1.1M. A floor on what was asked for, not a sales forecast." data-ar="*أقل كمية طلبها كل ليد مضروبة في أقل سعر قطعة عند العميل، حوالي 1.1 مليون دولار. ده حد أدنى للّي اتطلب، مش توقّع مبيعات.">*أقل كمية طلبها كل ليد مضروبة في أقل سعر قطعة عند العميل، حوالي 1.1 مليون دولار. ده حد أدنى للّي اتطلب، مش توقّع مبيعات.</p>
       </div>
+
+      <div class="cta-row reveal">
+        <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+          <span data-en="Book the free AI audit" data-ar="احجز فحص الـ AI المجاني">احجز فحص الـ AI المجاني</span>
+          <span class="arrow" aria-hidden="true"></span>
+        </a>
+        <a class="btn btn-wa" data-wa hidden target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span data-en="WhatsApp us" data-ar="كلّمنا واتساب">كلّمنا واتساب</span></a>
+        <span class="cta-row-note" data-en="45 minutes, free, no commitment" data-ar="45 دقيقة، مجاناً، من غير التزام">45 دقيقة، مجاناً، من غير التزام</span>
+      </div>
     </div>
   </section>
 
   <!-- AI course -->
-  <section id="course">
+  <section id="course" class="alt">
     <div class="wrap">
       <span class="eyebrow" data-en="AI course" data-ar="كورس الـ AI">كورس الـ AI</span>
       <h2 class="reveal" data-en="Rather learn it yourself? Three days, hands on." data-ar="عايز تتعلمه بنفسك؟ 3 أيام، بإيدك.">عايز تتعلمه بنفسك؟ 3 أيام، بإيدك.</h2>
-      <p class="lede" data-en="An intensive course for business owners. You build a website, an app, automations, videos and proposals with AI, and leave with your own version of each. No coding experience needed." data-ar="كورس مكثف لأصحاب البيزنس. بتعمل بإيدك موقع، تطبيق، أوتوميشن، فيديوهات وعروض أسعار بالـ AI، وبتطلع بنسختك إنت من كل واحدة. مش محتاج أي خبرة برمجة.">كورس مكثف لأصحاب البيزنس. بتعمل بإيدك موقع، تطبيق، أوتوميشن، فيديوهات وعروض أسعار بالـ AI، وبتطلع بنسختك إنت من كل واحدة. مش محتاج أي خبرة برمجة.</p>
+      <p class="lede" data-en="An intensive course for business owners. You build a website, an app, automations, videos and proposals with AI, and leave with your own version of each." data-ar="كورس مكثف لأصحاب البيزنس. بتعمل بإيدك موقع، تطبيق، أوتوميشن، فيديوهات وعروض أسعار بالـ AI، وبتطلع بنسختك إنت من كل واحدة.">كورس مكثف لأصحاب البيزنس. بتعمل بإيدك موقع، تطبيق، أوتوميشن، فيديوهات وعروض أسعار بالـ AI، وبتطلع بنسختك إنت من كل واحدة.</p>
 
       <div class="course">
         <div class="card course-card reveal">
           <ul class="ticks">
-            <li data-en="17, 18 and 19 November 2026" data-ar="17 و18 و19 نوفمبر 2026">17 و18 و19 نوفمبر 2026</li>
-            <li data-en="Alexandria, in person" data-ar="إسكندرية، حضوري">إسكندرية، حضوري</li>
-            <li data-en="10:00 to 17:00 each day" data-ar="من 10 الصبح لـ 5 المغرب كل يوم">من 10 الصبح لـ 5 المغرب كل يوم</li>
+            <li data-en="3 days, in person, in Alexandria" data-ar="3 أيام، حضوري، في إسكندرية">3 أيام، حضوري، في إسكندرية</li>
             <li data-en="15 seats only, so everyone gets help" data-ar="15 مكان بس، عشان كل واحد ياخد مساعدة">15 مكان بس، عشان كل واحد ياخد مساعدة</li>
+            <li data-en="No coding experience needed" data-ar="مش محتاج أي خبرة برمجة">مش محتاج أي خبرة برمجة</li>
             <li data-en="With Adham Mashaly and Ashraf Salah El-Din" data-ar="مع أدهم مشالي وأشرف صلاح الدين">مع أدهم مشالي وأشرف صلاح الدين</li>
           </ul>
           <div class="course-price"><b data-en="EGP 5,500" data-ar="5,500 جنيه">5,500 جنيه</b> <span data-en="early bird, then EGP 7,500" data-ar="حجز مبكر، وبعدها 7,500 جنيه">حجز مبكر، وبعدها 7,500 جنيه</span></div>
-          <a href="https://hightechvision-ai-course.pages.dev/register" target="_blank" rel="noopener" class="btn btn-primary">
+          <a href="https://hightechvision-ai-course.pages.dev/register" target="_blank" rel="noopener" class="btn btn-primary" data-track="CourseClick">
             <span data-en="Details and registration" data-ar="التفاصيل والتسجيل">التفاصيل والتسجيل</span>
             <span class="arrow" aria-hidden="true"></span>
           </a>
@@ -776,61 +849,59 @@
   </section>
 
   <!-- How we work -->
-  <section id="method" class="alt">
+  <section id="method">
     <div class="wrap">
       <span class="eyebrow" data-en="How we work" data-ar="بنشتغل إزاي">بنشتغل إزاي</span>
       <h2 class="reveal" data-en="Audit, a quick win, then we stay on." data-ar="فحص، مكسب سريع، وبعدين بنكمّل معاك.">فحص، مكسب سريع، وبعدين بنكمّل معاك.</h2>
 
-      <div class="grid-3">
-        <div class="card reveal">
+      <ol class="flow reveal">
+        <li>
           <span class="num">01</span>
-          <h3 data-en="Audit" data-ar="الفحص">الفحص</h3>
-          <p data-en="Free and 45 minutes long. You get the map of where AI pays off in your business, and it's yours to keep whether we work together or not." data-ar="مجاني و45 دقيقة. بتاخد خريطة الأماكن اللي الـ AI هيفرق فيها في شركتك، وبتفضل معاك سواء اشتغلنا مع بعض أو لأ.">مجاني و45 دقيقة. بتاخد خريطة الأماكن اللي الـ AI هيفرق فيها في شركتك، وبتفضل معاك سواء اشتغلنا مع بعض أو لأ.</p>
-        </div>
-        <div class="card reveal">
+          <div>
+            <h3 data-en="Audit" data-ar="الفحص">الفحص</h3>
+            <p data-en="Free, 45 minutes. You get the map of where AI pays off, yours to keep either way." data-ar="مجاني، 45 دقيقة. بتاخد خريطة الأماكن اللي الـ AI هيفرق فيها، وبتفضل معاك في كل الأحوال.">مجاني، 45 دقيقة. بتاخد خريطة الأماكن اللي الـ AI هيفرق فيها، وبتفضل معاك في كل الأحوال.</p>
+          </div>
+        </li>
+        <li>
           <span class="num">02</span>
-          <h3 data-en="Quick win" data-ar="مكسب سريع">مكسب سريع</h3>
-          <p data-en="We build the first piece, the one that pays off fastest, for a fixed price and a go-live date agreed before anything starts." data-ar="بنبني أول حاجة، اللي هتجيب نتيجة أسرع، بسعر ثابت وميعاد تشغيل متفق عليهم قبل ما أي حاجة تبدأ.">بنبني أول حاجة، اللي هتجيب نتيجة أسرع، بسعر ثابت وميعاد تشغيل متفق عليهم قبل ما أي حاجة تبدأ.</p>
-        </div>
-        <div class="card reveal">
+          <div>
+            <h3 data-en="Quick win" data-ar="مكسب سريع">مكسب سريع</h3>
+            <p data-en="We build the piece that pays off fastest, for a fixed price and a go-live date agreed up front." data-ar="بنبني الحاجة اللي هتجيب نتيجة أسرع، بسعر ثابت وميعاد تشغيل متفق عليهم من الأول.">بنبني الحاجة اللي هتجيب نتيجة أسرع، بسعر ثابت وميعاد تشغيل متفق عليهم من الأول.</p>
+          </div>
+        </li>
+        <li>
           <span class="num">03</span>
-          <h3 data-en="Run" data-ar="التشغيل">التشغيل</h3>
-          <p data-en="A monthly plan: we review the numbers with you, fix what gets in your team's way and add the next piece when you're ready." data-ar="خطة شهرية: بنراجع الأرقام سوا، بنصلّح اللي بيعطّل فريقك، وبنضيف الخطوة الجاية وقت ما تكون جاهز.">خطة شهرية: بنراجع الأرقام سوا، بنصلّح اللي بيعطّل فريقك، وبنضيف الخطوة الجاية وقت ما تكون جاهز.</p>
-        </div>
-      </div>
+          <div>
+            <h3 data-en="Run" data-ar="التشغيل">التشغيل</h3>
+            <p data-en="A monthly plan: we review the numbers, fix what's in your team's way and add the next piece." data-ar="خطة شهرية: بنراجع الأرقام، بنصلّح اللي بيعطّل فريقك، وبنضيف الخطوة الجاية.">خطة شهرية: بنراجع الأرقام، بنصلّح اللي بيعطّل فريقك، وبنضيف الخطوة الجاية.</p>
+          </div>
+        </li>
+      </ol>
       <p class="note" data-en="Project prices are quoted after the audit. The course has its own fixed price." data-ar="أسعار المشاريع بتتحدد بعد الفحص. والكورس ليه سعر ثابت لوحده.">أسعار المشاريع بتتحدد بعد الفحص. والكورس ليه سعر ثابت لوحده.</p>
     </div>
   </section>
 
   <!-- Who it's for -->
-  <section id="fit">
+  <section id="fit" class="alt">
     <div class="wrap">
       <span class="eyebrow" data-en="Who it's for" data-ar="مناسب لمين">مناسب لمين</span>
       <h2 class="reveal" data-en="Built for businesses that want results, not experiments." data-ar="معمول للشركات اللي عايزة نتيجة، مش تجارب.">معمول للشركات اللي عايزة نتيجة، مش تجارب.</h2>
 
-      <div class="fit">
-        <div class="card fit-yes reveal">
-          <h3 data-en="A good fit if" data-ar="مناسب ليك لو">مناسب ليك لو</h3>
-          <ul class="ticks">
-            <li data-en="You run a business with a team, and repetitive work eats their week." data-ar="عندك بيزنس وفريق، والشغل المتكرر واكل أسبوعهم.">عندك بيزنس وفريق، والشغل المتكرر واكل أسبوعهم.</li>
-            <li data-en="Inquiries reach you from ads, your website or WhatsApp, and some slip through." data-ar="الاستفسارات بتوصلك من الإعلانات أو الموقع أو الواتساب، وفيه منها بيضيع.">الاستفسارات بتوصلك من الإعلانات أو الموقع أو الواتساب، وفيه منها بيضيع.</li>
-            <li data-en="You've tried AI tools, but nothing stuck." data-ar="جرّبت أدوات AI، بس ولا حاجة كمّلت.">جرّبت أدوات AI، بس ولا حاجة كمّلت.</li>
-            <li data-en="You want to see the numbers, not hear about them." data-ar="عايز تشوف الأرقام بعينك، مش تسمع عنها.">عايز تشوف الأرقام بعينك، مش تسمع عنها.</li>
-          </ul>
-        </div>
-        <div class="card reveal">
-          <h3 data-en="Probably not a fit if" data-ar="غالباً مش مناسب لو">غالباً مش مناسب لو</h3>
-          <ul class="ticks no">
-            <li data-en="You want a tool to tick the AI box, with nobody to use it." data-ar="عايز أداة عشان تقول إنك بتستخدم AI، ومحدش هيستخدمها.">عايز أداة عشان تقول إنك بتستخدم AI، ومحدش هيستخدمها.</li>
-            <li data-en="You're not ready to change how even one thing is done." data-ar="مش مستعد تغيّر طريقة شغل ولو حاجة واحدة.">مش مستعد تغيّر طريقة شغل ولو حاجة واحدة.</li>
-          </ul>
-        </div>
+      <div class="card fit-yes fit-one reveal">
+        <h3 data-en="A good fit if" data-ar="مناسب ليك لو">مناسب ليك لو</h3>
+        <ul class="ticks two">
+          <li data-en="You run a business with a team, and repetitive work eats their week." data-ar="عندك بيزنس وفريق، والشغل المتكرر واكل أسبوعهم.">عندك بيزنس وفريق، والشغل المتكرر واكل أسبوعهم.</li>
+          <li data-en="Inquiries reach you from ads, your website or WhatsApp, and some slip through." data-ar="الاستفسارات بتوصلك من الإعلانات أو الموقع أو الواتساب، وفيه منها بيضيع.">الاستفسارات بتوصلك من الإعلانات أو الموقع أو الواتساب، وفيه منها بيضيع.</li>
+          <li data-en="You've tried AI tools, but nothing stuck." data-ar="جرّبت أدوات AI، بس ولا حاجة كمّلت.">جرّبت أدوات AI، بس ولا حاجة كمّلت.</li>
+          <li data-en="You want to see the numbers, not hear about them." data-ar="عايز تشوف الأرقام بعينك، مش تسمع عنها.">عايز تشوف الأرقام بعينك، مش تسمع عنها.</li>
+        </ul>
       </div>
+      <p class="note" data-en="Probably not a fit if you want a tool just to tick the AI box, or you're not ready to change how even one thing is done." data-ar="غالباً مش مناسب لو عايز أداة عشان تقول إنك بتستخدم AI وخلاص، أو مش مستعد تغيّر طريقة شغل ولو حاجة واحدة.">غالباً مش مناسب لو عايز أداة عشان تقول إنك بتستخدم AI وخلاص، أو مش مستعد تغيّر طريقة شغل ولو حاجة واحدة.</p>
     </div>
   </section>
 
   <!-- Case study -->
-  <section id="case-study" class="alt">
+  <section id="case-study">
     <div class="wrap case">
       <div class="case-img reveal">
         <img src="/assets/img/techne.jpg" alt="Techne Summit 2025" loading="lazy" width="1600" height="893">
@@ -858,44 +929,44 @@
   </section>
 
   <!-- Clients -->
-  <section id="clients">
+  <section id="clients" class="alt">
     <div class="wrap">
       <span class="eyebrow" data-en="Clients" data-ar="عملاءنا">عملاءنا</span>
-      <h2 class="reveal" data-en="Companies we've worked with, and what we did" data-ar="شركات اشتغلنا معاها، وعملنالها إيه">شركات اشتغلنا معاها، وعملنالها إيه</h2>
+      <h2 class="reveal" data-en="Companies we've worked with" data-ar="شركات اشتغلنا معاها">شركات اشتغلنا معاها</h2>
 
-      <div class="clients">
+      <div class="clients" id="clientsGrid">
         <div class="client"><div class="logo-tile"><img src="/assets/logos/ahead-energies.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/ahead-energies.png" alt="" loading="lazy" width="400" height="200"></div><h3>Ahead Energies</h3><p data-en="Energy" data-ar="طاقة">طاقة</p><p class="scope" data-en="Website" data-ar="موقع إلكتروني">موقع إلكتروني</p></div>
-        <a class="client" href="https://alexandriaangels.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/alexandria-angels.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/alexandria-angels.png" alt="" loading="lazy" width="400" height="200"></div><h3>Alexandria Angels</h3><p data-en="Investment community" data-ar="مجتمع استثمار">مجتمع استثمار</p><p class="scope" data-en="Growth consulting, website" data-ar="استشارات نمو، موقع">استشارات نمو، موقع</p></a>
-        <a class="client" href="https://blackdogcommunications.us.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/black-dog.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/black-dog.png" alt="" loading="lazy" width="400" height="200"></div><h3>Black Dog Communication</h3><p data-en="Telecommunications" data-ar="اتصالات">اتصالات</p><p class="scope" data-en="Consulting" data-ar="استشارات">استشارات</p></a>
-        <a class="client" href="https://cooleycomics.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/cooley-comics.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/cooley-comics.png" alt="" loading="lazy" width="400" height="200"></div><h3>Cooley Comics</h3><p data-en="Education and comics" data-ar="تعليم وكوميكس">تعليم وكوميكس</p><p class="scope" data-en="AI, marketing, automation" data-ar="AI، تسويق، أتمتة">AI، تسويق، أتمتة</p></a>
-        <a class="client" href="https://daffodilprojectroc.org/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/daffodil-project.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/daffodil-project.png" alt="" loading="lazy" width="400" height="200"></div><h3>Daffodil Project</h3><p data-en="Charity" data-ar="عمل خيري">عمل خيري</p><p class="scope" data-en="Website" data-ar="موقع إلكتروني">موقع إلكتروني</p></a>
+        <a class="client" aria-label="Alexandria Angels" href="https://alexandriaangels.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/alexandria-angels.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/alexandria-angels.png" alt="" loading="lazy" width="400" height="200"></div><h3>Alexandria Angels</h3><p data-en="Investment community" data-ar="مجتمع استثمار">مجتمع استثمار</p><p class="scope" data-en="Growth consulting, website" data-ar="استشارات نمو، موقع">استشارات نمو، موقع</p></a>
+        <a class="client" aria-label="Black Dog Communication" href="https://blackdogcommunications.us.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/black-dog.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/black-dog.png" alt="" loading="lazy" width="400" height="200"></div><h3>Black Dog Communication</h3><p data-en="Telecommunications" data-ar="اتصالات">اتصالات</p><p class="scope" data-en="Consulting" data-ar="استشارات">استشارات</p></a>
+        <a class="client" aria-label="Cooley Comics" href="https://cooleycomics.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/cooley-comics.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/cooley-comics.png" alt="" loading="lazy" width="400" height="200"></div><h3>Cooley Comics</h3><p data-en="Education and comics" data-ar="تعليم وكوميكس">تعليم وكوميكس</p><p class="scope" data-en="AI, marketing, automation" data-ar="AI، تسويق، أتمتة">AI، تسويق، أتمتة</p></a>
+        <a class="client" aria-label="Daffodil Project" href="https://daffodilprojectroc.org/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/daffodil-project.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/daffodil-project.png" alt="" loading="lazy" width="400" height="200"></div><h3>Daffodil Project</h3><p data-en="Charity" data-ar="عمل خيري">عمل خيري</p><p class="scope" data-en="Website" data-ar="موقع إلكتروني">موقع إلكتروني</p></a>
         <div class="client"><div class="logo-tile"><img src="/assets/logos/infinity-elite.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/infinity-elite.png" alt="" loading="lazy" width="400" height="200"></div><h3>Infinity Elite Group</h3><p data-en="Real estate and construction" data-ar="عقارات ومقاولات">عقارات ومقاولات</p><p class="scope" data-en="Marketing, website" data-ar="تسويق، موقع">تسويق، موقع</p></div>
         <div class="client"><div class="logo-tile"><img src="/assets/logos/investors-med.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/investors-med.png" alt="" loading="lazy" width="400" height="200"></div><h3>Investors of the Mediterranean</h3><p data-en="Investment community" data-ar="مجتمع استثمار">مجتمع استثمار</p><p class="scope" data-en="Marketing, AI, automation" data-ar="تسويق، AI، أتمتة">تسويق، AI، أتمتة</p></div>
-        <a class="client" href="https://kafmarket.com/" target="_blank" rel="noopener"><div class="logo-tile text">Kaf Market</div><h3>Kaf Market</h3><p data-en="E-commerce" data-ar="تجارة إلكترونية">تجارة إلكترونية</p><p class="scope" data-en="Full partnership" data-ar="شراكة كاملة">شراكة كاملة</p></a>
-        <a class="client" href="https://www.microerapower.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/micro-era-power.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/micro-era-power.png" alt="" loading="lazy" width="400" height="200"></div><h3>Micro Era Power</h3><p data-en="Energy" data-ar="طاقة">طاقة</p><p class="scope" data-en="Website" data-ar="موقع إلكتروني">موقع إلكتروني</p></a>
+        <a class="client" aria-label="Kaf Market" href="https://kafmarket.com/" target="_blank" rel="noopener"><div class="logo-tile text">Kaf Market</div><h3>Kaf Market</h3><p data-en="E-commerce" data-ar="تجارة إلكترونية">تجارة إلكترونية</p><p class="scope" data-en="Full partnership" data-ar="شراكة كاملة">شراكة كاملة</p></a>
+        <a class="client" aria-label="Micro Era Power" href="https://www.microerapower.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/micro-era-power.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/micro-era-power.png" alt="" loading="lazy" width="400" height="200"></div><h3>Micro Era Power</h3><p data-en="Energy" data-ar="طاقة">طاقة</p><p class="scope" data-en="Website" data-ar="موقع إلكتروني">موقع إلكتروني</p></a>
         <div class="client"><div class="logo-tile"><img src="/assets/logos/ozworks.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/ozworks.png" alt="" loading="lazy" width="400" height="200"></div><h3>Ozworks</h3><p data-en="Wealth consulting" data-ar="استشارات ثروات">استشارات ثروات</p><p class="scope" data-en="Consulting, marketing" data-ar="استشارات، تسويق">استشارات، تسويق</p></div>
         <div class="client"><div class="logo-tile"><img src="/assets/logos/pr-ankh.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/pr-ankh.png" alt="" loading="lazy" width="400" height="200"></div><h3>Pr Ankh</h3><p data-en="Real estate" data-ar="عقارات">عقارات</p><p class="scope" data-en="Website, marketing" data-ar="موقع، تسويق">موقع، تسويق</p></div>
-        <a class="client" href="https://proactclinics.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/proact.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/proact.png" alt="" loading="lazy" width="400" height="200"></div><h3>Proact Clinics</h3><p data-en="Health" data-ar="صحة">صحة</p><p class="scope" data-en="Website, marketing consulting" data-ar="موقع، استشارات تسويق">موقع، استشارات تسويق</p></a>
-        <a class="client" href="https://rocgrowth.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/rocgrowth.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/rocgrowth.png" alt="" loading="lazy" width="400" height="200"></div><h3>RocGrowth</h3><p data-en="Community" data-ar="مجتمع أعمال">مجتمع أعمال</p><p class="scope" data-en="Website, email marketing" data-ar="موقع، إيميل ماركتنج">موقع، إيميل ماركتنج</p></a>
-        <a class="client" href="https://rocketoday.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/rocketoday.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/rocketoday.png" alt="" loading="lazy" width="400" height="200"></div><h3>RockeToday</h3><p data-en="Marketing" data-ar="تسويق">تسويق</p><p class="scope" data-en="AI and automation, website" data-ar="AI وأتمتة، موقع">AI وأتمتة، موقع</p></a>
-        <a class="client" href="https://sennoelite.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/senno-elite.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/senno-elite.png" alt="" loading="lazy" width="400" height="200"></div><h3>Senno Elite</h3><p data-en="Uniforms and apparel" data-ar="يونيفورم وملابس">يونيفورم وملابس</p><p class="scope" data-en="Full partnership: marketing, AI, website" data-ar="شراكة كاملة: تسويق، AI، موقع">شراكة كاملة: تسويق، AI، موقع</p></a>
-        <a class="client" href="https://sestosynergy.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/sesto-synergy.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/sesto-synergy.png" alt="" loading="lazy" width="400" height="200"></div><h3>Sesto Synergy</h3><p data-en="Jewelry" data-ar="مجوهرات">مجوهرات</p><p class="scope" data-en="Marketing consulting" data-ar="استشارات تسويق">استشارات تسويق</p></a>
-        <a class="client" href="https://technesummit.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/techne-summit.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/techne-summit.png" alt="" loading="lazy" width="400" height="200"></div><h3>Techne Summit</h3><p data-en="Tech summit" data-ar="قمة تكنولوجيا">قمة تكنولوجيا</p><p class="scope" data-en="Marketing, AI, automation" data-ar="تسويق، AI، أتمتة">تسويق، AI، أتمتة</p></a>
-        <a class="client" href="https://www.troyweb.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/troy-consulting.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/troy-consulting.png" alt="" loading="lazy" width="400" height="200"></div><h3>Troy Consulting</h3><p data-en="Software" data-ar="برمجيات">برمجيات</p><p class="scope" data-en="Marketing consulting" data-ar="استشارات تسويق">استشارات تسويق</p></a>
+        <a class="client" aria-label="Proact Clinics" href="https://proactclinics.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/proact.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/proact.png" alt="" loading="lazy" width="400" height="200"></div><h3>Proact Clinics</h3><p data-en="Health" data-ar="صحة">صحة</p><p class="scope" data-en="Website, marketing consulting" data-ar="موقع، استشارات تسويق">موقع، استشارات تسويق</p></a>
+        <a class="client" aria-label="RocGrowth" href="https://rocgrowth.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/rocgrowth.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/rocgrowth.png" alt="" loading="lazy" width="400" height="200"></div><h3>RocGrowth</h3><p data-en="Community" data-ar="مجتمع أعمال">مجتمع أعمال</p><p class="scope" data-en="Website, email marketing" data-ar="موقع، إيميل ماركتنج">موقع، إيميل ماركتنج</p></a>
+        <a class="client" aria-label="RockeToday" href="https://rocketoday.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/rocketoday.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/rocketoday.png" alt="" loading="lazy" width="400" height="200"></div><h3>RockeToday</h3><p data-en="Marketing" data-ar="تسويق">تسويق</p><p class="scope" data-en="AI and automation, website" data-ar="AI وأتمتة، موقع">AI وأتمتة، موقع</p></a>
+        <a class="client" aria-label="Senno Elite" href="https://sennoelite.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/senno-elite.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/senno-elite.png" alt="" loading="lazy" width="400" height="200"></div><h3>Senno Elite</h3><p data-en="Uniforms and apparel" data-ar="يونيفورم وملابس">يونيفورم وملابس</p><p class="scope" data-en="Full partnership: marketing, AI, website" data-ar="شراكة كاملة: تسويق، AI، موقع">شراكة كاملة: تسويق، AI، موقع</p></a>
+        <a class="client" aria-label="Sesto Synergy" href="https://sestosynergy.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/sesto-synergy.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/sesto-synergy.png" alt="" loading="lazy" width="400" height="200"></div><h3>Sesto Synergy</h3><p data-en="Jewelry" data-ar="مجوهرات">مجوهرات</p><p class="scope" data-en="Marketing consulting" data-ar="استشارات تسويق">استشارات تسويق</p></a>
+        <a class="client" aria-label="Techne Summit" href="https://technesummit.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/techne-summit.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/techne-summit.png" alt="" loading="lazy" width="400" height="200"></div><h3>Techne Summit</h3><p data-en="Tech summit" data-ar="قمة تكنولوجيا">قمة تكنولوجيا</p><p class="scope" data-en="Marketing, AI, automation" data-ar="تسويق، AI، أتمتة">تسويق، AI، أتمتة</p></a>
+        <a class="client" aria-label="Troy Consulting" href="https://www.troyweb.com/" target="_blank" rel="noopener"><div class="logo-tile"><img src="/assets/logos/troy-consulting.png" alt="" loading="lazy" width="400" height="200"><img class="c" src="/assets/logos/color/troy-consulting.png" alt="" loading="lazy" width="400" height="200"></div><h3>Troy Consulting</h3><p data-en="Software" data-ar="برمجيات">برمجيات</p><p class="scope" data-en="Marketing consulting" data-ar="استشارات تسويق">استشارات تسويق</p></a>
       </div>
+      <button type="button" id="clientsMore" class="btn btn-ghost btn-sm clients-more" aria-expanded="false" aria-controls="clientsGrid" data-en="See what we did for each" data-ar="شوف عملنا إيه لكل شركة">شوف عملنا إيه لكل شركة</button>
     </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="alt">
+  <section id="about">
     <div class="wrap about">
       <div class="reveal">
         <span class="eyebrow" data-en="About" data-ar="عننا">عننا</span>
         <h2 data-en="Why &quot;MeshMesh&quot;?" data-ar="ليه &quot;مشمش&quot;؟">ليه &quot;مشمش&quot;؟</h2>
-        <p data-en="In Egypt, &quot;fel meshmesh&quot; (in apricot season) is what people say when something is never going to happen. We named the company after it, because most of our work starts with someone being told exactly that." data-ar="في مصر بنقول &quot;في المشمش&quot; على الحاجة اللي عمرها ما هتحصل. سمّينا الشركة كده عشان أغلب شغلنا بيبدأ من عند حد اتقاله نفس الجملة.">في مصر بنقول &quot;في المشمش&quot; على الحاجة اللي عمرها ما هتحصل. سمّينا الشركة كده عشان أغلب شغلنا بيبدأ من عند حد اتقاله نفس الجملة.</p>
-        <p><strong>Adham Mashaly</strong>, <span data-en="founder" data-ar="المؤسس">المؤسس</span></p>
-        <p class="who" data-en="University of Rochester, USA" data-ar="جامعة روتشستر، الولايات المتحدة">جامعة روتشستر، الولايات المتحدة</p>
-        <p data-en="Built and scaled multiple 7-figure operations. The systems we install are ones we run in our own companies first. If it isn't efficient, it doesn't stay." data-ar="بنى وكبّر أكتر من بيزنس وصل لـ 7 أرقام. الأنظمة اللي بنركّبها بنشغّلها في شركاتنا الأول. ولو مش فعّالة، مش بتفضل.">بنى وكبّر أكتر من بيزنس وصل لـ 7 أرقام. الأنظمة اللي بنركّبها بنشغّلها في شركاتنا الأول. ولو مش فعّالة، مش بتفضل.</p>
+        <p data-en="In Egypt, &quot;fel meshmesh&quot; (in apricot season) means it's never going to happen. Most of our work starts with someone being told exactly that." data-ar="في مصر بنقول &quot;في المشمش&quot; على الحاجة اللي عمرها ما هتحصل. وأغلب شغلنا بيبدأ من عند حد اتقاله كده.">في مصر بنقول &quot;في المشمش&quot; على الحاجة اللي عمرها ما هتحصل. وأغلب شغلنا بيبدأ من عند حد اتقاله كده.</p>
+        <p><strong>Adham Mashaly</strong>, <span data-en="founder. University of Rochester, USA." data-ar="المؤسس. جامعة روتشستر، الولايات المتحدة.">المؤسس. جامعة روتشستر، الولايات المتحدة.</span></p>
+        <p data-en="Built and scaled multiple 7-figure operations. The systems we install are ones we run in our own companies first." data-ar="بنى وكبّر أكتر من بيزنس وصل لـ 7 أرقام. والأنظمة اللي بنركّبها بنشغّلها في شركاتنا الأول.">بنى وكبّر أكتر من بيزنس وصل لـ 7 أرقام. والأنظمة اللي بنركّبها بنشغّلها في شركاتنا الأول.</p>
       </div>
       <div class="about-img reveal">
         <img src="/assets/img/adham.jpg" alt="Adham Mashaly" loading="lazy" width="1400" height="781">
@@ -904,7 +975,7 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq">
+  <section id="faq" class="alt">
     <div class="wrap">
       <span class="eyebrow" data-en="FAQ" data-ar="أسئلة">أسئلة</span>
       <h2 class="reveal" data-en="Questions we get on every audit." data-ar="أسئلة بتتسأل في كل فحص.">أسئلة بتتسأل في كل فحص.</h2>
@@ -950,16 +1021,20 @@
   <section id="audit" class="cta">
     <div class="wrap">
       <h2 class="reveal" data-en="Find out where AI pays off in your business." data-ar="اعرف الـ AI هيفرق فين في شركتك.">اعرف الـ AI هيفرق فين في شركتك.</h2>
-      <p class="lede" data-en="Book the free 45-minute AI audit. We'll map where it saves you time and money, and what to do first. No commitment." data-ar="احجز فحص الـ AI المجاني، 45 دقيقة. هنحدد معاك فين هيوفّرلك وقت وفلوس، وتبدأ بإيه الأول. من غير أي التزام.">احجز فحص الـ AI المجاني، 45 دقيقة. هنحدد معاك فين هيوفّرلك وقت وفلوس، وتبدأ بإيه الأول. من غير أي التزام.</p>
-      <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
-        <span data-en="Book the free AI audit" data-ar="احجز فحص الـ AI المجاني">احجز فحص الـ AI المجاني</span>
-        <span class="arrow" aria-hidden="true"></span>
-      </a>
-      <div class="hero-notes">
-        <span data-en="45 minutes" data-ar="45 دقيقة">45 دقيقة</span>
-        <span data-en="Video call" data-ar="مكالمة فيديو">مكالمة فيديو</span>
-        <span data-en="Free for qualified businesses" data-ar="مجاني للشركات المؤهلة">مجاني للشركات المؤهلة</span>
+      <p class="lede" data-en="Book the free AI audit. We'll map where it saves you time and money, and what to do first. No commitment." data-ar="احجز فحص الـ AI المجاني. هنحدد معاك فين هيوفّرلك وقت وفلوس، وتبدأ بإيه الأول. من غير أي التزام.">احجز فحص الـ AI المجاني. هنحدد معاك فين هيوفّرلك وقت وفلوس، وتبدأ بإيه الأول. من غير أي التزام.</p>
+      <div class="cta-btns">
+        <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+          <span data-en="Book the free AI audit" data-ar="احجز فحص الـ AI المجاني">احجز فحص الـ AI المجاني</span>
+          <span class="arrow" aria-hidden="true"></span>
+        </a>
+        <a class="btn btn-wa" data-wa hidden target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span data-en="WhatsApp us" data-ar="كلّمنا واتساب">كلّمنا واتساب</span></a>
       </div>
+      <ol class="steps">
+        <li data-en="Pick a time" data-ar="اختار ميعاد">اختار ميعاد</li>
+        <li data-en="Tell us about your business" data-ar="احكيلنا عن شغلك">احكيلنا عن شغلك</li>
+        <li data-en="Get your AI map on the call" data-ar="خد خريطة الـ AI في المكالمة">خد خريطة الـ AI في المكالمة</li>
+      </ol>
+      <p class="steps-note" data-en="45 minutes. Free for qualified businesses. English or Arabic." data-ar="45 دقيقة. مجاني للشركات المؤهلة. عربي أو إنجليزي.">45 دقيقة. مجاني للشركات المؤهلة. عربي أو إنجليزي.</p>
     </div>
   </section>
 
@@ -970,13 +1045,15 @@
         <span>MeshMesh Consulting</span>
       </a>
       <a href="mailto:adham@meshmeshconsulting.com">adham@meshmeshconsulting.com</a>
+      <a class="foot-wa" data-wa hidden target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>WhatsApp</span></a>
       <span>&copy; 2026 MeshMesh Consulting</span>
     </div>
   </footer>
 
   <!-- Sticky booking bar on phones, shown once the hero has scrolled away -->
   <div id="mbar" class="mbar">
-    <span class="mbar-note" data-en="45 min, free" data-ar="45 دقيقة، مجاناً">45 دقيقة، مجاناً</span>
+    <span class="mbar-note" data-wa-alt data-en="45 min, free" data-ar="45 دقيقة، مجاناً">45 دقيقة، مجاناً</span>
+    <a class="btn btn-wa mbar-wa" data-wa hidden target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
     <a href="https://cal.com/adham-mashaly/45min" class="btn btn-primary" data-cal-link="adham-mashaly/45min" data-cal-namespace="45min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' data-en="Book the free AI audit" data-ar="احجز فحص الـ AI المجاني">احجز فحص الـ AI المجاني</a>
   </div>
 
@@ -991,9 +1068,51 @@
   <script>
     document.documentElement.classList.add('js');
 
+    // ---- Site settings: fill these in to switch the features on ----
+    const WHATSAPP_NUMBER = '';  // digits only, with country code, for example 201001234567
+    const META_PIXEL_ID = '';    // from Meta Events Manager
+    // -----------------------------------------------------------------
+
+    const isAr = document.documentElement.lang === 'ar';
+
     // Old links used ?lang=ar; the Arabic page now lives at /ar/
-    if (document.documentElement.lang === 'en' && new URLSearchParams(location.search).get('lang') === 'ar') {
+    if (!isAr && new URLSearchParams(location.search).get('lang') === 'ar') {
       location.replace('/ar/' + location.hash);
+    }
+
+    // Remember the language someone picks, so the Arabic redirect never overrides it
+    document.getElementById('langToggle').addEventListener('click', (e) => {
+      try { localStorage.setItem('mm-lang', e.currentTarget.getAttribute('hreflang')); } catch (err) {}
+    });
+
+    // Meta pixel (only loads once an id is set)
+    if (META_PIXEL_ID) {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', META_PIXEL_ID);
+      fbq('track', 'PageView');
+    }
+    const track = (...args) => { if (window.fbq) window.fbq(...args); };
+
+    // Booking: count opened calendars and completed bookings
+    document.querySelectorAll('[data-cal-link]').forEach(el => el.addEventListener('click', () => track('trackCustom', 'AuditClick')));
+    document.querySelectorAll('[data-track]').forEach(el => el.addEventListener('click', () => track('trackCustom', el.dataset.track)));
+    let booked = false;
+    const onBooked = () => { if (!booked) { booked = true; track('track', 'Schedule'); } };
+    try {
+      Cal.ns['45min']('on', { action: 'bookingSuccessfulV2', callback: onBooked });
+      Cal.ns['45min']('on', { action: 'bookingSuccessful', callback: onBooked });
+    } catch (e) {}
+
+    // WhatsApp buttons (only shown once a number is set)
+    if (WHATSAPP_NUMBER) {
+      const text = isAr ? 'أهلاً، عايز أعرف أكتر عن فحص الـ AI المجاني.' : "Hi, I'd like to know more about the free AI audit.";
+      const url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
+      document.querySelectorAll('[data-wa]').forEach(el => {
+        el.href = url;
+        el.hidden = false;
+        el.addEventListener('click', () => track('track', 'Contact'));
+      });
+      document.querySelectorAll('[data-wa-alt]').forEach(el => { el.hidden = true; });
     }
 
     // Mobile menu
@@ -1007,6 +1126,14 @@
         menu.classList.remove('open');
         burger.setAttribute('aria-expanded', 'false');
       });
+    });
+
+    // Clients: phones show a compact logo wall until asked for the details
+    const clientsMore = document.getElementById('clientsMore');
+    clientsMore.addEventListener('click', () => {
+      document.getElementById('clientsGrid').classList.add('open');
+      clientsMore.setAttribute('aria-expanded', 'true');
+      clientsMore.hidden = true;
     });
 
     // Sticky booking bar: show after the hero, hide again at the final call to action
